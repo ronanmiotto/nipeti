@@ -1,0 +1,29 @@
+.container {
+  margin:0 auto;
+  width: 960px;
+}
+
+.main {
+  margin-top: 70px;
+}
+
+.clear {
+  clear: both;
+  display: block !important;
+}
+
+.form-user {
+}
+
+.title {
+  margin: 0 0 30px 0;
+}
+
+.bs-docs-footer {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin-top: 100px;
+  color: #99979c;
+  text-align: center;
+  background-color: #2a2730;
+}
