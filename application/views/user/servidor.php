@@ -23,7 +23,6 @@
               <input type="radio" name="inlineRadioOptions" name="type_estudant" value="option3"> Outros
             </label>
           </div>
-
           <div class="form-group">
             <label>Nome</label>
             <input type="text" class="form-control" name ="name_user" placeholder="Nome completo" required="">
@@ -47,7 +46,7 @@
           <div class="form-group clear">
             <label>Data de Nascimento: </label>
             <input type="date" name="date_nasc" value="Data de Nascimento" required="">
-            <div>
+          </div>
               <div class="form-group">
                 <label>Endereço</label>
                 <input type="text" class="form-control" name ="endereco" placeholder="Ex. Rua, Av" required="">
@@ -131,19 +130,25 @@
                     <input type="checkbox" name="inlineRadioOptions" name="turn" value="option3"> Diurno
                   </label>
                 </div>
+              </div>
                 <label>Imagem</label>
                 <label class="btn btn-default btn-file clear">
                   <input type="file">
                 </label>
-                <label class="block clear">Observações</label>
+                <label class="clear">Observações</label>
                 <textarea class="form-control clear" rows="4"></textarea>
+                <label class="clear">Lattes</label>
+                <textarea class="form-control clear" rows="2"></textarea>
                 <div class="form-group clear">
                   <label>Data de Ingresso na Instituição: </label>
                   <input type="date" name="date_inst" value="Data de início" required="">
-                <div>
-                  </form>
                 </div>
-              </div>
-            </body>
-            <?php $this->load->view('footer') ?>
-            </html>
+                <button type="button" class="btn btn-success">Salvar</button>
+                <button type="button" class="btn btn-danger">Cancelar</button>
+              </form>
+          </div>
+          </div>
+        </div>
+      </body>
+      <?php $this->load->view('footer') ?>
+      </html>

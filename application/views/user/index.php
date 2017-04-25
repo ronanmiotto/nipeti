@@ -8,26 +8,34 @@
         <div class="col-sm-3" id="sidebar">
           <?php $this->load->view('menu') ?>
         </div>
+
+        <?php echo flash_message(); ?>
+
         <div class="col-sm-9">
-          <a href="/user/new_user" class="btn btn-primary btn-lg">Estudantes</a>
-          <a href="/user/new_user2" class="btn btn-primary btn-lg">Servidores</a>
+          <a href="/user/new_user" class="btn btn-primary btn-lg">Novo Usuário</a>
           <hr>
           <table class="table table-striped">
             <thead>
               <tr>
                 <th>Código</th>
                 <th>Nome</th>
-                <th>Idade</th>
-                <th>Curso</th>
+                <th>Data Nascimento</th>
+                <th>CPF</th>
+                <th>Ações</th>
               </tr>
             </thead>
             <tbody>
-              <?php for($i = 0; $i < 10; $i++) { ?>
+              <?php foreach ($users as $value) { ?>
               <tr>
-                <td><?php echo $i ?></td>
-                <td>Pedro</td>
-                <td>18</td>
-                <td>Análise e Desenvolvimento de Sistemas</td>
+                <td><?php echo $value->idUsuario ?></td>
+                <td><?php echo $value->nome ?></td>
+                <td><?php echo $value->dataNasc ?></td>
+                <td><?php echo $value->cpf ?></td>
+                <td>
+                  <a href="/user/show?idUsuario=<?= $value->idUsuario ?>" class="btn btn-primary">Visualizar</a>
+                  <a href="/user/edit?idUsuario=<?= $value->idUsuario ?>" class="btn btn-primary">Editar</a>
+                  <a href="/user/destroy?idUsuario=<?= $value->idUsuario ?>" class="btn btn-danger">X</a>
+                </td>
               </tr>
               <?php } ?>
             </tbody>
