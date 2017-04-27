@@ -34,7 +34,7 @@
                 <td>
                   <a href="/user/show?idUsuario=<?= $value->idUsuario ?>" class="btn btn-primary">Visualizar</a>
                   <a href="/user/edit?idUsuario=<?= $value->idUsuario ?>" class="btn btn-primary">Editar</a>
-                  <a href="/user/destroy?idUsuario=<?= $value->idUsuario ?>" class="btn btn-danger">X</a>
+                  <a href="/user/destroy?idUsuario=<?= $value->idUsuario ?>" class="btn btn-danger">Deletar</a>
                 </td>
               </tr>
               <?php } ?>

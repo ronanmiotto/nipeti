@@ -10,7 +10,18 @@
       </div>
       <div class="col-sm-9">
         <h1 class="title">Visualizar dados</h1>
-        <?= $user->nome ?>
+          <label>Nome: </label>
+          <?= $user->nome ?><br>
+          <label>RG: </label>
+          <?= $user->rg ?><br>
+          <label>CPF: </label>
+          <?= $user->cpf ?><br>
+          <label>Data de Nascimento: </label>
+          <?= $user->dataNasc ?><br>
+          <label>Cidade: </label>
+          <?= $user->cidade ?><br>
+          <label>UF: </label>
+          <?= $user->uf ?><br>
       </div>
     </div>
   </div>
