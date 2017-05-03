@@ -9,8 +9,8 @@
         <?php $this->load->view('menu') ?>
       </div>
       <div class="col-sm-9">
-        <h1 class="title">Editar Usuários</h1>
-        <form class="col-sm-10" action="<?php echo base_url() ?>user/create" method="post">
+        <h1 class="title">Editar Usuário</h1>
+        <form class="col-sm-10" action="<?php echo base_url() ?>user/update" method="post">
           <div class="form-group clear">
           </div>
 
@@ -29,10 +29,10 @@
 
           <label>Sexo: </label>
           <label class="radio-inline">
-            <input type="radio" name="sexo" value="<?php if($_POST['sexo']=="M") echo "checked";?>"/> Masculino
+            <input type="radio" name="sexo" value="M" <?php if($user->sexo == "M") echo "checked"; ?> /> Masculino
           </label>
           <label class="radio-inline">
-            <input type="radio" name="sexo"  value="<?php if($_POST['sexo']=="F") echo "checked";?>"/> Feminino
+            <input type="radio" name="sexo"  value="F" <?php if($user->sexo == "F") echo "checked"; ?> /> Feminino
           </label>
           <div class="form-group clear">
             <label>Data de Nascimento: </label>
@@ -60,48 +60,30 @@
           </div>
           <div class="form-group">
             <label>UF </label>
-            <select class="form-control" name="uf" value="<?= $item = $_POST['uf'];
-echo $item;?>">
+            <select class="form-control" name="uf">
               <option selected=""></option>
-              <option value="AC">Acre</option>
-              <option value="AL">Alagoas</option>
-              <option value="AP">Amapá</option>
-              <option value="AM">Amazonas</option>
-              <option value="BA">Bahia</option>
-              <option value="CE">Ceará</option>
-              <option value="DF">Distrito Federal</option>
-              <option value="ES">Espírito Santo</option>
-              <option value="GO">Goiás</option>
-              <option value="MA">Maranhão</option>
-              <option value="MT">Mato Grosso</option>
-              <option value="MS">Mato Grosso do Sul</option>
-              <option value="MG">Minas Gerais</option>
-              <option value="PA">Pará</option>
-              <option value="PB">Paraíba</option>
-              <option value="PR">Paraná</option>
-              <option value="PE">Pernambuco</option>
-              <option value="PI">Piauí</option>
-              <option value="RJ">Rio de Janeiro</option>
-              <option value="RN">Rio Grande do Norte</option>
-              <option value="RS">Rio Grande do Sul</option>
-              <option value="RO">Rondônia</option>
-              <option value="RR">Roraima</option>
-              <option value="SC">Santa Catarina</option>
-              <option value="SP">São Paulo</option>
-              <option value="SE">Sergipe</option>
-              <option value="TO">Tocantins</option>
+              <?php
+                foreach (states() as $key => $value) {
+                  $selected = $user->uf == $key ? "selected" : "";
+                  echo '<option value="'.$key.'" '.$selected.'>'.$value.'</option>';
+                }
+              ?>
             </select>
+          </div>
+          <div class="form-group">
+            <label>Fone</label>
+            <input type="text" class="form-control" name ="fone" value="<?= $user->fone ?>" placeholder="Telefone / Celular" required="">
           </div>
           <div class="form-group">
             <label>E-mail</label>
             <input type="email" class="form-control" name ="email" value="<?= $user->email ?>" placeholder="E-mail" required="">
           </div>
           <div class="form-group">
-            <label>Fone</label>
-            <input type="text" class="form-control" name ="fone" value="<?= $user->fone ?>" placeholder="Telefone / Celular" required="">
+            <label>Senha</label>
+            <input type="password" class="form-control" name ="senha">
           </div>
+          <input type="hidden" name="idUsuario" value="<?= $user->idUsuario ?>">
           <button type="submit" class="btn btn-success">Salvar</button>
-          <button type="#" class="btn btn-danger">Cancelar</button>
           </form>
           </div>
         </div>

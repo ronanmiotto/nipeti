@@ -13,9 +13,27 @@ class User extends CI_Controller {
 	}
 
 	public function create(){
-		$this->user->create($_POST);
-		$this->session->set_flashdata('message', 'cadastrado com sucesso');
+		$data = $_POST;
+		$data['senha'] = sha1($_POST['senha']);
+		$this->user->create($data);
+		// if (create) {
+		// 	# code...
+		// }
+		$this->session->set_flashdata('message', 'Cadastrado com sucesso');
 		redirect('/user');
+	}
+
+	public function update(){
+		if (($_POST['senha']) != ''){
+			$data = $_POST;
+			$data['senha'] = sha1($_POST['senha']);
+		} else {
+			unset($data);
+		}
+
+		// $this->user->update($data, $data['idUsuario']);
+		// $this->session->set_flashdata('message', 'Atualizado com sucesso');
+		// redirect('/user');
 	}
 
 	public function edit(){

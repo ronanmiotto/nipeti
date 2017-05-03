@@ -29,10 +29,10 @@
 
           <label>Sexo: </label>
           <label class="radio-inline">
-            <input type="radio" name="sexo" value="option1"> Masculino
+            <input type="radio" name="sexo" value="M"> Masculino
           </label>
           <label class="radio-inline">
-            <input type="radio" name="sexo" value="option2"> Feminino
+            <input type="radio" name="sexo" value="F"> Feminino
           </label>
           <div class="form-group clear">
             <label>Data de Nascimento: </label>
@@ -61,35 +61,17 @@
           <div class="form-group">
             <label>UF </label>
             <select class="form-control" name="uf">
-              <option selected=""></option>
-              <option value="AC">Acre</option>
-              <option value="AL">Alagoas</option>
-              <option value="AP">Amapá</option>
-              <option value="AM">Amazonas</option>
-              <option value="BA">Bahia</option>
-              <option value="CE">Ceará</option>
-              <option value="DF">Distrito Federal</option>
-              <option value="ES">Espírito Santo</option>
-              <option value="GO">Goiás</option>
-              <option value="MA">Maranhão</option>
-              <option value="MT">Mato Grosso</option>
-              <option value="MS">Mato Grosso do Sul</option>
-              <option value="MG">Minas Gerais</option>
-              <option value="PA">Pará</option>
-              <option value="PB">Paraíba</option>
-              <option value="PR">Paraná</option>
-              <option value="PE">Pernambuco</option>
-              <option value="PI">Piauí</option>
-              <option value="RJ">Rio de Janeiro</option>
-              <option value="RN">Rio Grande do Norte</option>
-              <option value="RS">Rio Grande do Sul</option>
-              <option value="RO">Rondônia</option>
-              <option value="RR">Roraima</option>
-              <option value="SC">Santa Catarina</option>
-              <option value="SP">São Paulo</option>
-              <option value="SE">Sergipe</option>
-              <option value="TO">Tocantins</option>
+              <?php
+                foreach (states() as $key => $value) {
+                  $selected = $user->uf == $key ? "selected" : "";
+                  echo '<option value="'.$key.'" '.$selected.'>'.$value.'</option>';
+                }
+              ?>
             </select>
+          </div>
+          <div class="form-group">
+            <label>Fone</label>
+            <input type="text" class="form-control" name ="fone" placeholder="Telefone / Celular" required="">
           </div>
           <div class="form-group">
             <label>E-mail</label>
@@ -97,7 +79,7 @@
           </div>
           <div class="form-group">
             <label>Fone</label>
-            <input type="text" class="form-control" name ="fone" placeholder="Telefone / Celular" required="">
+            <input type="password" class="form-control" name ="senha" placeholder="Senha" required="">
           </div>
           <button type="submit" class="btn btn-success">Salvar</button>
           <button type="reset" class="btn btn-danger">Limpar</button>

@@ -22,6 +22,11 @@
           return $query->first_row();
         }
 
+        public function update($data, $id){
+          $this->db->update($this->table, $data, array('idUsuario' => $id));
+          return $this->find($id);
+        }
+
         public function destroy($id){
           $this->db->delete($this->table, array('idUsuario' => $id));
         }

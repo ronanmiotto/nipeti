@@ -10,18 +10,66 @@
       </div>
       <div class="col-sm-9">
         <h1 class="title">Visualizar dados</h1>
-          <label>Nome: </label>
-          <?= $user->nome ?><br>
-          <label>RG: </label>
-          <?= $user->rg ?><br>
-          <label>CPF: </label>
-          <?= $user->cpf ?><br>
-          <label>Data de Nascimento: </label>
-          <?= $user->dataNasc ?><br>
-          <label>Cidade: </label>
-          <?= $user->cidade ?><br>
-          <label>UF: </label>
-          <?= $user->uf ?><br>
+        <table class="table table-hover">
+          <tbody>
+            <tr>
+              <th scope="row">Código</th>
+              <td><?= $user->idUsuario ?></td>
+            </tr>
+            <tr>
+              <th scope="row">Nome</th>
+              <td><?= $user->nome ?></td>
+            </tr>
+            <tr>
+              <th scope="row">RG</th>
+              <td><?= $user->rg ?></td>
+            </tr>
+            <tr>
+              <th scope="row">CPF</th>
+              <td><?= $user->cpf ?></td>
+            </tr>
+            <tr>
+              <th scope="row">Sexo</th>
+              <td><?= $user->sexo ?></td>
+            </tr>
+            <tr>
+              <th scope="row">Data de Nascimento</th>
+              <td><?= $user->dataNasc ?></td>
+            </tr>
+            <tr>
+              <th scope="row">Endereço</th>
+              <td><?= $user->endereco ?></td>
+            </tr>
+            <tr>
+              <th scope="row">Número</th>
+              <td><?= $user->numero ?></td>
+            </tr>
+            <tr>
+              <th scope="row">Bairro</th>
+              <td><?= $user->bairro ?></td>
+            </tr>
+            <tr>
+              <th scope="row">Cidade</th>
+              <td><?= $user->cidade ?></td>
+            </tr>
+            <tr>
+              <th scope="row">CEP</th>
+              <td><?= $user->cep ?></td>
+            </tr>
+            <tr>
+              <th scope="row">UF</th>
+              <td><?= $user->uf ?></td>
+            </tr>
+            <tr>
+              <th scope="row">E-mail</th>
+              <td><?= $user->email ?></td>
+            </tr>
+            <tr>
+              <th scope="row">fone</th>
+              <td><?= $user->fone ?></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>

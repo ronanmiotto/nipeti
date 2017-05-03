@@ -16,7 +16,40 @@ if (!function_exists('total_url')){
   }
 }
 
-
+if (!function_exists('states')){
+  function states(){
+    return array(
+      '' => '',
+      'AC' => 'Acre',
+      'AL' => 'Alagoas',
+      'AP' => 'Amapá',
+      'AM' => 'Amazonas',
+      'BA' => 'Bahia',
+      'CE' => 'Ceará',
+      'DF' => 'Distrito Federal',
+      'ES' => 'Espírito Santo',
+      'GO' => 'Goiás',
+      'MA' => 'Maranhão',
+      'MT' => 'Mato Grosso',
+      'MS' => 'Mato Grosso do Sul',
+      'MG' => 'Minas Gerias',
+      'PA' => 'Pará',
+      'PB' => 'Paraíba',
+      'PR' => 'Parańa',
+      'PE' => 'Pernambuco',
+      'PI' => 'Piauí',
+      'RJ' => 'Rio de Janeiro',
+      'RN' => 'Rio Grande do Norte',
+      'RS' => 'Rio Grande do Sul',
+      'RO' => 'Rondônia',
+      'RR' => 'Roraima',
+      'SC' => 'Santa Catarina',
+      'SP' => 'São Paulo',
+      'SE' => 'Sergipe',
+      'TO' => 'Tocantins',
+    );
+  }
+}
 if (!function_exists('flash_message')){
   function flash_message(){
     if (isset($_SESSION['message'])){
