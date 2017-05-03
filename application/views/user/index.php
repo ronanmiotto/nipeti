@@ -9,8 +9,6 @@
           <?php $this->load->view('menu') ?>
         </div>
 
-        <?php echo flash_message(); ?>
-
         <div class="col-sm-9">
           <a href="/user/new_user" class="btn btn-primary btn-lg">Novo Usuário</a>
           <hr>
@@ -19,7 +17,6 @@
               <tr>
                 <th>Código</th>
                 <th>Nome</th>
-                <th>Data Nascimento</th>
                 <th>CPF</th>
                 <th>Ações</th>
               </tr>
@@ -29,7 +26,6 @@
               <tr>
                 <td><?php echo $value->idUsuario ?></td>
                 <td><?php echo $value->nome ?></td>
-                <td><?php echo $value->dataNasc ?></td>
                 <td><?php echo $value->cpf ?></td>
                 <td>
                   <a href="/user/show?idUsuario=<?= $value->idUsuario ?>" class="btn btn-primary">Visualizar</a>

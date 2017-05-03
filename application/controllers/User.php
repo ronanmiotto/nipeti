@@ -14,26 +14,29 @@ class User extends CI_Controller {
 
 	public function create(){
 		$data = $_POST;
-		$data['senha'] = sha1($_POST['senha']);
-		$this->user->create($data);
-		// if (create) {
-		// 	# code...
-		// }
-		$this->session->set_flashdata('message', 'Cadastrado com sucesso');
-		redirect('/user');
+		if ($data['senha'] == $data['confirma_senha']){
+			$data['senha'] = sha1($_POST['senha']);
+			$this->user->create($data);
+			$this->session->set_flashdata('message', 'Cadastrado com sucesso');
+			redirect('/user');
+		} else {
+			$this->session->set_flashdata('danger', 'Senhas não são iguais');
+			$data['user'] = (object) $_POST;
+			$this->load->view('user/edit', $data);
+		}
 	}
 
 	public function update(){
-		if (($_POST['senha']) != ''){
-			$data = $_POST;
+		$data = $_POST;
+		if (!empty($data['senha'])){
 			$data['senha'] = sha1($_POST['senha']);
 		} else {
-			unset($data);
+			unset($data['senha']);
 		}
 
-		// $this->user->update($data, $data['idUsuario']);
-		// $this->session->set_flashdata('message', 'Atualizado com sucesso');
-		// redirect('/user');
+		$this->user->update($data, $data['idUsuario']);
+		$this->session->set_flashdata('message', 'Atualizado com sucesso');
+		redirect('/user');
 	}
 
 	public function edit(){

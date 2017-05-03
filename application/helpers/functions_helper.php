@@ -50,6 +50,52 @@ if (!function_exists('states')){
     );
   }
 }
+
+if (!function_exists('periods')){
+  function periods(){
+    return array(
+      '' => '',
+      '1' => '1º Semestre',
+      '2' => '2º Semestre',
+      '3' => '3º Semestre',
+      '4' => '4º Semestre',
+      '5' => '5º Semestre',
+      '5' => '6º Semestre',
+      '7' => '7º Semestre',
+      '8' => '8º Semestre',
+      '9' => '9º Semestre',
+      '10' => '10º Semestre',
+      'outros' => 'Outros',
+    );
+  }
+}
+
+if (!function_exists('courses')){
+  function courses(){
+    return array(
+      '' => '',
+      'tagro' => 'Técnico em Agropecuária',
+      'tinfo' => 'Técnico em Informática',
+      'tzoo' => 'Técnico em Zootecnia',
+      'agro' => 'Bacharelado em Agronomia',
+      'tads' => 'Superior de Tecnologia em Análise e Desenvolvimento de Sistemas',
+      'tpg' => 'Superior de Tecnologia de Produção em Grãos',
+    );
+  }
+}
+
+if (!function_exists('turns')){
+  function turns(){
+    return array(
+      '' => '',
+      'matutino' => 'Matutino',
+      'vespertino' => 'Vespertino',
+      'noturno' => 'Noturno',
+      'diurno' => 'Diurno',
+    );
+  }
+}
+
 if (!function_exists('flash_message')){
   function flash_message(){
     if (isset($_SESSION['message'])){

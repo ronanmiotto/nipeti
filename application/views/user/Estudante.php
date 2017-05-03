@@ -24,12 +24,12 @@
             </label>
           </div>
 
-        
+
           <div class="form-group">
             <label class="clear">Curso</label>
             <input type="radio" name="curso" value="Técnico em Agropecuária" required> Técnico em Agropecuária<br/>
             <input type="radio" name="curso" value="Técnico em Informática" required> Técnico em Informática<br/>
-            <input type="radio" name="curso" value="Técnicoem Zootecnia" required> Técnico em Zootecnia<br/>
+            <input type="radio" name="curso" value="Técnico em Zootecnia" required> Técnico em Zootecnia<br/>
             <input type="radio" name="curso" value="Bacharelado em Agronomia" required> Bacharelado em Agronomia<br/>
             <input type="radio" name="curso" value="Superior de Tecnologia em Análise de Sistemas" required> Superior de Tecnologia em Análise e Desenvolvimento de Sistemas<br/>
             <input type="radio" name="curso" value="Superior de Tecnologia em Produção de Grãos" required> Superior de Tecnologia em Produção de Grãos<br/>
