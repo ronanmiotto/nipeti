@@ -63,10 +63,10 @@
             <select class="form-control" name="uf">
               <option selected=""></option>
               <?php
-                foreach (states() as $key => $value) {
-                  $selected = $user->uf == $key ? "selected" : "";
-                  echo '<option value="'.$key.'" '.$selected.'>'.$value.'</option>';
-                }
+              foreach (states() as $key => $value) {
+                $selected = $user->uf == $key ? "selected" : "";
+                echo '<option value="'.$key.'" '.$selected.'>'.$value.'</option>';
+              }
               ?>
             </select>
           </div>
@@ -82,12 +82,77 @@
             <label>Senha</label>
             <input type="password" class="form-control" name ="senha">
           </div>
-          <input type="hidden" name="idUsuario" value="<?= $user->idUsuario ?>">
-          <button type="submit" class="btn btn-success">Salvar</button>
+          <div class="form-group">
+            <fieldset class="scheduler-border">
+              <legend class="scheduler-border">Estudante</legend>
+              <label>Curso</label>
+              <select class="form-control" name="curso">
+                <option selected=""></option>
+                <?php
+                foreach (courses() as $key => $value) {
+                  $selected = $user->curso == $key ? "selected" : "";
+                  echo '<option value="'.$key.'" '.$selected.'>'.$value.'</option>';
+                }
+                ?>
+              </select>
+              <label>Período</label>
+              <select class="form-control" name="periodo">
+                <option selected=""></option>
+                <?php
+                foreach (periods() as $key => $value) {
+                  $selected = $user->periodo == $key ? "selected" : "";
+                  echo '<option value="'.$key.'" '.$selected.'>'.$value.'</option>';
+                }
+                ?>
+              </select>
+              <label>Turno</label>
+              <select class="form-control" name="turno">
+                <option selected=""></option>
+                <?php
+                foreach (turns() as $key => $value) {
+                  $selected = $user->turno == $key ? "selected" : "";
+                  echo '<option value="'.$key.'" '.$selected.'>'.$value.'</option>';
+                }
+                ?>
+              </select>
+            </fieldset>
+            <fieldset class="scheduler-border">
+              <legend class="scheduler-border">Servidor</legend>
+              <div class="form-group">
+                <label>Principal Formação</label>
+                <input type="text" class="form-control" name ="formacao" value="<?= $user->formacao ?>"  placeholder="Formação Acadêmica">
+              </div>
+              <label class="clear">Demais Formações</label>
+              <textarea class="form-control clear" name="demaisFormacao" value="<?= $user->demaisFormacao ?>"  rows="6" placeholder="Outros cursos e formações"></textarea>
+              <div class="form-group">
+                <label>Lattes</label>
+                <input type="text" class="form-control" name ="lattes" value="<?= $user->lattes ?>" placeholder="Link Lattes">
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend></legend>
+            </fieldset>
+            <label class="clear">Observações</label>
+            <textarea class="form-control clear" name="observacao" value="<?= $user->observacao ?>" rows="4"></textarea>
+            <fieldset>
+              <legend></legend>
+            </fieldset>
+            <div class="form-group clear">
+              <label>Data de Ingresso na Instituição: </label>
+              <input type="date" name="dataInicio" value="<?= $user->dataInicio ?>" required="">
+            </div>
+            <div class="form-group">
+              <label>Selecione a imagem</label>
+              <input type="file" name="imagem">
+              <p class="help-block">Imagem do usuário a ser cadastrado</p>
+            </div>
+            <input type="hidden" name="idUsuario" value="<?= $user->idUsuario ?>">
+            <button type="submit" class="btn btn-success">Salvar</button>
           </form>
-          </div>
         </div>
-        </div>
-      </body>
-      <?php $this->load->view('footer') ?>
-      </html>
+      </div>
+    </div>
+  </div>
+  </body>
+  <?php $this->load->view('footer') ?>
+  </html>

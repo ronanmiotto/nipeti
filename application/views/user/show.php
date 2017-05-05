@@ -12,6 +12,7 @@
         <h1 class="title">Visualizar dados</h1>
         <table class="table table-hover">
           <tbody>
+              <img src="images/users/img.jpg" alt="Imagem do Usuário" class="img-rounded">
             <tr>
               <th scope="row">Código</th>
               <td><?= $user->idUsuario ?></td>
@@ -65,8 +66,36 @@
               <td><?= $user->email ?></td>
             </tr>
             <tr>
-              <th scope="row">fone</th>
+              <th scope="row">Telefone/Celular</th>
               <td><?= $user->fone ?></td>
+            </tr>
+            <tr>
+              <th scope="row">Curso</th>
+              <td><?= $user->curso ?></td>
+            </tr>
+            <tr>
+              <th scope="row">Período</th>
+              <td><?= $user->periodo ?></td>
+            </tr>
+            <tr>
+              <th scope="row">Turno</th>
+              <td><?= $user->turno ?></td>
+            </tr>
+            <tr>
+              <th scope="row">Principal Formação</th>
+              <td><?= $user->formacao ?></td>
+            </tr>
+            <tr>
+              <th scope="row">Demais Formações</th>
+              <td><?= $user->demaisFormacao ?></td>
+            </tr>
+            <tr>
+              <th scope="row">Lattes</th>
+              <td><?= $user->lattes ?></td>
+            </tr>
+            <tr>
+              <th scope="row">Observações</th>
+              <td><?= $user->observacao ?></td>
             </tr>
           </tbody>
         </table>

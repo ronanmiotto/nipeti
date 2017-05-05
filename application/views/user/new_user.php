@@ -142,6 +142,11 @@
               <label>Data de Ingresso na Instituição: </label>
               <input type="date" name="dataInicio" value="dataInicio" required="">
             </div>
+            <div class="form-group">
+              <label>Selecione a imagem</label>
+                <input type="file" name="imagem">
+                  <p class="help-block">Imagem do usuário a ser cadastrado</p>
+            </div>
             <button type="submit" class="btn btn-success">Salvar</button>
             <button type="reset" class="btn btn-danger">Limpar</button>
             </form>
