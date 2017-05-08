@@ -1,9 +1,9 @@
 <div class="list-group">
   <a href="/" class="list-group-item active">Início</a>
   <a href="/user" class="list-group-item">Usuários</a>
-  <a href="#" class="list-group-item">Link</a>
-  <a href="#" class="list-group-item">Link</a>
-  <a href="#" class="list-group-item">Link</a>
-  <a href="#" class="list-group-item">Link</a>
-  <a href="#" class="list-group-item">Link</a>
+  <a href="/project" class="list-group-item">Projetos</a>
+  <a href="/publication" class="list-group-item">Publicação</a>
+  <a href="/newspapper" class="list-group-item">Periódico</a>
+  <a href="/event" class="list-group-item">Evento</a>
+  <a href="/report" class="list-group-item">Relatórios</a>
 </div>

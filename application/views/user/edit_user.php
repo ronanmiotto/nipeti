@@ -133,7 +133,7 @@
               <legend></legend>
             </fieldset>
             <label class="clear">Observações</label>
-            <textarea class="form-control clear" name="observacao" value="<?= $user->observacao ?>" rows="4"></textarea>
+            <textarea class="form-control clear" name="observacoes" value="<?= $user->observacoes ?>" rows="4"></textarea>
             <fieldset>
               <legend></legend>
             </fieldset>

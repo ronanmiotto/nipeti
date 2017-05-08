@@ -95,7 +95,7 @@
             </tr>
             <tr>
               <th scope="row">Observações</th>
-              <td><?= $user->observacao ?></td>
+              <td><?= $user->observacoes ?></td>
             </tr>
           </tbody>
         </table>
