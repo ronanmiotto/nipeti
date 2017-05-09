@@ -41,12 +41,12 @@ class User extends CI_Controller {
 
 	public function edit(){
 		$data['user'] = $this->user->find($_GET['idUsuario']);
-		$this->load->view('user/edit', $data);
+		$this->load->view('user/edit_user', $data);
 	}
 
 	public function show(){
 		$data['user'] = $this->user->find($_GET['idUsuario']);
-		$this->load->view('user/show', $data);
+		$this->load->view('user/show_user', $data);
 	}
 
 	public function destroy(){
