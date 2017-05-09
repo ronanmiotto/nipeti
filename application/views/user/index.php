@@ -4,6 +4,7 @@
   <body>
     <?php $this->load->view('nav') ?>
     <div class="container main">
+      <?php echo flash_message(); ?>
       <div class="row row-offcanvas row-offcanvas-right">
         <div class="col-sm-3" id="sidebar">
           <?php $this->load->view('menu') ?>
@@ -33,12 +34,14 @@
                 <td>
                   <a href="/user/show?idUsuario=<?= $value->idUsuario ?>" class="btn btn-primary">Visualizar</a>
                   <a href="/user/edit?idUsuario=<?= $value->idUsuario ?>" class="btn btn-primary">Editar</a>
-                  <a href="/user/destroy?idUsuario=<?= $value->idUsuario ?>" class="btn btn-danger">Deletar</a>
+                  <a href="/user/destroy?idUsuario=<?= $value->idUsuario ?>" class="btn btn-danger" onclick="return confirm_destroy()">Deletar</a>
                 </td>
               </tr>
               <?php } ?>
             </tbody>
           </table>
+
+          <?php echo $paginate ?>
         </div>
       </div>
     </div>

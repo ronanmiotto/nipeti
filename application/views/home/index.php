@@ -2,6 +2,7 @@
 <html>
   <?php $this->load->view('head') ?>
   <body>
+    <base href="<?= base_url(); ?>">
     <?php $this->load->view('nav') ?>
     <div class="container main">
       <div class="row row-offcanvas row-offcanvas-right">

@@ -10,10 +10,16 @@
       </div>
       <div class="col-sm-9">
         <h1 class="title">Editar Usuário</h1>
-        <form class="col-sm-10" action="<?php echo base_url() ?>user/update" method="post">
+        <form class="col-sm-10" action="<?php echo base_url() ?>user/update" method="post" enctype="multipart/form-data">
           <div class="form-group clear">
           </div>
-
+          <label>Tipo: </label>
+          <label class="radio-inline">
+            <input type="radio" name="tipo" value="1" <?php if($user->tipo == 1) echo "checked"; ?> /> Servidor
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="tipo" value="2" <?php if($user->tipo == 2) echo "checked"; ?> /> Estudante
+          </label>
           <div class="form-group">
             <label>Nome</label>
             <input type="text" class="form-control" name ="nome" value="<?= $user->nome ?>" placeholder="Nome completo" required="">
@@ -123,7 +129,7 @@
                 <input type="text" class="form-control" name ="formacao" value="<?= $user->formacao ?>"  placeholder="Formação Acadêmica">
               </div>
               <label class="clear">Demais Formações</label>
-              <textarea class="form-control clear" name="demaisFormacao" value="<?= $user->demaisFormacao ?>"  rows="6" placeholder="Outros cursos e formações"></textarea>
+              <textarea class="form-control clear" name="demaisFormacao" rows="6" placeholder="Outros cursos e formações"><?= $user->demaisFormacao ?></textarea>
               <div class="form-group">
                 <label>Lattes</label>
                 <input type="text" class="form-control" name ="lattes" value="<?= $user->lattes ?>" placeholder="Link Lattes">
@@ -133,7 +139,7 @@
               <legend></legend>
             </fieldset>
             <label class="clear">Observações</label>
-            <textarea class="form-control clear" name="observacoes" value="<?= $user->observacoes ?>" rows="4"></textarea>
+            <textarea class="form-control clear" name="observacoes" rows="4"><?= $user->observacoes ?></textarea>
             <fieldset>
               <legend></legend>
             </fieldset>

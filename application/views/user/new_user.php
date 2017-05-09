@@ -4,17 +4,23 @@
   <body>
     <?php $this->load->view('nav') ?>
     <div class="container main">
-<?php echo flash_message(); ?>
+      <?php echo flash_message(); ?>
       <div class="row row-offcanvas row-offcanvas-right">
         <div class="col-sm-3" id="sidebar">
           <?php $this->load->view('menu') ?>
         </div>
         <div class="col-sm-9">
           <h1 class="title">Cadastrar Usuário</h1>
-          <form class="col-sm-10" action="<?php echo base_url() ?>user/create" method="post">
+          <form class="col-sm-10" action="<?php echo base_url() ?>user/create" method="post" enctype="multipart/form-data">
             <div class="form-group clear">
             </div>
-
+            <label>Tipo: </label>
+            <label class="radio-inline">
+              <input type="radio" name="tipo" value="1"> Servidor
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="tipo" value="2"> Estudante
+            </label>
             <div class="form-group">
               <label>Nome</label>
               <input type="text" class="form-control" name ="nome" placeholder="Nome completo" required="">
@@ -134,7 +140,7 @@
               <legend></legend>
             </fieldset>
             <label class="clear">Observações</label>
-            <textarea class="form-control clear" name="observacao" rows="4"></textarea>
+            <textarea class="form-control clear" name="observacoes" rows="4"></textarea>
             <fieldset>
               <legend></legend>
             </fieldset>

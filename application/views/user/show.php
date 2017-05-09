@@ -12,7 +12,7 @@
         <h1 class="title">Visualizar dados</h1>
         <table class="table table-hover">
           <tbody>
-              <img src="images/users/img.jpg" alt="Imagem do Usuário" class="img-rounded">
+              <img src="<?= base_url()?>images/users/<?= $user->imagem ?>" alt="Imagem do Usuário" class="img-rounded">
             <tr>
               <th scope="row">Código</th>
               <td><?= $user->idUsuario ?></td>
@@ -71,15 +71,15 @@
             </tr>
             <tr>
               <th scope="row">Curso</th>
-              <td><?= $user->curso ?></td>
+              <td><?= courses()[$user->curso] ?></td>
             </tr>
             <tr>
               <th scope="row">Período</th>
-              <td><?= $user->periodo ?></td>
+              <td><?= periods()[$user->periodo]  ?></td>
             </tr>
             <tr>
               <th scope="row">Turno</th>
-              <td><?= $user->turno ?></td>
+              <td><?= turns()[$user->turno] ?></td>
             </tr>
             <tr>
               <th scope="row">Principal Formação</th>
@@ -91,7 +91,7 @@
             </tr>
             <tr>
               <th scope="row">Lattes</th>
-              <td><?= $user->lattes ?></td>
+              <td><a href="<?= $user->lattes ?>"><?= $user->lattes ?></a></td>
             </tr>
             <tr>
               <th scope="row">Observações</th>
