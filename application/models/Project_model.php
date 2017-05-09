@@ -1,8 +1,8 @@
   <?php
 
-    class User_model extends CI_Model {
+    class Project_model extends CI_Model {
 
-        public $table = 'usuario';
+        public $table = 'projeto';
 
         public function __construct(){
           parent::__construct();
@@ -22,24 +22,17 @@
         }
 
         public function find($id){
-          $query = $this->db->get_where($this->table, array('idUsuario' => $id));
+          $query = $this->db->get_where($this->table, array('idProjeto' => $id));
           return $query->first_row();
         }
 
         public function update($data, $id){
-          $this->db->update($this->table, $data, array('idUsuario' => $id));
+          $this->db->update($this->table, $data, array('idProjeto' => $id));
           return $this->find($id);
         }
 
         public function destroy($id){
-          $this->db->delete($this->table, array('idUsuario' => $id));
-        }
-
-        public function get_by($type){
-          $query = $this->db->get_where($this->table, array(
-            'tipo' => $type
-          ));
-          return $query->result();
+          $this->db->delete($this->table, array('idProjeto' => $id));
         }
 
         public function check_login($array){

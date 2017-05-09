@@ -25,7 +25,7 @@
                   </br>
                   <div class="wrapper">
                   <span class="group-btn">
-                    <input type="submit" value="Login" class="btn btn-primary btn-md fa fa-sign-in">
+                    <input type="submit" value="Logar" class="btn btn-primary btn-md" class="fa fa-sign-in">
                   </span>
                   </div>
                   </div>

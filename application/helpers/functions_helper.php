@@ -96,6 +96,39 @@ if (!function_exists('turns')){
   }
 }
 
+if (!function_exists('projects')){
+  function projects(){
+    return array(
+      '' => '',
+      'pibic' => 'PIBIC',
+      'tcc' => 'TCC',
+      'extensao' => 'Extensão',
+    );
+  }
+}
+
+if (!function_exists('status')){
+  function status(){
+    return array(
+      '' => '',
+      'andamento' => 'Em andamento',
+      'concluido' => 'Concluído',
+      'paralisado' => 'Paralisado',
+    );
+  }
+}
+
+if (!function_exists('development')){
+  function development(){
+    return array(
+      '' => '',
+      'sim' => 'Sim',
+      'nao' => 'Não',
+      'analise' => 'Em análise',
+    );
+  }
+}
+
 if (!function_exists('flash_message')){
   function flash_message(){
     if (isset($_SESSION['message'])){
