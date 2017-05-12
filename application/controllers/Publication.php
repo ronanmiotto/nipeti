@@ -1,13 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class User extends CI_Controller {
+class Publication extends CI_Controller {
 
 	public function index(){
 		$this->logged_in();
 
-		$config['base_url'] = '/user';
-		$config['total_rows'] = $this->user->count();
+		$config['base_url'] = '/publication';
+		$config['total_rows'] = $this->publication->count();
 		$config['page_query_string'] = true;
 		$config['first_tag_open'] = '<li>';
 		$config['first_link'] = '&laquo;';
@@ -31,41 +31,22 @@ class User extends CI_Controller {
 		$this->pagination->initialize($config);
 		$page = isset($_GET['per_page']) ? $_GET['per_page'] : 0;
 
-		$data['users'] = $this->user->all($page, 15);
+		$data['publications'] = $this->publication->all($page, 15);
 
 		$data['paginate'] = $this->pagination->create_links();
-		$this->load->view('user/index', $data);
+		$this->load->view('publication/index', $data);
 	}
 
-	public function new_user(){
-		$this->load->view('user/new_user');
-	}
-
-	public function about(){
-		$this->load->view('user/about');
-	}
-
-	public function contact(){
-		$this->load->view('user/contact');
+	public function new_publication(){
+		$this->load->view('publication/new_publication');
 	}
 
 	public function create(){
 		$data = $_POST;
-		if ($data['senha'] == $data['confirma_senha']){
-			$data['senha'] = sha1($_POST['senha']);
-			unset($data['confirma_senha']);
-
-			$this->send_image($data);
-			$data['imagem'] = $this->upload->data('file_name');
-
-			$this->session->set_flashdata('message', 'Cadastrado com sucesso');
-			$this->user->create($data);
-			redirect('/user');
-		} else {
-			$this->session->set_flashdata('danger', 'Senhas não são iguais');
-			$data['user'] = (object) $_POST;
-			$this->load->view('user/new_user', $data);
-		}
+		$data['students'] = $this->students();
+		$this->session->set_flashdata('message', 'Cadastrado com sucesso');
+		$this->project->create($data);
+		redirect('/publication');
 	}
 
 	public function update(){
@@ -145,5 +126,10 @@ class User extends CI_Controller {
 			$this->session->set_flashdata('message', 'Usuário não cadastrado');
 			$this->logged_in();
 		}
+	}
+
+	private function students(){
+		// 1: professor 2: estudante
+		return $this->user->get_by(2);
 	}
 }

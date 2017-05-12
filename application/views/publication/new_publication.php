@@ -10,8 +10,8 @@
         <?php $this->load->view('menu') ?>
       </div>
       <div class="col-sm-9">
-        <h1 class="title">Cadastrar projeto</h1>
-        <form class="col-sm-10" action="<?php echo base_url() ?>project/create" method="post" enctype="multipart/form-data">
+        <h1 class="title">Cadastrar publicação</h1>
+        <form class="col-sm-10" action="<?php echo base_url() ?>publication/create" method="post" enctype="multipart/form-data">
           <div class="form-group clear">
           </div>
           <div class="form-group">

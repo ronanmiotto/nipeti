@@ -129,6 +129,16 @@ if (!function_exists('development')){
   }
 }
 
+if (!function_exists('types')){
+  function types(){
+    return array(
+      '' => '',
+      '1' => 'Servidor',
+      '2' => 'Estudante',
+    );
+  }
+}
+
 if (!function_exists('flash_message')){
   function flash_message(){
     if (isset($_SESSION['message'])){

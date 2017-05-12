@@ -42,7 +42,7 @@
           </label>
           <div class="form-group clear">
             <label>Data de Nascimento: </label>
-            <input type="date" name="dataNasc" value="<?= $user->dataNasc ?>" required="">
+            <input class="date-clear date-fim" type="date" name="dataNasc" value="<?= $user->dataNasc ?>" required="">
           </div>
           <div class="form-group">
             <label>Endereço</label>

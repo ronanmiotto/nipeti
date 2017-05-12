@@ -16,7 +16,7 @@
           <div class="col-sm-9">
             <h1 class="title">Lista de projetos</h1>
           </div>
-          <table class="table table-striped">
+          <table id="employee_data" class="table table-striped">
             <thead>
               <tr>
                 <th>Código</th>
@@ -48,3 +48,13 @@
   </body>
   <?php $this->load->view('footer') ?>
 </html>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+      $('#employee_data').DataTable({
+        "language": {
+            "url":"//cdn.datatables.net/plug-ins/1.10.13/i18n/Portuguese-Brasil.json"
+}
+});
+  });
+</script>

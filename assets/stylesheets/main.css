@@ -39,6 +39,26 @@ img {
   margin-bottom: 30px;
 }
 
+.color-types {
+
+  color: green;
+}
+
+.date-clear {
+
+  margin-top: 20px;
+}
+
+.date-fim {
+
+    margin-left: 10px;
+}
+
+.about {
+
+  margin-top: 30px;
+}
+
 
 fieldset.scheduler-border {
     border: 1px groove #ddd !important;

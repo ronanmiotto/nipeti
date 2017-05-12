@@ -11,30 +11,28 @@
         </div>
 
         <div class="col-sm-9">
-          <a href="/user/new_user" class="btn btn-primary btn-lg">Novo Usuário</a>
+          <a href="/publication/new_publication" class="btn btn-primary btn-lg">Nova Publicação</a>
           <hr>
           <div class="col-sm-9">
-            <h1 class="title">Lista de usuários</h1>
+            <h1 class="title">Lista de publicações</h1>
           </div>
-          <table id="employee_data" class="table table-striped table-bordered">
+          <table id="employee_data" class="table table-striped">
             <thead>
               <tr>
                 <th>Código</th>
-                <th>Nome</th>
-                <th>CPF</th>
+                <th>Publicação</th>
                 <th>Ações</th>
               </tr>
             </thead>
             <tbody>
-              <?php foreach ($users as $value) { ?>
+              <?php foreach (publications as $value) { ?>
               <tr>
-                <td><?php echo $value->idUsuario ?></td>
-                <td><?php echo $value->nome ?></td>
-                <td><?php echo $value->cpf ?></td>
+                <td><?php echo $value->idPublicacao ?></td>
+                <td><?php echo $value->descricao ?></td>
                 <td>
-                  <a href="/user/show?idUsuario=<?= $value->idUsuario ?>" class="btn btn-primary">Visualizar</a>
-                  <a href="/user/edit?idUsuario=<?= $value->idUsuario ?>" class="btn btn-primary">Editar</a>
-                  <a href="/user/destroy?idUsuario=<?= $value->idUsuario ?>" class="btn btn-danger" onclick="return confirm_destroy()">Deletar</a>
+                  <a href="/publication/show?idPublicacao=<?= $value->idPublicacao ?>" class="btn btn-primary">Visualizar</a>
+                  <a href="/publication/edit?idPublicacao=<?= $value->idPublicacao ?>" class="btn btn-primary">Editar</a>
+                  <a href="/publication/destroy?idPublicacao=<?= $value->idPublicacao ?>" class="btn btn-danger" onclick="return confirm_destroy()">Deletar</a>
                 </td>
               </tr>
               <?php } ?>

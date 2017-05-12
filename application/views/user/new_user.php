@@ -47,7 +47,7 @@
             </div>
             <div class="form-group">
               <label>Endereço</label>
-              <input type="text" class="form-control" name ="endereco" placeholder="Ex. Rua, Av" required="">
+              <input type="text" class="form-control date-fim date-clear" name ="endereco" placeholder="Ex. Rua, Av" required="">
             </div>
             <div class="form-group">
               <label>Número</label>
