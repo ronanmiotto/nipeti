@@ -5,35 +5,7 @@ class Publication extends CI_Controller {
 
 	public function index(){
 		$this->logged_in();
-
-		$config['base_url'] = '/publication';
-		$config['total_rows'] = $this->publication->count();
-		$config['page_query_string'] = true;
-		$config['first_tag_open'] = '<li>';
-		$config['first_link'] = '&laquo;';
-		$config['first_tag_close'] = '</li>';
-		$config['cur_tag_open'] = "<li class='active'><a href='javascript:void(0)'>";
-		$config['cur_tag_close'] = '</a></li>';
-		$config['last_tag_open'] = '<li>';
-		$config['last_link'] = '&raquo;';
-		$config['last_tag_close'] = '</li>';
-		$config['next_tag_open'] = '<li>';
-		$config['next_link'] = '&rsaquo;';
-		$config['next_tag_close'] = '</li>';
-		$config['num_tag_open'] = '<li>';
-		$config['num_tag_close'] = '</li>';
-		$config['prev_tag_open'] = '<li>';
-		$config['prev_link'] = '&lsaquo;';
-		$config['prev_tag_close'] = '</li>';
-		$config['full_tag_open'] = '<div class="text-center"><ul class="pagination">';
-		$config['full_tag_close'] = '</ul></div>';
-
-		$this->pagination->initialize($config);
-		$page = isset($_GET['per_page']) ? $_GET['per_page'] : 0;
-
-		$data['publications'] = $this->publication->all($page, 15);
-
-		$data['paginate'] = $this->pagination->create_links();
+		$data['publications'] = $this->publication->all();
 		$this->load->view('publication/index', $data);
 	}
 

@@ -135,5 +135,6 @@ $autoload['language'] = array();
 */
 $autoload['model'] = array(
   'User_model' => 'user',
-  'Project_model' => 'project'
+  'Project_model' => 'project',
+  'Publication_model' => 'publication',
 );

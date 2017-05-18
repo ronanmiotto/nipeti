@@ -12,7 +12,7 @@
       <h3 class="text-center"><strong>Claudio Zarate Sanavria, Nátalli Macedo Rodrigues Falleiros</strong></h3>
       <h4 class="text-center">Instituto Federal de Educação, Ciência e Tecnologia de Mato Grosso do Sul (IFMS)<br>
         Caixa Postal 144 – 79.750-000 – Nova Andradina – MS – Brasil</h4>
-      <h5 class="text-center">claudio.sanavria@ifms.edu.br, natalli.falleiros@ifms.edu.br</h5>
+      <h5 class="text-center"><a href="mailto:claudio.sanavria@ifms.edu.br">claudio.sanavria@ifms.edu.br</a>,<a href="mailto:natalli.falleiros@ifms.edu.br">natalli.falleiros@ifms.edu.br</a></h5>
       <div class="">
         <p class="about" align="justify">
           O NIPETI surgiu como uma proposta de espaço para integração pedagógica das
