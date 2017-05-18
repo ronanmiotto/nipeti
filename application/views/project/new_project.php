@@ -58,24 +58,12 @@
             <label>Fomento</label>
             <select class="form-control" name="fomento">
               <?php
-                foreach (development() as $key => $value) {
-                  $selected = $user->development == $key ? "selected" : "";
+                foreach (scholarships() as $key => $value) {
+                  $selected = $user->scholarship == $key ? "selected" : "";
                   echo '<option value="'.$key.'" '.$selected.'>'.$value.'</option>';
                 }
               ?>
             </select>
-          </div>
-          <label>Professor</label>
-          <select class="form-control" name="fomento">
-          </select>
-          <label>Estudante</label>
-          <select class="form-control" name="fomento">
-            <?php
-              foreach ($students as $student) {
-                echo '<option value="'.$student->idUsuario.'">'.$student->nome.'</option>';
-              }
-            ?>
-          </select>
           <fieldset>
             <legend></legend>
           </fieldset>
@@ -84,6 +72,9 @@
           <fieldset>
             <legend></legend>
           </fieldset>
+          <label>Selecione a arquivo</label>
+            <input type="file" name="arquivo">
+              <p class="help-block">Arquivo a ser cadastrado</p>
           <button type="submit" class="btn btn-success">Salvar</button>
           <button type="reset" class="btn btn-danger">Limpar</button>
           </form>

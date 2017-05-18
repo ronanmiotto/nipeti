@@ -118,8 +118,8 @@ if (!function_exists('status')){
   }
 }
 
-if (!function_exists('development')){
-  function development(){
+if (!function_exists('scholarships')){
+  function scholarships(){
     return array(
       '' => '',
       'sim' => 'Sim',

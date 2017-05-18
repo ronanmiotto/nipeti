@@ -3,37 +3,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class User extends CI_Controller {
 
+	// public function __construct(){
+	// 	parent::__construct();
+	// 	$this->logged_in('1');
+	// }
+
 	public function index(){
-		$this->logged_in();
-
-		$config['base_url'] = '/user';
-		$config['total_rows'] = $this->user->count();
-		$config['page_query_string'] = true;
-		$config['first_tag_open'] = '<li>';
-		$config['first_link'] = '&laquo;';
-		$config['first_tag_close'] = '</li>';
-		$config['cur_tag_open'] = "<li class='active'><a href='javascript:void(0)'>";
-		$config['cur_tag_close'] = '</a></li>';
-		$config['last_tag_open'] = '<li>';
-		$config['last_link'] = '&raquo;';
-		$config['last_tag_close'] = '</li>';
-		$config['next_tag_open'] = '<li>';
-		$config['next_link'] = '&rsaquo;';
-		$config['next_tag_close'] = '</li>';
-		$config['num_tag_open'] = '<li>';
-		$config['num_tag_close'] = '</li>';
-		$config['prev_tag_open'] = '<li>';
-		$config['prev_link'] = '&lsaquo;';
-		$config['prev_tag_close'] = '</li>';
-		$config['full_tag_open'] = '<div class="text-center"><ul class="pagination">';
-		$config['full_tag_close'] = '</ul></div>';
-
-		$this->pagination->initialize($config);
-		$page = isset($_GET['per_page']) ? $_GET['per_page'] : 0;
-
-		$data['users'] = $this->user->all($page, 15);
-
-		$data['paginate'] = $this->pagination->create_links();
+		$this->logged_in('1');
+		$data['users'] = $this->user->all();
 		$this->load->view('user/index', $data);
 	}
 
@@ -127,7 +104,9 @@ class User extends CI_Controller {
 	}
 
 	private function logged_in(){
-    $this->session->userdata('logged_in') == true && $this->session->userdata('adm') == true ? '' : redirect('/login/index');
+    if ($this->session->userdata('logged_in') == false){
+			redirect('/login/index');
+		}
   }
 
 	public function check_login(){
@@ -137,7 +116,7 @@ class User extends CI_Controller {
 
 	private function create_session_for_user($user){
 		if (isset($user->email)){
-			$newdata = array('email' => $user->email, 'logged_in' => true, 'type' => true);
+			$newdata = array('email' => $user->email, 'logged_in' => true, 'type' => $user->tipo);
 			$this->session->set_userdata($newdata);
 			$this->session->set_flashdata('message', 'Logado com sucesso');
 			redirect('/home/index');
