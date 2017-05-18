@@ -137,7 +137,7 @@ class User extends CI_Controller {
 
 	private function create_session_for_user($user){
 		if (isset($user->email)){
-			$newdata = array('email' => $user->email, 'logged_in' => true, 'adm' => true);
+			$newdata = array('email' => $user->email, 'logged_in' => true, 'type' => true);
 			$this->session->set_userdata($newdata);
 			$this->session->set_flashdata('message', 'Logado com sucesso');
 			redirect('/home/index');
