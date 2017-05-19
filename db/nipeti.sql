@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Tempo de geração: 18/05/2017 às 13:35
+-- Tempo de geração: 19/05/2017 às 14:57
 -- Versão do servidor: 5.7.18-0ubuntu0.16.04.1
 -- Versão do PHP: 7.0.15-0ubuntu0.16.04.4
 
@@ -19,18 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `nipeti`
 --
-
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `arquivo`
---
-
-CREATE TABLE `arquivo` (
-  `idArquivo` int(11) UNSIGNED NOT NULL,
-  `tipo` varchar(30) DEFAULT NULL,
-  `caminho` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 PACK_KEYS=0;
 
 -- --------------------------------------------------------
 
@@ -71,7 +59,6 @@ CREATE TABLE `participa` (
 
 CREATE TABLE `projeto` (
   `idProjeto` int(11) UNSIGNED NOT NULL,
-  `arquivo_idArquivo` int(11) UNSIGNED NOT NULL,
   `titulo` varchar(200) DEFAULT NULL,
   `descricao` varchar(500) DEFAULT NULL,
   `dataInicio` date DEFAULT NULL,
@@ -80,8 +67,18 @@ CREATE TABLE `projeto` (
   `tipo` varchar(100) DEFAULT NULL,
   `statuss` varchar(50) DEFAULT NULL,
   `fomento` varchar(150) DEFAULT NULL,
-  `observacoes` varchar(400) NOT NULL
+  `observacoes` varchar(400) DEFAULT NULL,
+  `arquivo` varchar(150) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 PACK_KEYS=0;
+
+--
+-- Fazendo dump de dados para tabela `projeto`
+--
+
+INSERT INTO `projeto` (`idProjeto`, `titulo`, `descricao`, `dataInicio`, `dataFim`, `area`, `tipo`, `statuss`, `fomento`, `observacoes`, `arquivo`) VALUES
+(1, 'Lula 2018', 'Lulão', '2013-10-27', '2014-11-29', 'Política', 'tcc', 'andamento', 'nao', 'Teste....', NULL),
+(2, 'Mito2018', 'Bolsomito', '2014-10-28', '2016-10-29', 'Política', 'tcc', 'andamento', 'sim', 'Teste...', NULL),
+(3, 'Nipeti - IFMS', 'Teste...', '2015-10-28', '2016-11-30', 'Política', 'tcc', 'concluido', 'sim', 'Teste...', 'Sem_título_1.pdf');
 
 -- --------------------------------------------------------
 
@@ -91,9 +88,9 @@ CREATE TABLE `projeto` (
 
 CREATE TABLE `publicacao` (
   `idPublicacao` int(11) UNSIGNED NOT NULL,
-  `arquivo_idArquivo` int(11) UNSIGNED NOT NULL,
   `projeto_idProjeto` int(11) UNSIGNED DEFAULT NULL,
-  `descricao` longtext
+  `descricao` longtext,
+  `arquivo` varchar(150) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 PACK_KEYS=0;
 
 -- --------------------------------------------------------
@@ -114,7 +111,7 @@ CREATE TABLE `usuario` (
   `uf` char(2) DEFAULT NULL,
   `endereco` varchar(45) DEFAULT NULL,
   `numero` int(255) NOT NULL,
-  `bairro` varchar(150) NOT NULL,
+  `bairro` varchar(255) NOT NULL,
   `cep` varchar(45) DEFAULT NULL,
   `email` varchar(45) NOT NULL,
   `senha` varchar(100) DEFAULT NULL,
@@ -127,18 +124,20 @@ CREATE TABLE `usuario` (
   `demaisFormacao` varchar(500) DEFAULT NULL,
   `lattes` varchar(500) DEFAULT NULL,
   `observacoes` varchar(500) DEFAULT NULL,
-  `imagem` varchar(150) NOT NULL
+  `imagem` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Fazendo dump de dados para tabela `usuario`
+--
+
+INSERT INTO `usuario` (`idUsuario`, `tipo`, `nome`, `cpf`, `rg`, `sexo`, `dataNasc`, `cidade`, `uf`, `endereco`, `numero`, `bairro`, `cep`, `email`, `senha`, `fone`, `curso`, `periodo`, `turno`, `dataInicio`, `formacao`, `demaisFormacao`, `lattes`, `observacoes`, `imagem`) VALUES
+(3, 2, 'Ronan Allen Miotto', '01405113189', '001422413', 'M', '1988-10-06', 'Nova Andradina', 'MS', 'Rua José Ferreira', 1212, 'Centro Educacional', '79750-000', 'ronanmiotto@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '999678967', 'tads', 'outros', 'noturno', '2014-01-01', '', '', '', 'Cursando.', 'ronaldin10.jpg'),
+(4, 1, 'Luiz Picolo', '05401343289', '00231456', 'M', '1986-04-02', 'Campo Grande', 'CE', 'Rua A dos Santos', 678, 'Morada do Sol', '78679-000', 'picolo@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '67 99987-8978', '', '', '', '2014-03-02', 'Análise e Desenvolvimento de Sistemas', 'Bacharelado em História', 'http://picolo.com.br', 'Servidor IFMS', 'ronaldin11.jpg');
 
 --
 -- Índices de tabelas apagadas
 --
-
---
--- Índices de tabela `arquivo`
---
-ALTER TABLE `arquivo`
-  ADD PRIMARY KEY (`idArquivo`);
 
 --
 -- Índices de tabela `orientacao`
@@ -161,16 +160,14 @@ ALTER TABLE `participa`
 -- Índices de tabela `projeto`
 --
 ALTER TABLE `projeto`
-  ADD PRIMARY KEY (`idProjeto`),
-  ADD KEY `PROJETO_FKIndex1` (`arquivo_idArquivo`);
+  ADD PRIMARY KEY (`idProjeto`);
 
 --
 -- Índices de tabela `publicacao`
 --
 ALTER TABLE `publicacao`
   ADD PRIMARY KEY (`idPublicacao`),
-  ADD KEY `PUBLICACAO_FKIndex3` (`projeto_idProjeto`),
-  ADD KEY `PUBLICACAO_FKIndex4` (`arquivo_idArquivo`);
+  ADD KEY `PUBLICACAO_FKIndex3` (`projeto_idProjeto`);
 
 --
 -- Índices de tabela `usuario`
@@ -182,11 +179,6 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabelas apagadas
 --
 
---
--- AUTO_INCREMENT de tabela `arquivo`
---
-ALTER TABLE `arquivo`
-  MODIFY `idArquivo` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de tabela `orientacao`
 --
@@ -201,7 +193,7 @@ ALTER TABLE `participa`
 -- AUTO_INCREMENT de tabela `projeto`
 --
 ALTER TABLE `projeto`
-  MODIFY `idProjeto` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `idProjeto` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT de tabela `publicacao`
 --
@@ -211,7 +203,7 @@ ALTER TABLE `publicacao`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idUsuario` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idUsuario` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- Restrições para dumps de tabelas
 --
@@ -232,17 +224,10 @@ ALTER TABLE `participa`
   ADD CONSTRAINT `fk_participa_usuario1` FOREIGN KEY (`usuario_idUsuario`) REFERENCES `usuario` (`idUsuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `projeto`
---
-ALTER TABLE `projeto`
-  ADD CONSTRAINT `fk_8b94ac55-29af-11e7-a87c-bc8556fd92b5` FOREIGN KEY (`arquivo_idArquivo`) REFERENCES `arquivo` (`idArquivo`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
 -- Restrições para tabelas `publicacao`
 --
 ALTER TABLE `publicacao`
-  ADD CONSTRAINT `fk_8b94ac4b-29af-11e7-a87c-bc8556fd92b5` FOREIGN KEY (`projeto_idProjeto`) REFERENCES `projeto` (`idProjeto`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_8b94ac50-29af-11e7-a87c-bc8556fd92b5` FOREIGN KEY (`arquivo_idArquivo`) REFERENCES `arquivo` (`idArquivo`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_8b94ac4b-29af-11e7-a87c-bc8556fd92b5` FOREIGN KEY (`projeto_idProjeto`) REFERENCES `projeto` (`idProjeto`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
