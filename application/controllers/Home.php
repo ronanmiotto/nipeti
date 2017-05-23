@@ -4,11 +4,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Home extends CI_Controller {
 
 	public function index(){
-		$this->logged_in();
+		$this->logged_in('1');
 		$this->load->view('home/index');
 	}
 
 	private function logged_in(){
-    $this->session->userdata('logged_in') == true && $this->session->userdata('adm') == true ? '' : redirect('/login/index');
+    $this->session->userdata('logged_in') == true ? '' : redirect('/login/index');
   }
 }
