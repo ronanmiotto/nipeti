@@ -1,27 +1,27 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Project extends CI_Controller {
+class Guidance extends CI_Controller {
 
 	public function index(){
 		$this->logged_in();
-		$data['projects'] = $this->project->all();
-		$this->load->view('project/index', $data);
+		$data['guidances'] = $this->guidance->all();
+		$this->load->view('/guidance/index', $data);
 	}
 
-	public function new_project(){
+	public function new_guidance(){
 		$data['teachers'] = $this->user->get_by(1);
 		$data['students'] = $this->user->get_by(2);
-		$this->load->view('project/new_project', $data);
+		$this->load->view('/guidance/new_guidance', $data);
 	}
 
 	public function create(){
 		$data = $_POST;
 		$this->send_file($data);
 		$data['arquivo'] = $this->upload->data('file_name');
-		$this->project->create($data);
+		$this->guidance->create($data);
 		$this->session->set_flashdata('message', 'Cadastrado com sucesso');
-		redirect('/project/index');
+		redirect('/guidance/index');
 	}
 
 	public function update(){
@@ -35,26 +35,26 @@ class Project extends CI_Controller {
 		$this->send_file($data);
 		$data['arquivo'] = $this->upload->data('file_name');
 
-		$this->project->update($data, $data['idProjeto']);
+		$this->guidance->update($data, $data['idOrientacao']);
 
 		$this->session->set_flashdata('message', 'Atualizado com sucesso');
-		redirect('/project/index');
+		redirect('/guidance/index');
 	}
 
 	public function edit(){
-		$data['project'] = $this->project->find($_GET['idProjeto']);
-		$this->load->view('project/edit', $data);
+		$data['guidance'] = $this->guidance->find($_GET['idOrientacao']);
+		$this->load->view('/guidance/edit', $data);
 	}
 
 	public function show(){
-		$data['project'] = $this->project->find($_GET['idProjeto']);
-		$this->load->view('project/show', $data);
+		$data['guidance'] = $this->guidance->find($_GET['idOrientacao']);
+		$this->load->view('/guidance/show', $data);
 	}
 
 	public function destroy(){
-		$this->project->destroy($_GET['idProjeto']);
+		$this->guidance->destroy($_GET['idOrientacao']);
 		$this->session->set_flashdata('message', 'Deletado com sucesso');
-		redirect('/project/index');
+		redirect('/guidance/index');
 	}
 
 	public function send_file($data) {

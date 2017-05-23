@@ -9,6 +9,10 @@ body {
 .container {
     padding: 25px;
     position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -45%;
+    margin-top: -10%;
 }
 
 .form-login {

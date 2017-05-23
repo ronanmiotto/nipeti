@@ -38,21 +38,9 @@
               <?php } ?>
             </tbody>
           </table>
-
-          <?php echo $paginate ?>
         </div>
       </div>
     </div>
   </body>
   <?php $this->load->view('footer') ?>
 </html>
-
-<script type="text/javascript">
-  $(document).ready(function(){
-      $('#employee_data').DataTable({
-        "language": {
-            "url":"//cdn.datatables.net/plug-ins/1.10.13/i18n/Portuguese-Brasil.json"
-}
-});
-  });
-</script>

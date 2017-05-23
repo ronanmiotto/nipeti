@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Tempo de geração: 19/05/2017 às 14:57
+-- Tempo de geração: 22/05/2017 às 23:52
 -- Versão do servidor: 5.7.18-0ubuntu0.16.04.1
 -- Versão do PHP: 7.0.15-0ubuntu0.16.04.4
 
@@ -78,7 +78,8 @@ CREATE TABLE `projeto` (
 INSERT INTO `projeto` (`idProjeto`, `titulo`, `descricao`, `dataInicio`, `dataFim`, `area`, `tipo`, `statuss`, `fomento`, `observacoes`, `arquivo`) VALUES
 (1, 'Lula 2018', 'Lulão', '2013-10-27', '2014-11-29', 'Política', 'tcc', 'andamento', 'nao', 'Teste....', NULL),
 (2, 'Mito2018', 'Bolsomito', '2014-10-28', '2016-10-29', 'Política', 'tcc', 'andamento', 'sim', 'Teste...', NULL),
-(3, 'Nipeti - IFMS', 'Teste...', '2015-10-28', '2016-11-30', 'Política', 'tcc', 'concluido', 'sim', 'Teste...', 'Sem_título_1.pdf');
+(3, 'Nipeti - IFMS', 'Teste...', '2015-10-28', '2016-11-30', 'Política', 'tcc', 'concluido', 'sim', 'Teste...', 'Sem_título_1.pdf'),
+(4, 'Projeto TADS', 'Projeto de desenvolvimento de sistemas.', '2014-10-29', '2016-11-30', 'Análise e Desenvolvimento de Sistemas', 'extensao', 'paralisado', 'nao', 'testando', 'Sem_título_11.pdf');
 
 -- --------------------------------------------------------
 
@@ -89,7 +90,16 @@ INSERT INTO `projeto` (`idProjeto`, `titulo`, `descricao`, `dataInicio`, `dataFi
 CREATE TABLE `publicacao` (
   `idPublicacao` int(11) UNSIGNED NOT NULL,
   `projeto_idProjeto` int(11) UNSIGNED DEFAULT NULL,
+  `tipo` varchar(150) NOT NULL,
   `descricao` longtext,
+  `titulo` varchar(255) NOT NULL,
+  `localidade` varchar(255) NOT NULL,
+  `area` varchar(255) NOT NULL,
+  `data` date NOT NULL,
+  `volume` int(100) NOT NULL,
+  `cooautores` varchar(255) NOT NULL,
+  `paginas` int(255) NOT NULL,
+  `link` varchar(255) NOT NULL,
   `arquivo` varchar(150) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 PACK_KEYS=0;
 
@@ -193,7 +203,7 @@ ALTER TABLE `participa`
 -- AUTO_INCREMENT de tabela `projeto`
 --
 ALTER TABLE `projeto`
-  MODIFY `idProjeto` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idProjeto` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de tabela `publicacao`
 --
@@ -203,7 +213,7 @@ ALTER TABLE `publicacao`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idUsuario` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idUsuario` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- Restrições para dumps de tabelas
 --
