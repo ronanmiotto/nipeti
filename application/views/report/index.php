@@ -11,7 +11,7 @@
         </div>
 
         <div class="col-sm-9">
-          <a href="/project/new_project" class="btn btn-primary btn-lg">Gerar Relatório</a>
+          <a href="/report/new_report" class="btn btn-primary btn-lg">Gerar Relatório</a>
           <hr>
           <div class="col-sm-9">
             <h1 class="title">Relatórios</h1>
@@ -22,13 +22,3 @@
   </body>
   <?php $this->load->view('footer') ?>
 </html>
-
-<script type="text/javascript">
-  $(document).ready(function(){
-      $('#employee_data').DataTable({
-        "language": {
-            "url":"//cdn.datatables.net/plug-ins/1.10.13/i18n/Portuguese-Brasil.json"
-}
-});
-  });
-</script>

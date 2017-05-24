@@ -11,10 +11,10 @@
         </div>
 
         <div class="col-sm-9">
-          <a href="/guidance/new_guidance" class="btn btn-primary btn-lg">Nova Orientação</a>
+          <a href="/guidance/new_guidance" class="btn btn-primary btn-lg">Vincular Nova Orientação</a>
           <hr>
           <div class="col-sm-9">
-            <h1 class="title">Lista de projetos</h1>
+            <h1 class="title">Orientações</h1>
           </div>
           <table id="employee_data" class="table table-striped">
             <thead>

@@ -9,7 +9,7 @@
         <?php $this->load->view('menu') ?>
       </div>
       <div class="col-sm-9">
-        <h1 class="title">Visualizar dados</h1>
+        <h1 class="title">Projetos / Visualizar dados</h1>
         <table class="table table-hover">
           <tbody>
             <tr>
@@ -18,7 +18,7 @@
             </tr>
             <tr>
               <th scope="row">Título</th>
-              <td><?= $project->titulo ?></td>
+              <td><strong><?= $project->titulo ?></strong></td>
             </tr>
             <tr>
               <th scope="row">Descrição</th>
@@ -38,7 +38,7 @@
             </tr>
             <tr>
               <th scope="row">Tipo de projeto</th>
-              <td><?= types()[$project->tipo] ?></td>
+              <td><?= projects()[$project->tipo] ?></td>
             </tr>
             <tr>
               <th scope="row">Status</th>

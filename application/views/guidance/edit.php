@@ -10,20 +10,20 @@
         <?php $this->load->view('menu') ?>
       </div>
       <div class="col-sm-9">
-        <h1 class="title">Cadastrar Orientação</h1>
-        <form class="col-sm-10" action="<?php echo base_url() ?>guidance/create" method="post" enctype="multipart/form-data">
+        <h1 class="title">Editar Orientação</h1>
+        <form class="col-sm-10" action="<?php echo base_url() ?>guidance/update" method="post" enctype="multipart/form-data">
           <div class="form-group clear">
           </div>
           <div class="guidance_space">
             <label>Tipo: </label>
             <label class="radio-inline">
-              <input type="radio" name="tipoOrientacao" value="1"> TCC
+              <input type="radio" name="tipoOrientacao" value="1" <?php if($guidance->tipo == 1) echo "checked"; ?> /> TCC
             </label>
             <label class="radio-inline">
-              <input type="radio" name="tipoOrientacao" value="2"> PIBIC
+              <input type="radio" name="tipoOrientacao" value="2" <?php if($guidance->tipo == 2) echo "checked"; ?> /> PIBIC
             </label>
             <label class="radio-inline">
-              <input type="radio" name="tipoOrientacao" value="3"> Extensão
+              <input type="radio" name="tipoOrientacao" value="3" <?php if($guidance->tipo == 3) echo "checked"; ?> /> Extensão
             </label>
           </div>
           <div class="guidance_space">
@@ -64,11 +64,11 @@
           </div>
           <div class="form-group clear">
             <label>Data Início: </label>
-            <input class="date-inicio" type="date" name="dataInicio" required="">
+            <input class="date-inicio" type="date" name="dataInicio" value="<?= $guidance->dataInicio ?>" required="">
           </div>
           <div class="form-group clear">
             <label>Data Fim: </label>
-            <input class="date-fim" type="date" name="dataFim" required="">
+            <input class="date-fim" type="date" name="dataFim" value="<?= $guidance->dataFim ?>" required="">
           </div>
           <button type="submit" class="btn btn-success">Salvar</button>
           <button type="reset" class="btn btn-danger">Limpar</button>

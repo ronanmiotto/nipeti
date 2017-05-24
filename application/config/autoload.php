@@ -137,5 +137,5 @@ $autoload['model'] = array(
   'User_model' => 'user',
   'Project_model' => 'project',
   'Publication_model' => 'publication',
-  //'Guidance_model' => 'guidance',
+  'Guidance_model' => 'guidance',
 );

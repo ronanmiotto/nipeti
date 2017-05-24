@@ -9,7 +9,7 @@
         <?php $this->load->view('menu') ?>
       </div>
       <div class="col-sm-9">
-        <h1 class="title">Visualizar dados</h1>
+        <h1 class="title"> Usuários / Visualizar dados</h1>
         <table class="table table-hover">
           <tbody>
               <img src="<?= base_url()?>images/users/<?= $user->imagem ?>" alt="Imagem do Usuário" class="img-rounded">
@@ -23,7 +23,7 @@
             </tr>
             <tr>
               <th scope="row">Nome</th>
-              <td><?= $user->nome ?></td>
+              <td><strong><?= $user->nome ?></strong></td>
             </tr>
             <tr>
               <th scope="row">RG</th>
