@@ -27,37 +27,37 @@
             </label>
           </div>
           <div class="guidance_space">
+            <label>Projeto (vincular)</label>
+            <select class="form-control js-example-basic-single" name="projeto_idProjeto">
+            <option value=""></option>
+              <?php
+                foreach ($projects as $project) {
+                  $selected = "";
+                  echo '<option value="'.$project->idProjeto.'" '.$selected.'>'.$project->titulo.'</option>';
+                }
+              ?>
+            </select>
+          </div>
+          <div class="guidance_space">
             <label>Professor</label>
-            <select class="form-control js-example-basic-single" name="servidor">
+            <select class="form-control js-example-basic-single" name="usuario_idServidor">
             <option value=""></option>
               <?php
                 foreach ($teachers as $teacher) {
                   $selected = "";
-                  echo '<option value="'.$teacher->id.'" '.$selected.'>'.$teacher->nome.'</option>';
+                  echo '<option value="'.$teacher->idUsuario.'" '.$selected.'>'.$teacher->nome.'</option>';
                 }
               ?>
             </select>
           </div>
           <div class="guidance_space">
             <label>Estudante</label>
-            <select class="form-control js-example-basic-single" name="estudante">
+            <select class="form-control js-example-basic-single" name="usuario_idEstudante">
             <option value=""></option>
               <?php
                 foreach ($students as $student) {
                   $selected = "";
-                  echo '<option value="'.$student->id.'" '.$selected.'>'.$student->nome.'</option>';
-                }
-              ?>
-            </select>
-          </div>
-          <div class="guidance_space">
-            <label>Projeto</label>
-            <select class="form-control js-example-basic-single" name="projeto">
-            <option value=""></option>
-              <?php
-                foreach ($projects as $project) {
-                  $selected = "";
-                  echo '<option value="'.$project->id.'" '.$selected.'>'.$project->titulo.'</option>';
+                  echo '<option value="'.$student->idUsuario.'" '.$selected.'>'.$student->nome.'</option>';
                 }
               ?>
             </select>

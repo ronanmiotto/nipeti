@@ -20,15 +20,17 @@
             <thead>
               <tr>
                 <th>Código</th>
-                <th>Publicação</th>
+                <th>Tipo</th>
+                <th>Título</th>
                 <th>Ações</th>
               </tr>
             </thead>
             <tbody>
-              <?php foreach (publications as $value) { ?>
+              <?php foreach ($publications as $value) { ?>
               <tr>
                 <td><?php echo $value->idPublicacao ?></td>
-                <td><?php echo $value->descricao ?></td>
+                <td><?php echo types_publications()[$value->tipo] ?></td>
+                <td><?php echo $value->titulo ?></td>
                 <td>
                   <a href="/publication/show?idPublicacao=<?= $value->idPublicacao ?>" class="btn btn-primary">Visualizar</a>
                   <a href="/publication/edit?idPublicacao=<?= $value->idPublicacao ?>" class="btn btn-primary">Editar</a>

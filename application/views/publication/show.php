@@ -9,51 +9,56 @@
         <?php $this->load->view('menu') ?>
       </div>
       <div class="col-sm-9">
-        <h1 class="title">Publicações / Visualizar dados</h1>
+        <h1 class="title">Publicação / Visualizar dados</h1>
         <table class="table table-hover">
           <tbody>
             <tr>
               <th scope="row"><h3>Tipo</h3></th>
-              <td><h3 class="color-types"><?= types_projects()[$publication->tipo] ?></h3></td>
+              <td><h3 class="color-types"><?= types_publications()[$publication->tipo] ?></h3></td>
             </tr>
             <tr>
               <th scope="row">Código</th>
-              <td><?= $guidance->idOrientacao ?></td>
+              <td><?= $publication->idPublicacao ?></td>
             </tr>
             <tr>
               <th scope="row">Título</th>
-              <td><strong><?= $guidance->titulo ?></strong></td>
+              <td><strong><?= $publication->titulo ?></strong></td>
             </tr>
             <tr>
               <th scope="row">Descrição</th>
-              <td><?= $guidance->descricao ?></td>
+              <td><?= $publication->descricao ?></td>
             </tr>
             <tr>
               <th scope="row">Localidade</th>
-              <td><?= $guidance->localidade ?></td>
+              <td><?= $publication->localidade ?></td>
             </tr>
             <tr>
               <th scope="row">Área</th>
-              <td><?= $guidance->area ?></td>
+              <td><?= $publication->area ?></td>
             </tr>
             <tr>
               <th scope="row">Data</th>
-              <td><?= $guidance->data ?></td>
+              <td><?= $publication->data ?></td>
             </tr>
             <tr>
               <th scope="row">Cooautores</th>
-              <td><?= $guidance->cooautores ?></td>
+              <td><?= $publication->cooautores ?></td>
             </tr>
             <tr>
               <th scope="row">Volume</th>
-              <td><?= $guidance->volume ?></td>
+              <td><?= $publication->volume ?></td>
             </tr>
             <tr>
               <th scope="row">Páginas</th>
-              <td><?= $guidance->paginas ?></td>
+              <td><?= $publication->paginas ?></td>
             </tr>
+            <tr>
               <th scope="row">Link</th>
-              <td><?= $project->link ?></td>
+              <td><a href="<?= $publication->link ?>"><?= $publication->link ?></a></td>
+            </tr>
+            <tr>
+              <th scope="row">Visualizar arquivo</th>
+              <td><a href="/projects/<?= $project->arquivo ?>" target="_blank">Arquivo.pdf</a></td>
             </tr>
           </tbody>
         </table>

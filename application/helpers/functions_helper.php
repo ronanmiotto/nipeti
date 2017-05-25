@@ -107,6 +107,17 @@ if (!function_exists('projects')){
   }
 }
 
+if (!function_exists('projects_guidance')){
+  function projects_guidance(){
+    return array(
+      '' => '',
+      '1' => 'TCC',
+      '2' => 'PIBIC',
+      '3' => 'Extensão',
+    );
+  }
+}
+
 if (!function_exists('status')){
   function status(){
     return array(
@@ -129,12 +140,22 @@ if (!function_exists('scholarships')){
   }
 }
 
-if (!function_exists('types')){
-  function types(){
+if (!function_exists('types_users')){
+  function types_users(){
     return array(
       '' => '',
       '1' => 'Servidor',
       '2' => 'Estudante',
+    );
+  }
+}
+
+if (!function_exists('types_publications')){
+  function types_publications(){
+    return array(
+      '' => '',
+      '1' => 'Evento',
+      '2' => 'Periódico',
     );
   }
 }

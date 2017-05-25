@@ -10,41 +10,33 @@ class Publication extends CI_Controller {
 	}
 
 	public function new_publication(){
-		$this->load->view('publication/new_publication');
+		$data['projects'] = $this->project->all();
+		$this->load->view('publication/new_publication', $data);
 	}
 
 	public function create(){
 		$data = $_POST;
-		$data['students'] = $this->students();
 		$this->session->set_flashdata('message', 'Cadastrado com sucesso');
-		$this->project->create($data);
+		$this->publication->create($data);
 		redirect('/publication/index');
 	}
 
 	public function update(){
 		$data = $_POST;
-		if (!empty($data['senha'])){
-			$data['senha'] = sha1($_POST['senha']);
-		} else {
-			unset($data['senha']);
-		}
-
-		$this->send_image($data);
-		$data['imagem'] = $this->upload->data('file_name');
-
 		$this->publication->update($data, $data['idPublicacao']);
-
 		$this->session->set_flashdata('message', 'Atualizado com sucesso');
 		redirect('/publication');
 	}
 
 	public function edit(){
+		$data['projects'] = $this->project->all();
 		$data['publication'] = $this->publication->find($_GET['idPublicacao']);
-		$this->load->view('publication/edit', $data);
+		$this->load->view('/publication/edit', $data);
 	}
 
 	public function show(){
 		$data['publication'] = $this->publication->find($_GET['idPublicacao']);
+		$data['project'] = $this->project->find($data['publication']->projeto_idProjeto);
 		$this->load->view('publication/show', $data);
 	}
 

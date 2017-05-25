@@ -9,13 +9,13 @@
         <?php $this->load->view('menu') ?>
       </div>
       <div class="col-sm-9">
-        <h1 class="title"> Usuários / Visualizar dados</h1>
+        <h1 class="title"> Usuário / Visualizar dados</h1>
         <table class="table table-hover">
           <tbody>
               <img src="<?= base_url()?>images/users/<?= $user->imagem ?>" alt="Imagem do Usuário" class="img-rounded">
             <tr>
               <th scope="row"><h3>Tipo</h3></th>
-              <td><h3 class="color-types"><?= types()[$user->tipo] ?></h3></td>
+              <td><h3 class="color-types"><?= types_users()[$user->tipo] ?></h3></td>
             </tr>
             <tr>
               <th scope="row">Código</th>

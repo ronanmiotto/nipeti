@@ -10,6 +10,7 @@ class Guidance extends CI_Controller {
 	}
 
 	public function new_guidance(){
+		$data['projects'] = $this->project->all();
 		$data['teachers'] = $this->user->get_by(1);
 		$data['students'] = $this->user->get_by(2);
 		$this->load->view('/guidance/new_guidance', $data);
@@ -17,8 +18,6 @@ class Guidance extends CI_Controller {
 
 	public function create(){
 		$data = $_POST;
-		$this->send_file($data);
-		$data['arquivo'] = $this->upload->data('file_name');
 		$this->guidance->create($data);
 		$this->session->set_flashdata('message', 'Cadastrado com sucesso');
 		redirect('/guidance/index');

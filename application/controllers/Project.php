@@ -60,7 +60,7 @@ class Project extends CI_Controller {
 	public function send_file($data) {
 	  $config['upload_path']          = '/home/ronanmiotto/php/nipeti/projects/';
 	  $config['allowed_types']        = 'pdf|doc|docx';
-		$config['encrypt_name	'] 				= true;
+		$config['encrypt_name'] 				= true;
 
 	  $this->load->library('upload', $config);
 

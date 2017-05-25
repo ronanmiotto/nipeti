@@ -25,6 +25,18 @@
             <label>Título</label>
             <input type="text" class="form-control" name ="titulo" value="<?= $publication->titulo ?>" placeholder="Título do evento ou periódico" required="">
           </div>
+          <div class="guidance_space">
+            <label>Projeto (vincular)</label>
+            <select class="form-control js-example-basic-single" name="projeto_idProjeto">
+            <option value=""></option>
+              <?php
+                foreach ($projects as $project) {
+                  $selected = $project->idProjeto == $publication->projeto_idProjeto ? "selected" : "";
+                  echo '<option value="'.$project->idProjeto.'" '.$selected.'>'.$project->titulo.'</option>';
+                }
+              ?>
+            </select>
+          </div>
           <label class="clear">Descrição</label>
           <textarea class="form-control clear" name="descricao"  rows="6" placeholder="Descrição do evento ou periódico"><?= $publication->descricao ?></textarea>
           <div class="form-group clear date-clear">
@@ -59,9 +71,13 @@
               <input type="text" class="form-control" name ="link" value="<?= $publication->link ?>"  placeholder="Link para download">
             </div>
           </fieldset>
+          <label>Selecione o novo arquivo</label>
+            <input type="file" name="arquivo">
+              <p class="help-block">Arquivo a ser cadastrado</p>
           <fieldset>
             <legend></legend>
           </fieldset>
+          <input type="hidden" name="idPublicacao" value="<?= $publication->idPublicacao ?>">
           <button type="submit" class="btn btn-success">Salvar</button>
           <button type="reset" class="btn btn-danger">Limpar</button>
           </form>

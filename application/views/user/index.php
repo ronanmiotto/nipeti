@@ -21,7 +21,7 @@
               <tr>
                 <th>Código</th>
                 <th>Nome</th>
-                <th>CPF</th>
+                <th>Tipo</th>
                 <th>Ações</th>
               </tr>
             </thead>
@@ -30,7 +30,7 @@
               <tr>
                 <td><?php echo $value->idUsuario ?></td>
                 <td><?php echo $value->nome ?></td>
-                <td><?php echo $value->cpf ?></td>
+                <td><?php echo types_users()[$value->tipo] ?></td>
                 <td>
                   <a href="/user/show?idUsuario=<?= $value->idUsuario ?>" class="btn btn-primary">Visualizar</a>
                   <a href="/user/edit?idUsuario=<?= $value->idUsuario ?>" class="btn btn-primary">Editar</a>

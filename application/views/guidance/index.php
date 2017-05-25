@@ -29,11 +29,11 @@
               <?php foreach ($guidances as $value) { ?>
               <tr>
                 <td><?php echo $value->idOrientacao ?></td>
-                <td><?php echo $value->usuario_idServidor ?></td>
-                <td><?php echo $value->usuario_idEstudante ?></td>
+                <td><?php echo $this->user->find($value->usuario_idServidor)->nome ?></td>
+                <td><?php echo $this->user->find($value->usuario_idEstudante)->nome ?></td>
                 <td>
                   <a href="/guidance/show?idOrientacao=<?= $value->idOrientacao ?>" class="btn btn-primary">Visualizar</a>
-                  <a href="/guidance/edit?idOrientacao=<?= $value->idProjeidOrientacaoto ?>" class="btn btn-primary">Editar</a>
+                  <a href="/guidance/edit?idOrientacao=<?= $value->idOrientacao ?>" class="btn btn-primary">Editar</a>
                   <a href="/guidance/destroy?idOrientacao=<?= $value->idOrientacao ?>" class="btn btn-danger" onclick="return confirm_destroy()">Deletar</a>
                 </td>
               </tr>

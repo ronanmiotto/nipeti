@@ -9,7 +9,7 @@
         <?php $this->load->view('menu') ?>
       </div>
       <div class="col-sm-9">
-        <h1 class="title">Projetos / Visualizar dados</h1>
+        <h1 class="title">Projeto / Visualizar dados</h1>
         <table class="table table-hover">
           <tbody>
             <tr>
