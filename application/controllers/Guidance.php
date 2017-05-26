@@ -24,16 +24,6 @@ class Guidance extends CI_Controller {
 	}
 
 	public function update(){
-		$data = $_POST;
-		if (!empty($data['senha'])){
-			$data['senha'] = sha1($_POST['senha']);
-		} else {
-			unset($data['senha']);
-		}
-
-		$this->send_file($data);
-		$data['arquivo'] = $this->upload->data('file_name');
-
 		$this->guidance->update($data, $data['idOrientacao']);
 
 		$this->session->set_flashdata('message', 'Atualizado com sucesso');
@@ -41,6 +31,7 @@ class Guidance extends CI_Controller {
 	}
 
 	public function edit(){
+		$data['projects'] = $this->guidance->all();
 		$data['guidance'] = $this->guidance->find($_GET['idOrientacao']);
 		$this->load->view('/guidance/edit', $data);
 	}
@@ -59,7 +50,7 @@ class Guidance extends CI_Controller {
 	public function send_file($data) {
 	  $config['upload_path']          = '/home/ronanmiotto/php/nipeti/projects/';
 	  $config['allowed_types']        = 'pdf|doc|docx';
-		$config['encrypt_name	'] 				= true;
+		$config['encrypt_name'] 				= true;
 
 	  $this->load->library('upload', $config);
 

@@ -52,6 +52,10 @@
               <th scope="row">Observações</th>
               <td><?= $project->observacoes ?></td>
             </tr>
+            <tr>
+              <th scope="row">Visualizar arquivo</th>
+              <td><a href="/projects/<?= $project->arquivo ?>" target="_blank">Arquivo.pdf</a></td>
+            </tr>
           </tbody>
         </table>
       </div>

@@ -17,14 +17,26 @@
           <div class="guidance_space">
             <label>Tipo: </label>
             <label class="radio-inline">
-              <input type="radio" name="tipoOrientacao" value="1" <?php if($guidance->tipo == 1) echo "checked"; ?> /> TCC
+              <input type="radio" name="tipoOrientacao" value="1" <?php if($guidance->tipoOrientacao == 1) echo "checked"; ?> /> TCC
             </label>
             <label class="radio-inline">
-              <input type="radio" name="tipoOrientacao" value="2" <?php if($guidance->tipo == 2) echo "checked"; ?> /> PIBIC
+              <input type="radio" name="tipoOrientacao" value="2" <?php if($guidance->tipoOrientacao == 2) echo "checked"; ?> /> PIBIC
             </label>
             <label class="radio-inline">
-              <input type="radio" name="tipoOrientacao" value="3" <?php if($guidance->tipo == 3) echo "checked"; ?> /> Extensão
+              <input type="radio" name="tipoOrientacao" value="3" <?php if($guidance->tipoOrientacao == 3) echo "checked"; ?> /> Extensão
             </label>
+          </div>
+          <div class="guidance_space">
+            <label>Projeto (vincular)</label>
+            <select class="form-control js-example-basic-single" name="projeto_idProjeto">
+            <option value=""></option>
+              <?php
+                foreach ($projects as $project) {
+                  $selected = $project->idProjeto == $guidance->projeto_idProjeto ? "selected" : "";
+                  echo '<option value="'.$project->idProjeto.'" '.$selected.'>'.$project->titulo.'</option>';
+                }
+              ?>
+            </select>
           </div>
           <div class="guidance_space">
             <label>Professor</label>
@@ -33,7 +45,7 @@
               <?php
                 foreach ($teachers as $teacher) {
                   $selected = "";
-                  echo '<option value="'.$teacher->id.'" '.$selected.'>'.$teacher->nome.'</option>';
+                  echo '<option value="'.$teacher->idUsuario.'" '.$selected.'>'.$teacher->nome.'</option>';
                 }
               ?>
             </select>
@@ -45,19 +57,7 @@
               <?php
                 foreach ($students as $student) {
                   $selected = "";
-                  echo '<option value="'.$student->id.'" '.$selected.'>'.$student->nome.'</option>';
-                }
-              ?>
-            </select>
-          </div>
-          <div class="guidance_space">
-            <label>Projeto</label>
-            <select class="form-control js-example-basic-single" name="projeto">
-            <option value=""></option>
-              <?php
-                foreach ($projects as $project) {
-                  $selected = "";
-                  echo '<option value="'.$project->id.'" '.$selected.'>'.$project->titulo.'</option>';
+                  echo '<option value="'.$student->idUsuario.'" '.$selected.'>'.$student->nome.'</option>';
                 }
               ?>
             </select>
@@ -70,6 +70,7 @@
             <label>Data Fim: </label>
             <input class="date-fim" type="date" name="dataFim" value="<?= $guidance->dataFim ?>" required="">
           </div>
+          <input type="hidden" name="idOrientacao" value="<?= $guidance->idOrientacao ?>">
           <button type="submit" class="btn btn-success">Salvar</button>
           <button type="reset" class="btn btn-danger">Limpar</button>
           </form>

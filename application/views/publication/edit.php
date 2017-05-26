@@ -71,9 +71,6 @@
               <input type="text" class="form-control" name ="link" value="<?= $publication->link ?>"  placeholder="Link para download">
             </div>
           </fieldset>
-          <label>Selecione o novo arquivo</label>
-            <input type="file" name="arquivo">
-              <p class="help-block">Arquivo a ser cadastrado</p>
           <fieldset>
             <legend></legend>
           </fieldset>

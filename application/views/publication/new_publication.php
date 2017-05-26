@@ -71,9 +71,6 @@
               <input type="text" class="form-control" name ="link"  placeholder="Link para download">
             </div>
           </fieldset>
-          <label>Selecione a arquivo</label>
-            <input type="file" name="arquivo">
-              <p class="help-block">Arquivo a ser cadastrado</p>
           <fieldset>
             <legend></legend>
           </fieldset>

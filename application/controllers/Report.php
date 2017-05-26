@@ -60,7 +60,7 @@ class Report extends CI_Controller {
 	  $config['max_size']             = 100;
 	  $config['max_width']            = 1024;
 	  $config['max_height']           = 768;
-		$config['encrypt_name	'] 				= true;
+		$config['encrypt_name'] 				= true;
 
 	  $this->load->library('upload', $config);
 
