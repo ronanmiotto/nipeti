@@ -14,7 +14,11 @@
         <li><a href="/">Início</a></li>
         <li><a href="/user/about">Sobre</a></li>
         <li><a href="/user/contact">Contato</a></li>
+        <li></li>
       </ul>
+      <div class="nav-name-user">
+        <a href="#"><strong>Usuário: <?= $this->session->userdata('nome') ?></strong></a>
+      </div>
     </div>
   </div>
 </nav>

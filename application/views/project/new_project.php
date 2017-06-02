@@ -77,6 +77,7 @@
               <p class="help-block">Arquivo a ser cadastrado</p>
           <button type="submit" class="btn btn-success">Salvar</button>
           <button type="reset" class="btn btn-danger">Limpar</button>
+          <a href="/project/index" class="btn btn-primary">Voltar</a>
           </form>
           </div>
         </div>

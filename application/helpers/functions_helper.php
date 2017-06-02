@@ -118,6 +118,18 @@ if (!function_exists('projects_guidance')){
   }
 }
 
+if (!function_exists('projects_participate')){
+  function projects_participate(){
+    return array(
+      '' => '',
+      '1' => 'Colaborador',
+      '2' => 'Coordenador',
+      '3' => 'Coorientador',
+      '4' => 'Bolsista',
+    );
+  }
+}
+
 if (!function_exists('status')){
   function status(){
     return array(
@@ -146,6 +158,16 @@ if (!function_exists('types_users')){
       '' => '',
       '1' => 'Servidor',
       '2' => 'Estudante',
+    );
+  }
+}
+
+if (!function_exists('sex')){
+  function sex(){
+    return array(
+      '' => '',
+      'M' => 'Masculino',
+      'F' => 'Feminino',
     );
   }
 }

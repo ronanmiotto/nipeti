@@ -10,20 +10,23 @@
         <?php $this->load->view('menu') ?>
       </div>
       <div class="col-sm-9">
-        <h1 class="title">Cadastrar Orientação</h1>
-        <form class="col-sm-10" action="<?php echo base_url() ?>guidance/create" method="post" enctype="multipart/form-data">
+        <h1 class="title">Cadastrar Participante</h1>
+        <form class="col-sm-10" action="<?php echo base_url() ?>participate/create" method="post" enctype="multipart/form-data">
           <div class="form-group clear">
           </div>
           <div class="guidance_space">
             <label>Tipo: </label>
             <label class="radio-inline">
-              <input type="radio" name="tipoOrientacao" value="1"> TCC
+              <input type="radio" name="tipo" value="1"> Colaborador
             </label>
             <label class="radio-inline">
-              <input type="radio" name="tipoOrientacao" value="2"> PIBIC
+              <input type="radio" name="tipo" value="2"> Coordenador
             </label>
             <label class="radio-inline">
-              <input type="radio" name="tipoOrientacao" value="3"> Extensão
+              <input type="radio" name="tipo" value="3"> Coorientador
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="tipo" value="4"> Bolsista
             </label>
           </div>
           <div class="guidance_space">
@@ -39,25 +42,13 @@
             </select>
           </div>
           <div class="guidance_space">
-            <label>Professor</label>
-            <select class="form-control js-example-basic-single" name="usuario_idServidor">
+            <label>Participante</label>
+            <select class="form-control js-example-basic-single" name="usuario_idUsuario">
             <option value=""></option>
               <?php
-                foreach ($teachers as $teacher) {
+                foreach ($users as $user) {
                   $selected = "";
-                  echo '<option value="'.$teacher->idUsuario.'" '.$selected.'>'.$teacher->nome.'</option>';
-                }
-              ?>
-            </select>
-          </div>
-          <div class="guidance_space">
-            <label>Estudante</label>
-            <select class="form-control js-example-basic-single" name="usuario_idEstudante">
-            <option value=""></option>
-              <?php
-                foreach ($students as $student) {
-                  $selected = "";
-                  echo '<option value="'.$student->idUsuario.'" '.$selected.'>'.$student->nome.'</option>';
+                  echo '<option value="'.$user->idUsuario.'" '.$selected.'>'.$user->nome.'</option>';
                 }
               ?>
             </select>
@@ -72,7 +63,7 @@
           </div>
           <button type="submit" class="btn btn-success">Salvar</button>
           <button type="reset" class="btn btn-danger">Limpar</button>
-          <a href="/guidance/index" class="btn btn-primary">Voltar</a>
+          <a href="/participate/index" class="btn btn-primary">Voltar</a>
           </form>
           </div>
         </div>

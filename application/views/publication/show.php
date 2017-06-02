@@ -54,7 +54,7 @@
             </tr>
             <tr>
               <th scope="row">Link</th>
-              <td><a href="<?= $publication->link ?>"><?= $publication->link ?></a></td>
+              <td><a href="<?= $publication->link ?> " target="_blank"><?= $publication->link ?></a></td>
             </tr>
             <tr>
               <th scope="row">Visualizar arquivo</th>
@@ -62,6 +62,7 @@
             </tr>
           </tbody>
         </table>
+        <a href="/publication/index" class="btn btn-primary">Voltar</a>
       </div>
     </div>
   </div>

@@ -154,6 +154,7 @@
             </div>
             <input type="hidden" name="idUsuario" value="<?= $user->idUsuario ?>">
             <button type="submit" class="btn btn-success">Salvar</button>
+            <button type="button" onclick="javascript:history.back()" class="btn btn-primary">Voltar</button>
           </form>
         </div>
       </div>

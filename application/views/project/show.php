@@ -25,6 +25,14 @@
               <td><?= $project->descricao ?></td>
             </tr>
             <tr>
+              <tr>
+                <th scope="row">Participante(s)</th>
+                <td>
+                  <?php foreach ($participates as $participate) { ?>
+                      <a href="/user/show?idUsuario=<?php echo $participate->usuario_idUsuario ?>"><?php echo $this->user->find($participate->usuario_idUsuario)->nome ?></a> /
+                  <?php } ?>
+                </td>
+              </tr>
               <th scope="row">Data Início</th>
               <td><?= $project->dataInicio ?></td>
             </tr>
@@ -58,6 +66,7 @@
             </tr>
           </tbody>
         </table>
+        <a href="/project/index" class="btn btn-primary">Voltar</a>
       </div>
     </div>
   </div>

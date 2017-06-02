@@ -138,4 +138,6 @@ $autoload['model'] = array(
   'Project_model' => 'project',
   'Publication_model' => 'publication',
   'Guidance_model' => 'guidance',
+  'Participate_model' => 'participate',
+  'Report_model' => 'report',
 );

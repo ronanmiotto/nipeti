@@ -5,7 +5,12 @@ class Project extends CI_Controller {
 
 	public function index(){
 		$this->logged_in();
-		$data['projects'] = $this->project->all();
+		if ($this->session->userdata('type') == 1) {
+			$data['projects'] = $this->project->all();
+		} else {
+			$id = $this->session->userdata('id');
+			$data['projects'] = $this->project->get_by_student($id);
+		}
 		$this->load->view('project/index', $data);
 	}
 
@@ -47,7 +52,9 @@ class Project extends CI_Controller {
 	}
 
 	public function show(){
+		$data['users'] = $this->user->all();
 		$data['project'] = $this->project->find($_GET['idProjeto']);
+		$data['participates'] = $this->project->participates($_GET['idProjeto']);
 		$this->load->view('project/show', $data);
 	}
 

@@ -10,20 +10,23 @@
         <?php $this->load->view('menu') ?>
       </div>
       <div class="col-sm-9">
-        <h1 class="title">Cadastrar Orientação</h1>
-        <form class="col-sm-10" action="<?php echo base_url() ?>guidance/create" method="post" enctype="multipart/form-data">
+        <h1 class="title">Editar Participante</h1>
+        <form class="col-sm-10" action="<?php echo base_url() ?>participate/update" method="post" enctype="multipart/form-data">
           <div class="form-group clear">
           </div>
           <div class="guidance_space">
             <label>Tipo: </label>
             <label class="radio-inline">
-              <input type="radio" name="tipoOrientacao" value="1"> TCC
+              <input type="radio" name="tipo" value="1" <?php if($participate->tipo == 1) echo "checked"; ?> /> Colaborador
             </label>
             <label class="radio-inline">
-              <input type="radio" name="tipoOrientacao" value="2"> PIBIC
+              <input type="radio" name="tipo" value="2" <?php if($participate->tipo == 2) echo "checked"; ?> /> Coordenador
             </label>
             <label class="radio-inline">
-              <input type="radio" name="tipoOrientacao" value="3"> Extensão
+              <input type="radio" name="tipo" value="3" <?php if($participate->tipo == 3) echo "checked"; ?> /> Coorientador
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="tipo" value="4" <?php if($participate->tipo == 4) echo "checked"; ?> /> Bolsista
             </label>
           </div>
           <div class="guidance_space">
@@ -32,47 +35,35 @@
             <option value=""></option>
               <?php
                 foreach ($projects as $project) {
-                  $selected = "";
+                  $selected = $project->idProjeto == $participate->projeto_idProjeto ? "selected" : "";
                   echo '<option value="'.$project->idProjeto.'" '.$selected.'>'.$project->titulo.'</option>';
                 }
               ?>
             </select>
           </div>
           <div class="guidance_space">
-            <label>Professor</label>
-            <select class="form-control js-example-basic-single" name="usuario_idServidor">
+            <label>Participante</label>
+            <select class="form-control js-example-basic-single" name="usuario_idUsuario">
             <option value=""></option>
               <?php
-                foreach ($teachers as $teacher) {
-                  $selected = "";
-                  echo '<option value="'.$teacher->idUsuario.'" '.$selected.'>'.$teacher->nome.'</option>';
-                }
-              ?>
-            </select>
-          </div>
-          <div class="guidance_space">
-            <label>Estudante</label>
-            <select class="form-control js-example-basic-single" name="usuario_idEstudante">
-            <option value=""></option>
-              <?php
-                foreach ($students as $student) {
-                  $selected = "";
-                  echo '<option value="'.$student->idUsuario.'" '.$selected.'>'.$student->nome.'</option>';
+                foreach ($users as $user) {
+                  $selected = $user->idUsuario == $participate->usuario_idUsuario ? "selected" : "";
+                  echo '<option value="'.$user->idUsuario.'" '.$selected.'>'.$user->nome.'</option>';
                 }
               ?>
             </select>
           </div>
           <div class="form-group clear">
             <label>Data Início: </label>
-            <input class="date-inicio" type="date" name="dataInicio" required="">
+            <input class="date-inicio" type="date" name="dataInicio" value="<?= $participate->dataInicio ?>">
           </div>
           <div class="form-group clear">
             <label>Data Fim: </label>
-            <input class="date-fim" type="date" name="dataFim" required="">
+            <input class="date-fim" type="date" name="dataFim" value="<?= $participate->dataInicio ?>">
           </div>
+          <input type="hidden" name="idParticipa" value="<?= $participate->idParticipa ?>">
           <button type="submit" class="btn btn-success">Salvar</button>
-          <button type="reset" class="btn btn-danger">Limpar</button>
-          <a href="/guidance/index" class="btn btn-primary">Voltar</a>
+          <a href="/participate/index" class="btn btn-primary">Voltar</a>
           </form>
           </div>
         </div>

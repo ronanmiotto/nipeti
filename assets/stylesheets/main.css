@@ -71,6 +71,23 @@ img {
   margin-bottom: 20px;
 }
 
+.nav-name-user {
+
+  float: right;
+  margin-top: 15px;
+}
+
+.nav-name-user a {
+
+  text-decoration: none;
+  color: white;
+}
+
+.btn-report {
+
+  display: block;
+  margin-top: 10px;
+}
 
 fieldset.scheduler-border {
     border: 1px groove #ddd !important;

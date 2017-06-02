@@ -11,16 +11,9 @@
         </div>
         <div class="col-sm-9">
           <h1 class="title">Cadastrar Usuário</h1>
-          <form class="col-sm-10" action="<?php echo base_url() ?>user/create" method="post" enctype="multipart/form-data">
+          <form id="form_user" class="col-sm-10" action="<?php echo base_url() ?>user/create" method="post" enctype="multipart/form-data">
             <div class="form-group clear">
             </div>
-            <label>Tipo: </label>
-            <label class="radio-inline">
-              <input type="radio" name="tipo" value="1"> Servidor
-            </label>
-            <label class="radio-inline">
-              <input type="radio" name="tipo" value="2"> Estudante
-            </label>
             <div class="form-group">
               <label>Nome</label>
               <input type="text" class="form-control" name ="nome" placeholder="Nome completo" required="">
@@ -33,7 +26,6 @@
               <label>CPF</label>
               <input type="text" class="form-control" name ="cpf" placeholder="CPF" required="">
             </div>
-
             <label>Sexo: </label>
             <label class="radio-inline">
               <input type="radio" name="sexo" value="M"> Masculino
@@ -47,7 +39,7 @@
             </div>
             <div class="form-group">
               <label>Endereço</label>
-              <input type="text" class="form-control date-fim date-clear" name ="endereco" placeholder="Ex. Rua, Av" required="">
+              <input type="text" class="form-control" name ="endereco" placeholder="Ex. Rua, Av" required="">
             </div>
             <div class="form-group">
               <label>Número</label>
@@ -92,37 +84,49 @@
               <label>Confirma Senha</label>
               <input type="password" class="form-control" name ="confirma_senha" placeholder="Confirme a Senha" required="" >
             </div>
+            <label>Tipo: </label>
+            <label class="radio-inline">
+              <input type="radio" name="tipo" value="1"> Servidor
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="tipo" value="2"> Estudante
+            </label>
             <div class="form-group">
-            <fieldset class="scheduler-border">
-              <legend class="scheduler-border">Estudante</legend>
-              <label>Curso</label>
-              <select class="form-control" name="curso">
+
+            <div id="student_inputs">
+              <fieldset class="scheduler-border">
+                <legend class="scheduler-border">Estudante</legend>
+                <label>Curso</label>
+                <select class="form-control" name="curso">
+                  <?php
+                    foreach (courses() as $key => $value) {
+                      $selected = $user->courses == $key ? "selected" : "";
+                      echo '<option value="'.$key.'" '.$selected.'>'.$value.'</option>';
+                    }
+                  ?>
+                </select>
+              <label>Período</label>
+              <select class="form-control" name="periodo">
                 <?php
-                  foreach (courses() as $key => $value) {
-                    $selected = $user->courses == $key ? "selected" : "";
+                  foreach (periods() as $key => $value) {
+                    $selected = $user->periods == $key ? "selected" : "";
                     echo '<option value="'.$key.'" '.$selected.'>'.$value.'</option>';
                   }
                 ?>
               </select>
-            <label>Período</label>
-            <select class="form-control" name="periodo">
-              <?php
-                foreach (periods() as $key => $value) {
-                  $selected = $user->periods == $key ? "selected" : "";
-                  echo '<option value="'.$key.'" '.$selected.'>'.$value.'</option>';
-                }
-              ?>
-            </select>
-            <label>Turno</label>
-            <select class="form-control" name="turno">
-              <?php
-                foreach (turns() as $key => $value) {
-                  $selected = $user->turns == $key ? "selected" : "";
-                  echo '<option value="'.$key.'" '.$selected.'>'.$value.'</option>';
-                }
-              ?>
-            </select>
-            </fieldset>
+              <label>Turno</label>
+              <select class="form-control" name="turno">
+                <?php
+                  foreach (turns() as $key => $value) {
+                    $selected = $user->turns == $key ? "selected" : "";
+                    echo '<option value="'.$key.'" '.$selected.'>'.$value.'</option>';
+                  }
+                ?>
+              </select>
+              </fieldset>
+            </div>
+
+            <div id="server_inputs">
             <fieldset class="scheduler-border">
               <legend class="scheduler-border">Servidor</legend>
               <div class="form-group">
@@ -139,11 +143,9 @@
             <fieldset>
               <legend></legend>
             </fieldset>
+            </div>
             <label class="clear">Observações</label>
             <textarea class="form-control clear" name="observacoes" rows="4"></textarea>
-            <fieldset>
-              <legend></legend>
-            </fieldset>
             <div class="form-group clear">
               <label>Data de Ingresso na Instituição: </label>
               <input type="date" name="dataInicio" value="dataInicio" required="">
@@ -155,6 +157,7 @@
             </div>
             <button type="submit" class="btn btn-success">Salvar</button>
             <button type="reset" class="btn btn-danger">Limpar</button>
+            <button type="button" onclick="javascript:history.back()" class="btn btn-primary">Voltar</button>
             </form>
             </div>
           </div>

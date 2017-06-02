@@ -1,54 +1,55 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Guidance extends CI_Controller {
+class Participate extends CI_Controller {
 
 	public function index(){
 		$this->logged_in();
-		$data['guidances'] = $this->guidance->all();
-		$this->load->view('/guidance/index', $data);
+		$data['participates'] = $this->participate->all();
+		$this->load->view('/participate/index', $data);
 	}
 
-	public function new_guidance(){
+	public function new_participate(){
+		$data['users'] = $this->user->all();
 		$data['projects'] = $this->project->all();
-		$data['teachers'] = $this->user->get_by(1);
-		$data['students'] = $this->user->get_by(2);
-		$this->load->view('/guidance/new_guidance', $data);
+		$this->load->view('/participate/new_participate', $data);
 	}
 
 	public function create(){
 		$data = $_POST;
-		$this->guidance->create($data);
+		$this->participate->create($data);
 		$this->session->set_flashdata('message', 'Cadastrado com sucesso');
-		redirect('/guidance/index');
+		redirect('/participate/index');
 	}
 
 	public function update(){
 		$data = $_POST;
-		$this->guidance->update($data, $_POST['idOrientacao']);
+		$this->participate->update($data, $_POST['idParticipa']);
+		$data['users'] = $this->user->all();
+		$data['projects'] = $this->project->all();
 
 		$this->session->set_flashdata('message', 'Atualizado com sucesso');
-		redirect('/guidance/index');
+		redirect('/participate/index');
 	}
 
 	public function edit(){
 		$data['projects'] = $this->project->all();
-		$data['teachers'] = $this->user->get_by(1);
-		$data['students'] = $this->user->get_by(2);
-		$data['guidance'] = $this->guidance->find($_GET['idOrientacao']);
-		$this->load->view('/guidance/edit', $data);
+		$data['users'] = $this->user->all();
+		$data['participate'] = $this->participate->find($_GET['idParticipa']);
+		$this->load->view('/participate/edit', $data);
 	}
 
 	public function show(){
-
-		$data['guidance'] = $this->guidance->find($_GET['idOrientacao']);
-		$this->load->view('/guidance/show', $data);
+		$data['projects'] = $this->project->all();
+		$data['users'] = $this->user->all();
+		$data['participate'] = $this->participate->find($_GET['idParticipa']);
+		$this->load->view('/participate/show', $data);
 	}
 
 	public function destroy(){
-		$this->guidance->destroy($_GET['idOrientacao']);
+		$this->participate->destroy($_GET['idParticipa']);
 		$this->session->set_flashdata('message', 'Deletado com sucesso');
-		redirect('/guidance/index');
+		redirect('/participate/index');
 	}
 
 	public function send_file($data) {

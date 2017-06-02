@@ -9,40 +9,36 @@
         <?php $this->load->view('menu') ?>
       </div>
       <div class="col-sm-9">
-        <h1 class="title">Orientação / Visualizar dados</h1>
+        <h1 class="title">Participante / Visualizar dados</h1>
         <table class="table table-hover">
           <tbody>
             <tr>
               <th scope="row"><h3>Tipo</h3></th>
-              <td><h3 class="color-types"><?= projects_guidance()[$guidance->tipoOrientacao] ?></h3></td>
+              <td><h3 class="color-types"><?= projects_participate()[$participate->tipo] ?></h3></td>
             </tr>
             <tr>
               <th scope="row">Código</th>
-              <td><?= $guidance->idOrientacao ?></td>
+              <td><?= $participate->idParticipa ?></td>
             </tr>
             <tr>
               <th scope="row">Projeto</th>
-              <td><?php echo $this->project->find($guidance->projeto_idProjeto)->titulo ?></td>
+              <td><?php echo $this->project->find($participate->projeto_idProjeto)->titulo ?></td>
             </tr>
             <tr>
-              <th scope="row">Servidor</th>
-              <td><?php echo $this->user->find($guidance->usuario_idServidor)->nome ?></td>
-            </tr>
-            <tr>
-              <th scope="row">Estudante</th>
-              <td><?php echo $this->user->find($guidance->usuario_idEstudante)->nome ?></td>
+              <th scope="row">Participante</th>
+              <td><?php echo $this->user->find($participate->usuario_idUsuario)->nome ?></td>
             </tr>
             <tr>
             <th scope="row">Data Início</th>
-              <td><?= $guidance->dataInicio ?></td>
+              <td><?= $participate->dataInicio ?></td>
             </tr>
             <tr>
               <th scope="row">Data Fim</th>
-            <td><?= $guidance->dataFim ?></td>
+            <td><?= $participate->dataFim ?></td>
           </tr>
           </tbody>
         </table>
-        <a href="/guidance/index" class="btn btn-primary">Voltar</a>
+        <a href="/participate/index" class="btn btn-primary">Voltar</a>
       </div>
     </div>
   </div>

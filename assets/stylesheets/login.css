@@ -3,16 +3,17 @@
 body {
   background-color:#fff;
   -webkit-font-smoothing: antialiased;
-  font: normal 14px Roboto,arial,sans-serif;
+  font: normal 20px Roboto,arial,sans-serif;
 }
 
 .container {
-    padding: 25px;
+    padding: 20px;
     position: fixed;
     top: 50%;
     left: 50%;
-    margin-left: -45%;
+    margin-left: -50%;
     margin-top: -10%;
+
 }
 
 .form-login {
@@ -41,6 +42,7 @@ h4 {
 .wrapper {
     text-align: center;
 }
+
 
 
 /*fim login*/

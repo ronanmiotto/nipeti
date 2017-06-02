@@ -35,7 +35,7 @@
             </tr>
             <tr>
               <th scope="row">Sexo</th>
-              <td><?= $user->sexo ?></td>
+              <td><?= sex()[$user->sexo] ?></td>
             </tr>
             <tr>
               <th scope="row">Data de Nascimento</th>
@@ -63,7 +63,7 @@
             </tr>
             <tr>
               <th scope="row">UF</th>
-              <td><?= $user->uf ?></td>
+              <td><?= states()[$user->uf] ?></td>>
             </tr>
             <tr>
               <th scope="row">E-mail</th>
@@ -95,14 +95,15 @@
             </tr>
             <tr>
               <th scope="row">Lattes</th>
-              <td><a href="<?= $user->lattes ?>"><?= $user->lattes ?></a></td>
+              <td><a href="<?= $user->lattes ?>" target="_blank"><?= $user->lattes ?></a></td>
             </tr>
             <tr>
               <th scope="row">Observações</th>
               <td><?= $user->observacoes ?></td>
             </tr>
           </tbody>
-        </table>
+        </table> 
+        <button type="button" onclick="javascript:history.back()" class="btn btn-primary">Voltar</button>
       </div>
     </div>
   </div>

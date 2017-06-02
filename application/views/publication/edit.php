@@ -76,7 +76,7 @@
           </fieldset>
           <input type="hidden" name="idPublicacao" value="<?= $publication->idPublicacao ?>">
           <button type="submit" class="btn btn-success">Salvar</button>
-          <button type="reset" class="btn btn-danger">Limpar</button>
+          <a href="/publication/index" class="btn btn-primary">Voltar</a>
           </form>
           </div>
         </div>

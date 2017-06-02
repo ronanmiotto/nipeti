@@ -40,11 +40,11 @@
           </div>
           <div class="guidance_space">
             <label>Professor</label>
-            <select class="form-control js-example-basic-single" name="servidor">
+            <select class="form-control js-example-basic-single" name="usuario_idServidor">
             <option value=""></option>
               <?php
                 foreach ($teachers as $teacher) {
-                  $selected = "";
+                  $selected = $teacher->idUsuario == $guidance->usuario_idServidor ? "selected" : "";
                   echo '<option value="'.$teacher->idUsuario.'" '.$selected.'>'.$teacher->nome.'</option>';
                 }
               ?>
@@ -52,11 +52,11 @@
           </div>
           <div class="guidance_space">
             <label>Estudante</label>
-            <select class="form-control js-example-basic-single" name="estudante">
+            <select class="form-control js-example-basic-single" name="usuario_idEstudante">
             <option value=""></option>
               <?php
                 foreach ($students as $student) {
-                  $selected = "";
+                  $selected = $student->idUsuario == $guidance->usuario_idEstudante ? "selected" : "";
                   echo '<option value="'.$student->idUsuario.'" '.$selected.'>'.$student->nome.'</option>';
                 }
               ?>
@@ -72,7 +72,7 @@
           </div>
           <input type="hidden" name="idOrientacao" value="<?= $guidance->idOrientacao ?>">
           <button type="submit" class="btn btn-success">Salvar</button>
-          <button type="reset" class="btn btn-danger">Limpar</button>
+          <a href="/guidance/index" class="btn btn-primary">Voltar</a>
           </form>
           </div>
         </div>

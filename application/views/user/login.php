@@ -15,23 +15,23 @@
     <div class="container">
         <div class="row">
             <form class="" action="/user/check_login" method="post">
-              <div class="col-md-offset-5 col-md-3">
-                  <?php echo flash_message(); ?>
-                  <div class="form-login">
-                  <h4>Login de Usuário</h4>
-                  <input type="email" name="email" class="form-control input-sm chat-input" placeholder="E-mail" />
-                  </br>
-                  <input type="password" name="senha" class="form-control input-sm chat-input" placeholder="Senha" />
-                  </br>
-                  <div class="wrapper">
-                  <span class="group-btn">
-                    <input type="submit" value="Logar" class="btn btn-primary btn-md" class="fa fa-sign-in">
-                  </span>
-                  </div>
-                  </div>
+                <div class="col-md-offset-5 col-md-3">
+                    <?php echo flash_message(); ?>
+                    <div class="form-login">
+                    <h4>Login de Usuário</h4>
+                    <input type="email" name="email" class="form-control input-sm chat-input" placeholder="E-mail" />
+                    </br>
+                    <input type="password" name="senha" class="form-control input-sm chat-input" placeholder="Senha" />
+                    </br>
+                    <div class="wrapper">
+                    <span class="group-btn">
+                      <input type="submit" value="Logar" class="btn btn-primary btn-md" class="fa fa-sign-in">
+                    </span>
+                    </div>
+                    </div>
+                </div>
+              </form>
               </div>
-            </form>
-
         </div>
     </div>
   </body>
