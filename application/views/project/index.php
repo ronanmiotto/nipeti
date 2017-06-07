@@ -16,12 +16,12 @@
           <div class="col-sm-9">
             <h1 class="title">Lista de projetos</h1>
           </div>
-          <table id="employee_data" class="table table-striped">
+          <table id="employee_data" class="table table-bordered table-hover table-color">
             <thead>
               <tr>
                 <th>Código</th>
-                <th>Projeto</th>
-                <th>Fomento</th>
+                <th>Título</th>
+                <th>Status</th>
                 <th>Ações</th>
               </tr>
             </thead>
@@ -30,7 +30,7 @@
               <tr>
                 <td><?php echo $value->idProjeto ?></td>
                 <td><?php echo $value->titulo ?></td>
-                <td><?php echo $value->fomento ?></td>
+                <td><?php echo status()[$value->statuss] ?></td>
                 <td>
                   <a href="/project/show?idProjeto=<?= $value->idProjeto ?>" class="btn btn-primary">Visualizar</a>
                   <a href="/project/edit?idProjeto=<?= $value->idProjeto ?>" class="btn btn-primary">Editar</a>

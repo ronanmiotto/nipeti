@@ -30,6 +30,11 @@ class Report extends CI_Controller {
 		$this->load->view('report/new_report_publication');
 	}
 
+	public function new_report_participate(){
+		$data['participate'] = $this->participate->all();
+		$this->load->view('report/new_report_participate');
+	}
+
 	public function create(){
 		$data = $_POST;
 		$data['students'] = $this->students();

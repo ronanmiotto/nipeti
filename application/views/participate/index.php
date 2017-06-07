@@ -16,7 +16,7 @@
           <div class="col-sm-9">
             <h1 class="title">Participante(s)</h1>
           </div>
-          <table id="employee_data" class="table table-striped">
+          <table id="employee_data" class="table table-bordered table-hover table-color">
             <thead>
               <tr>
                 <th>Código</th>

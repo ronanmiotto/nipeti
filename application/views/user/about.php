@@ -72,7 +72,10 @@
           <li>GENTE - Grupo de Estudos em Engenharia de Software e Tecnologia Educacional</li>
           <li>GEG - Grupo de Estudo de Games e Simuladores</li>
           <li>GESI - Grupo de Estudos em Sistemas Interativos e Embarcados﻿</li>
-        </p>
+        </p><br>
+        <p>Para maiores informações, acesse o blog ou Facebook do Nipeti IFMS nos links abaixo:</p>
+        <h4>Blog: <a href="http://nipeti.blogspot.com.br/" target="_blank">http://nipeti.blogspot.com.br/</a></h3>
+        <h4>Facebook: <a href="https://www.facebook.com/NIPETI-IFMS-276876375687143/" target="_blank">https://www.facebook.com/NIPETI-IFMS</a></h3>
       </div>
     </div>
   </body>

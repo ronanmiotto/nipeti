@@ -1,3 +1,11 @@
+body {
+  background-color: #F5F5F5;
+}
+
+.table-color {
+
+  background-color: white;
+}
 .container {
   margin:0 auto;
   width: 960px;
@@ -17,6 +25,7 @@
 
 .title {
   margin: 0 0 30px 0;
+  font-weight: bold;
 }
 
 .bs-docs-footer {
@@ -30,8 +39,14 @@
 
 .image-nipeti {
 
-  width: 350px;
-  height: 250px;
+  width: 600px;
+  height: 350px;
+}
+
+.image-nipeti2 {
+
+  width: 900px;
+  height: 200px;
 }
 
 img {
@@ -47,6 +62,11 @@ img {
 .date-clear {
 
   margin-top: 20px;
+}
+
+.label-clear {
+
+  margin-bottom: 20px;
 }
 
 .date-fim {

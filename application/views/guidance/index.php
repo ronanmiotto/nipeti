@@ -14,14 +14,15 @@
           <a href="/guidance/new_guidance" class="btn btn-primary btn-lg">Vincular Nova Orientação</a>
           <hr>
           <div class="col-sm-9">
-            <h1 class="title">Orientações</h1>
+            <h1 class="title">Lista de orientações</h1>
           </div>
-          <table id="employee_data" class="table table-striped">
+          <table id="employee_data" class="table table-bordered table-hover table-color">
             <thead>
               <tr>
                 <th>Código</th>
                 <th>Servidor</th>
                 <th>Estudante</th>
+                <th>Projeto</th>
                 <th>Ações</th>
               </tr>
             </thead>
@@ -31,6 +32,7 @@
                 <td><?php echo $value->idOrientacao ?></td>
                 <td><?php echo $this->user->find($value->usuario_idServidor)->nome ?></td>
                 <td><?php echo $this->user->find($value->usuario_idEstudante)->nome ?></td>
+                <td><?php echo $this->project->find($value->projeto_idProjeto)->titulo ?></td>
                 <td>
                   <a href="/guidance/show?idOrientacao=<?= $value->idOrientacao ?>" class="btn btn-primary">Visualizar</a>
                   <a href="/guidance/edit?idOrientacao=<?= $value->idOrientacao ?>" class="btn btn-primary">Editar</a>

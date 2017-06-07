@@ -18,6 +18,7 @@
               <a href="/report/new_report_project" class="btn btn-primary btn-lg btn-report">Gerar Relatório de Projetos</a>
               <a href="/report/new_report_guidance" class="btn btn-primary btn-lg btn-report">Gerar Relatório de Orientações</a>
               <a href="/report/new_report_publication" class="btn btn-primary btn-lg btn-report">Gerar Relatório de Publicações</a>
+              <a href="/report/new_report_participate" class="btn btn-primary btn-lg btn-report">Gerar Relatório de Participações</a>
             </div>
       </div>
     </div>

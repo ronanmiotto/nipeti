@@ -17,7 +17,9 @@ $(document).ready(function(){
 
   $('#student_inputs').css('display', 'none');
   $('#server_inputs').css('display', 'none');
+  $('#newspaper_inputs').css('display', 'none');
 
+// Função dos inputs da tela new_user
   $('#form_user input[name=tipo]').on('change', function() {
     if ($('input[name=tipo]:checked', '#form_user').val() == 1){
       $('#student_inputs').css('display', 'none');
@@ -27,6 +29,17 @@ $(document).ready(function(){
     if ($('input[name=tipo]:checked', '#form_user').val() == 2){
       $('#student_inputs').css('display', 'block');
       $('#server_inputs').css('display', 'none');
+    }
+  });
+// Função dos inputs da tela new_publication
+  $('#form_publication input[name=tipo]').on('change', function() {
+    if ($('input[name=tipo]:checked', '#form_publication').val() == 1){
+      $('#newspaper_inputs').css('display', 'none');
+    }
+
+    if ($('input[name=tipo]:checked', '#form_publication').val() == 2){
+      $('#newspaper_inputs').css('display', 'block');
+
     }
   });
 });

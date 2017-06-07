@@ -92,7 +92,6 @@
               <input type="radio" name="tipo" value="2"> Estudante
             </label>
             <div class="form-group">
-
             <div id="student_inputs">
               <fieldset class="scheduler-border">
                 <legend class="scheduler-border">Estudante</legend>
@@ -125,7 +124,6 @@
               </select>
               </fieldset>
             </div>
-
             <div id="server_inputs">
             <fieldset class="scheduler-border">
               <legend class="scheduler-border">Servidor</legend>
@@ -146,7 +144,7 @@
             </div>
             <label class="clear">Observações</label>
             <textarea class="form-control clear" name="observacoes" rows="4"></textarea>
-            <div class="form-group clear">
+            <div class="form-group clear date-clear">
               <label>Data de Ingresso na Instituição: </label>
               <input type="date" name="dataInicio" value="dataInicio" required="">
             </div>
@@ -157,7 +155,7 @@
             </div>
             <button type="submit" class="btn btn-success">Salvar</button>
             <button type="reset" class="btn btn-danger">Limpar</button>
-            <button type="button" onclick="javascript:history.back()" class="btn btn-primary">Voltar</button>
+            <a href="/user/index" class="btn btn-primary">Voltar</a>
             </form>
             </div>
           </div>

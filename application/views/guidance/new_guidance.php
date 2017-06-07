@@ -28,7 +28,7 @@
           </div>
           <div class="guidance_space">
             <label>Projeto (vincular)</label>
-            <select class="form-control js-example-basic-single" name="projeto_idProjeto">
+            <select class="form-control js-example-basic-single" name="projeto_idProjeto" required="">
             <option value=""></option>
               <?php
                 foreach ($projects as $project) {
@@ -39,8 +39,8 @@
             </select>
           </div>
           <div class="guidance_space">
-            <label>Professor</label>
-            <select class="form-control js-example-basic-single" name="usuario_idServidor">
+            <label>Servidor</label>
+            <select class="form-control js-example-basic-single" name="usuario_idServidor" required="">
             <option value=""></option>
               <?php
                 foreach ($teachers as $teacher) {
@@ -52,7 +52,7 @@
           </div>
           <div class="guidance_space">
             <label>Estudante</label>
-            <select class="form-control js-example-basic-single" name="usuario_idEstudante">
+            <select class="form-control js-example-basic-single" name="usuario_idEstudante" required="">
             <option value=""></option>
               <?php
                 foreach ($students as $student) {
