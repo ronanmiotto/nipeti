@@ -13,12 +13,11 @@
               <h1 class="title">Relatórios</h1>
               <hr>
             </div>
-            <div class="col-sm-5">
+            <div class="col-sm-5 div-btn-report">
               <a href="/report/new_report_user" class="btn btn-primary btn-lg  btn-report">Gerar Relatório de Usuários</a>
               <a href="/report/new_report_project" class="btn btn-primary btn-lg btn-report">Gerar Relatório de Projetos</a>
               <a href="/report/new_report_guidance" class="btn btn-primary btn-lg btn-report">Gerar Relatório de Orientações</a>
               <a href="/report/new_report_publication" class="btn btn-primary btn-lg btn-report">Gerar Relatório de Publicações</a>
-              <a href="/report/new_report_participate" class="btn btn-primary btn-lg btn-report">Gerar Relatório de Participações</a>
             </div>
       </div>
     </div>

@@ -11,7 +11,7 @@
         </div>
 
         <div class="col-sm-9">
-          <a href="/guidance/new_guidance" class="btn btn-primary btn-lg">Vincular Nova Orientação</a>
+          <a href="/guidance/new_guidance" class="btn btn-primary btn-lg">Nova Orientação</a>
           <hr>
           <div class="col-sm-9">
             <h1 class="title">Lista de orientações</h1>

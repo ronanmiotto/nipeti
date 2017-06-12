@@ -14,7 +14,7 @@
           <a href="/participate/new_participate" class="btn btn-primary btn-lg">Adicionar participante</a>
           <hr>
           <div class="col-sm-9">
-            <h1 class="title">Participante(s)</h1>
+            <h1 class="title">Lista de Participantes</h1>
           </div>
           <table id="employee_data" class="table table-bordered table-hover table-color">
             <thead>
