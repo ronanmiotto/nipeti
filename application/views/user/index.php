@@ -34,7 +34,8 @@
                 <td>
                   <a href="/user/show?idUsuario=<?= $value->idUsuario ?>" class="btn btn-primary">Visualizar</a>
                   <a href="/user/edit?idUsuario=<?= $value->idUsuario ?>" class="btn btn-primary">Editar</a>
-                  <a href="/user/destroy?idUsuario=<?= $value->idUsuario ?>" class="btn btn-danger" onclick="return confirm_destroy()">Deletar</a>
+                  <?php $disabled = $value->tipo != 3 ? "" : "disabled" ?>
+                  <a href="/user/destroy?idUsuario=<?= $value->idUsuario ?>" class="btn btn-danger" <?php echo $disabled; ?> onclick="return confirm_destroy()">Deletar</a>
                 </td>
               </tr>
               <?php } ?>

@@ -158,6 +158,7 @@ if (!function_exists('types_users')){
       '' => '',
       '1' => 'Servidor',
       '2' => 'Estudante',
+      '3' => 'Coordenador',
     );
   }
 }

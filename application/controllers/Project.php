@@ -5,12 +5,8 @@ class Project extends CI_Controller {
 
 	public function index(){
 		$this->logged_in();
-		if ($this->session->userdata('type') == 1) {
-			$data['projects'] = $this->project->all();
-		} else {
-			$id = $this->session->userdata('id');
-			$data['projects'] = $this->project->get_by_student($id);
-		}
+		$data['type'] = $this->session->userdata('type');
+		$data['projects'] = $this->project->all();
 		$this->load->view('project/index', $data);
 	}
 

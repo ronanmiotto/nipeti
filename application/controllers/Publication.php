@@ -5,6 +5,7 @@ class Publication extends CI_Controller {
 
 	public function index(){
 		$this->logged_in();
+		$data['type'] = $this->session->userdata('type');
 		$data['publications'] = $this->publication->all();
 		$this->load->view('publication/index', $data);
 	}

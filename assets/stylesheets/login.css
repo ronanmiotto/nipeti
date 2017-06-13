@@ -4,16 +4,25 @@ body {
   background-color:#fff;
   -webkit-font-smoothing: antialiased;
   font: normal 20px Roboto,arial,sans-serif;
+  text-align: center;
 }
 
 .container {
-    padding: 20px;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    margin-left: -50%;
-    margin-top: -10%;
+  position: relative;
+  left: -70px;
+  top: 70px;
+}
 
+.img-login {
+
+  position: relative;
+  left: 47.5px;
+  margin-bottom: 10px;
+}
+
+.link-login-visitant {
+
+  margin-top: 20px;
 }
 
 .form-login {

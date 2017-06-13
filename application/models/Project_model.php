@@ -13,14 +13,15 @@
           return $query->result();
         }
 
-        public function get_by_student($id){
+        public function get_by_student($id_project, $id_student){
           $this->db->select('*');
           $this->db->from('usuario as u');
           $this->db->join('orientacao as o', 'u.idUsuario = o.usuario_idEstudante');
           $this->db->join('projeto as p', 'p.idProjeto = o.projeto_idProjeto');
-          $this->db->where('u.idUsuario', $id);
+          $this->db->where('u.idUsuario', $id_student);
+          $this->db->where('p.idProjeto', $id_project);
           $query = $this->db->get();
-          return $query->result();
+          return $query->first_row();
         }
 
         public function count(){

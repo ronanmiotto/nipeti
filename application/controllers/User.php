@@ -53,8 +53,10 @@ class User extends CI_Controller {
 			unset($data['senha']);
 		}
 
-		$this->send_image($data);
-		$data['imagem'] = $this->upload->data('file_name');
+		if (!empty($_POST['imagem'])){
+			$this->send_image($data);
+			$data['imagem'] = $this->upload->data('file_name');
+		}
 
 		$this->user->update($data, $data['idUsuario']);
 
@@ -97,8 +99,7 @@ class User extends CI_Controller {
   }
 
 	public function logoff(){
-		$array = array('email', 'logged_in');
-		$this->session->unset_userdata($array);
+		$this->session->sess_destroy();
 		$this->session->set_flashdata('message', 'Deslogado com sucesso');
 		redirect('/login/index');
 	}
@@ -130,5 +131,16 @@ class User extends CI_Controller {
 			$this->session->set_flashdata('message', 'Usuário não cadastrado');
 			$this->logged_in();
 		}
+	}
+
+	public function create_session_for_user_visitant(){
+		$newdata = array(
+			'nome' => 'Visitante',
+			'logged_in' => true,
+			'type' => 4
+		);
+		$this->session->set_userdata($newdata);
+		$this->session->set_flashdata('message', 'Logado com sucesso como visitante');
+		redirect('/home/index');
 	}
 }

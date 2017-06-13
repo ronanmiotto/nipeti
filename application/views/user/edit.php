@@ -156,8 +156,8 @@
                 <p class="help-block">Imagem do usuário a ser cadastrado</p>
               </div>
               <input type="hidden" name="idUsuario" value="<?= $user->idUsuario ?>">
-              <button type="submit" class="btn btn-success">Salvar</button>
-              <button type="button" onclick="javascript:history.back()" class="btn btn-primary">Voltar</button>
+              <button type="submit" class="btn btn-success" onclick="return confirm_update()">Salvar</button>
+              <a href="/user/index" class="btn btn-primary">Voltar</a>
             </form>
           </div>
         </div>

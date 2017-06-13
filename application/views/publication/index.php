@@ -11,8 +11,10 @@
         </div>
 
         <div class="col-sm-9">
+          <?php if ($type != 2 ){?>
           <a href="/publication/new_publication" class="btn btn-primary btn-lg">Nova Publicação</a>
           <hr>
+          <?php } ?>
           <div class="col-sm-9">
             <h1 class="title">Lista de publicações</h1>
           </div>
@@ -33,8 +35,10 @@
                 <td><?php echo $value->titulo ?></td>
                 <td>
                   <a href="/publication/show?idPublicacao=<?= $value->idPublicacao ?>" class="btn btn-primary">Visualizar</a>
+                  <?php if ($type != 2 ){?>
                   <a href="/publication/edit?idPublicacao=<?= $value->idPublicacao ?>" class="btn btn-primary">Editar</a>
                   <a href="/publication/destroy?idPublicacao=<?= $value->idPublicacao ?>" class="btn btn-danger" onclick="return confirm_destroy()">Deletar</a>
+                  <?php } ?>
                 </td>
               </tr>
               <?php } ?>

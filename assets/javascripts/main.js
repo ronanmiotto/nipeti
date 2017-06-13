@@ -6,6 +6,14 @@ function confirm_destroy() {
   }
 }
 
+function confirm_update() {
+  if (confirm("Deseja realmente alterar?")){
+    return true;
+  } else {
+    return false;
+  }
+}
+
 $(document).ready(function(){
   $('#employee_data').DataTable({
     "language": {
