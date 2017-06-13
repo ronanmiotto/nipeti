@@ -11,8 +11,8 @@
         </div>
 
         <div class="col-sm-9">
-          <?php if ($type != 2 ){?>
-          <a href="/project/new_project" class="btn btn-primary btn-lg">Novo Projeto</a>
+          <?php if ($type != 4 ){?>
+          <a href="/project/new_project" class="btn btn-success btn-lg">Novo Projeto</a>
           <hr>
           <?php } ?>
           <div class="col-sm-9">

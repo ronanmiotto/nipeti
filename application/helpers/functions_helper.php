@@ -96,6 +96,16 @@ if (!function_exists('turns')){
   }
 }
 
+if (!function_exists('with_student')){
+  function with_student(){
+    return array(
+      '' => '',
+      '1' => 'Sim',
+      '2' => 'Não',
+    );
+  }
+}
+
 if (!function_exists('projects')){
   function projects(){
     return array(
@@ -136,7 +146,7 @@ if (!function_exists('status')){
       '' => '',
       'andamento' => 'Em andamento',
       'concluido' => 'Concluído',
-      'paralisado' => 'Paralisado',
+      'suspenso' => 'Suspenso',
     );
   }
 }
@@ -145,9 +155,10 @@ if (!function_exists('scholarships')){
   function scholarships(){
     return array(
       '' => '',
-      'sim' => 'Sim',
-      'nao' => 'Não',
-      'analise' => 'Em análise',
+      'fundect' => 'Fundect',
+      'cnpq' => 'CNPq',
+      'outra' => 'Outra',
+      'n/a' => 'N/A',
     );
   }
 }
@@ -179,6 +190,7 @@ if (!function_exists('types_publications')){
       '' => '',
       '1' => 'Evento',
       '2' => 'Periódico',
+      '3' => 'Publicação',
     );
   }
 }

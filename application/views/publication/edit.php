@@ -14,10 +14,31 @@
           <form id="form_publication" class="col-sm-10" action="<?php echo base_url() ?>publication/update" method="post" enctype="multipart/form-data">
             <div class="form-group clear">
             </div>
+            <label>Tipo: </label>
+            <label class="radio-inline">
+              <input type="radio" name="tipo" value="1" <?php if($publication->tipo == 1) echo "checked"; ?> /> Evento
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="tipo" value="2" <?php if($publication->tipo == 2) echo "checked"; ?> /> Periódico
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="tipo" value="3" <?php if($publication->tipo == 3) echo "checked"; ?> /> Publicação
+            </label>
             <div class="form-group">
               <label>Título</label>
               <input type="text" class="form-control" name ="titulo" value="<?= $publication->titulo ?>" placeholder="Título do evento ou periódico" required="">
             </div>
+            <div class="form-group">
+              <label>Participante(s) / Palestrante(s)</label>
+              <input type="text" class="form-control" name ="participante" value="<?= $publication->participante ?>" placeholder="Participante(s) do evento" required="">
+            </div>
+            <label>Com alunos? </label>
+            <label class="radio-inline">
+              <input type="radio" name="comAluno" value="1" <?php if($publication->comAluno == 1) echo "checked"; ?> /> Sim
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="comAluno" value="2" <?php if($publication->comAluno == 2) echo "checked"; ?> /> Não
+            </label>
             <div class="guidance_space">
               <label>Projeto (vincular)</label>
               <select class="form-control js-example-basic-single" name="projeto_idProjeto">
@@ -42,22 +63,15 @@
                 <input type="text" class="form-control" name ="area" value="<?= $publication->area ?>" placeholder="Área de atuação relacionada" required="">
               </div>
               <label>Data: </label>
-              <input type="date" name="data" value="<?= $publication->data ?>" required="">
+              <input type="text" name="ano" value="<?= $publication->ano ?>" required="">
             </div>
-            <label>Tipo: </label>
-            <label class="radio-inline">
-              <input type="radio" name="tipo" value="1" <?php if($publication->tipo == 1) echo "checked"; ?> /> Evento
-            </label>
-            <label class="radio-inline">
-              <input type="radio" name="tipo" value="2" <?php if($publication->tipo == 2) echo "checked"; ?> /> Periódico
-            </label>
             <div class="form-group clear">
             <div id="newspaper_inputs">
             <fieldset class="scheduler-border">
               <legend class="scheduler-border">Periódico</legend>
               <div class="form-group">
-                <label>Cooautores</label>
-                <input type="text" class="form-control" name ="cooautores" value="<?= $publication->cooautores ?>"  placeholder="Cooautor(es) do periódico">
+                <label>Coautores</label>
+                <input type="text" class="form-control" name ="coautores" value="<?= $publication->coautores ?>"  placeholder="Cooautor(es) do periódico">
               </div>
               <div class="form-group">
                 <label>Volume</label>

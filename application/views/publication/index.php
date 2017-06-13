@@ -11,8 +11,8 @@
         </div>
 
         <div class="col-sm-9">
-          <?php if ($type != 2 ){?>
-          <a href="/publication/new_publication" class="btn btn-primary btn-lg">Nova Publicação</a>
+          <?php if ($type != 4 || $type != 2){?>
+          <a href="/publication/new_publication" class="btn btn-success btn-lg">Nova Publicação</a>
           <hr>
           <?php } ?>
           <div class="col-sm-9">
@@ -35,7 +35,7 @@
                 <td><?php echo $value->titulo ?></td>
                 <td>
                   <a href="/publication/show?idPublicacao=<?= $value->idPublicacao ?>" class="btn btn-primary">Visualizar</a>
-                  <?php if ($type != 2 ){?>
+                  <?php if ($type != 4 || $type != 2 ){?>
                   <a href="/publication/edit?idPublicacao=<?= $value->idPublicacao ?>" class="btn btn-primary">Editar</a>
                   <a href="/publication/destroy?idPublicacao=<?= $value->idPublicacao ?>" class="btn btn-danger" onclick="return confirm_destroy()">Deletar</a>
                   <?php } ?>

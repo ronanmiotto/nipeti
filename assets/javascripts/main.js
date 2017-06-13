@@ -43,10 +43,16 @@ $(document).ready(function(){
   $('#form_publication input[name=tipo]').on('change', function() {
     if ($('input[name=tipo]:checked', '#form_publication').val() == 1){
       $('#newspaper_inputs').css('display', 'none');
+
     }
 
     if ($('input[name=tipo]:checked', '#form_publication').val() == 2){
       $('#newspaper_inputs').css('display', 'block');
+
+    }
+
+    if ($('input[name=tipo]:checked', '#form_publication').val() == 3){
+      $('#newspaper_inputs').css('display', 'none');
 
     }
   });

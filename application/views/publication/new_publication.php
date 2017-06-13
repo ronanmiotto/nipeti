@@ -14,12 +14,33 @@
           <form id="form_publication" class="col-sm-10" action="<?php echo base_url() ?>publication/create" method="post" enctype="multipart/form-data">
             <div class="form-group clear">
             </div>
+            <label class="label-clear">Tipo: </label>
+            <label class="radio-inline">
+              <input type="radio" name="tipo" value="1"> Evento
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="tipo" value="2"> Periódico
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="tipo" value="3"> Publicação
+            </label>
             <div class="form-group">
-              <label>Título</label>
+              <label>Título do Evento</label>
               <input type="text" class="form-control" name ="titulo" placeholder="Título do evento ou periódico" required="">
             </div>
+            <div class="form-group">
+              <label>Participante(s) / Palestrante(s)</label>
+              <input type="text" class="form-control" name ="participante" placeholder="Participante(s) do evento" required="">
+            </div>
+            <label class="label-clear">Com alunos? </label>
+            <label class="radio-inline">
+              <input type="radio" name="comAluno" value="1"> Sim
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="comAluno" value="2"> Não
+            </label>
             <div class="guidance_space">
-              <label>Projeto (vincular)</label>
+              <label>Projeto (vincular se houver)</label>
               <select class="form-control js-example-basic-single" name="projeto_idProjeto">
               <option value=""></option>
                 <?php
@@ -41,23 +62,16 @@
                 <label>Área</label>
                 <input type="text" class="form-control" name ="area" placeholder="Área de atuação relacionada" required="">
               </div>
-              <label>Data: </label>
-              <input type="date" name="data" required="">
+              <label>Ano: </label>
+              <input type="text" name="ano" required="">
             </div>
-            <label class="label-clear">Tipo: </label>
-            <label class="radio-inline">
-              <input type="radio" name="tipo" value="1"> Evento
-            </label>
-            <label class="radio-inline">
-              <input type="radio" name="tipo" value="2"> Periódico
-            </label>
               <div class="form-group clear">
                 <div id="newspaper_inputs">
                 <fieldset class="scheduler-border">
                   <legend class="scheduler-border">Periódico</legend>
                   <div class="form-group">
-                    <label>Cooautores</label>
-                    <input type="text" class="form-control" name ="cooautores"  placeholder="Cooautor(es) do periódico">
+                    <label>Coautores</label>
+                    <input type="text" class="form-control" name ="coautores"  placeholder="Coautor(es) do periódico">
                   </div>
                   <div class="form-group">
                     <label>Volume</label>

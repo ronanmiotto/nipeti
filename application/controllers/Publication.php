@@ -11,6 +11,7 @@ class Publication extends CI_Controller {
 	}
 
 	public function new_publication(){
+		$data['users'] = $this->user->all();
 		$data['projects'] = $this->project->all();
 		$this->load->view('publication/new_publication', $data);
 	}

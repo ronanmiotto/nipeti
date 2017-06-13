@@ -11,7 +11,7 @@
         </div>
 
         <div class="col-sm-9">
-          <a href="/user/new_user" class="btn btn-primary btn-lg">Novo Usuário</a>
+          <a href="/user/new_user" class="btn btn-success btn-lg">Novo Usuário</a>
           <hr>
           <div class="col-sm-9">
             <h1 class="title">Lista de usuários</h1>

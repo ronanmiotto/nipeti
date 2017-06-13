@@ -11,7 +11,7 @@
         </div>
 
         <div class="col-sm-9">
-          <a href="/participate/new_participate" class="btn btn-primary btn-lg">Adicionar participante</a>
+          <a href="/participate/new_participate" class="btn btn-success btn-lg">Adicionar participante</a>
           <hr>
           <div class="col-sm-9">
             <h1 class="title">Lista de Participantes</h1>
