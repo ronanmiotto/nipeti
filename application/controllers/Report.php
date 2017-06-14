@@ -30,9 +30,20 @@ class Report extends CI_Controller {
 		$this->load->view('report/new_report_publication');
 	}
 
-	public function new_report_participate(){
-		$data['participate'] = $this->participate->all();
-		$this->load->view('report/new_report_participate');
+	public function index_report_publication(){
+		$this->load->view('report/index_report_publication');
+	}
+
+	public function report_publication_pub(){
+		$this->load->view('report/report_publication_pub');
+	}
+
+	public function report_publication_eve(){
+		$this->load->view('report/report_publication_eve');
+	}
+
+	public function report_publication_per(){
+		$this->load->view('report/report_publication_per');
 	}
 
 	public function create(){

@@ -29,6 +29,14 @@
               <td><?= $publication->descricao ?></td>
             </tr>
             <tr>
+              <th scope="row">Participante(s)</th>
+              <td><?= $publication->participante ?></td>
+            </tr>
+            <tr>
+              <th scope="row">Com alunos?</th>
+                <td><?= with_student()[$publication->comAluno] ?></td>
+            </tr>
+            <tr>
               <th scope="row">Localidade</th>
               <td><?= $publication->localidade ?></td>
             </tr>
@@ -37,12 +45,12 @@
               <td><?= $publication->area ?></td>
             </tr>
             <tr>
-              <th scope="row">Data</th>
-              <td><?= $publication->data ?></td>
+              <th scope="row">Ano</th>
+              <td><?= $publication->ano ?></td>
             </tr>
             <tr>
-              <th scope="row">Cooautores</th>
-              <td><?= $publication->cooautores ?></td>
+              <th scope="row">Coautores</th>
+              <td><?= $publication->coautores ?></td>
             </tr>
             <tr>
               <th scope="row">Volume</th>

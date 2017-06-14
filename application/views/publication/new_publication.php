@@ -63,7 +63,7 @@
                 <input type="text" class="form-control" name ="area" placeholder="Área de atuação relacionada" required="">
               </div>
               <label>Ano: </label>
-              <input type="text" name="ano" required="">
+              <input class="input-ano" type="number" name="ano" required="">
             </div>
               <div class="form-group clear">
                 <div id="newspaper_inputs">

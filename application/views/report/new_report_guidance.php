@@ -14,10 +14,34 @@
         <hr>
         <form class="col-sm-10" action="<?php echo base_url() ?>report/new_report_guidance" method="post" enctype="multipart/form-data">
           <div class="form-group clear">
-
-
-
-
+            <div class="form-group">
+              <label>Tipo de orientação</label>
+              <select class="form-control" name="tipoOrientacao">
+                <?php
+                  foreach (projects_guidance() as $key => $value) {
+                    $selected = $user->guidance == $key ? "selected" : "";
+                    echo '<option value="'.$key.'" '.$selected.'>'.$value.'</option>';
+                  }
+                ?>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Tipo</label>
+              <select class="form-control" name="tipo">
+                <?php
+                  foreach (types_users() as $key => $value) {
+                    $selected = $user->user == $key ? "selected" : "";
+                    echo '<option value="'.$key.'" '.$selected.'>'.$value.'</option>';
+                  }
+                ?>
+              </select>
+            </div>
+            <div class="form-group clear">
+              <label>Período: </label>
+              <input class="input-ano-report" type="date" name="dataInicio" required="">
+              <label>a </label>
+              <input class="input-ano-report" type="date" name="dataFim" required="">
+            </div>
           <button type="submit" class="btn btn-success">Gerar</button>
           <a href="/report/index" class="btn btn-primary">Voltar</a>
           </form>

@@ -62,8 +62,8 @@
                 <label>Área</label>
                 <input type="text" class="form-control" name ="area" value="<?= $publication->area ?>" placeholder="Área de atuação relacionada" required="">
               </div>
-              <label>Data: </label>
-              <input type="text" name="ano" value="<?= $publication->ano ?>" required="">
+              <label>Ano: </label>
+              <input class="input-ano" type="number" name="ano" value="<?= $publication->ano ?>" required="">
             </div>
             <div class="form-group clear">
             <div id="newspaper_inputs">

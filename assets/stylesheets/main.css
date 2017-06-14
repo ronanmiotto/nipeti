@@ -81,6 +81,12 @@ img {
       margin-top: 0px;
 }
 
+.input-ano-report {
+
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 .about {
 
   margin-top: 30px;
@@ -112,6 +118,11 @@ img {
 .div-btn-report {
 
   margin-top: -20px;
+}
+
+.input-ano {
+
+  width: 55px;
 }
 
 fieldset.scheduler-border {

@@ -14,13 +14,26 @@
         <hr>
         <form class="col-sm-10" action="<?php echo base_url() ?>report/new_report_user" method="post" enctype="multipart/form-data">
           <div class="form-group clear">
-            <div class="form-group">
-              <label>Tipo</label>
-              <select class="form-control" name="tipo">
+            <div class="guidance_space">
+              <label>Servidor</label>
+              <select class="form-control js-example-basic-single" name="name_teacher">
+              <option value=""></option>
                 <?php
-                  foreach (types_users() as $key => $value) {
-                    $selected = $user->user == $key ? "selected" : "";
-                    echo '<option value="'.$key.'" '.$selected.'>'.$value.'</option>';
+                  foreach ($teachers as $teacher) {
+                    //$selected = $teacher->idUsuario ? "selected" : "";
+                    echo '<option value="'.$teacher->idUsuario.'">'.$teacher->nome.'</option>';
+                  }
+                ?>
+              </select>
+            </div>
+            <div class="guidance_space">
+              <label>Estudante</label>
+              <select class="form-control js-example-basic-single" name="name_student">
+              <option value=""></option>
+                <?php
+                  foreach ($students as $student) {
+                    //$selected = $student->idUsuario ? "selected" : "";
+                    echo '<option value="'.$student->idUsuario.'">'.$student->nome.'</option>';
                   }
                 ?>
               </select>
