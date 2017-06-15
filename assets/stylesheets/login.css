@@ -18,6 +18,8 @@ body {
   position: relative;
   left: 47.5px;
   margin-bottom: 10px;
+  border-radius: 6px;
+
 }
 
 .link-login-visitant {

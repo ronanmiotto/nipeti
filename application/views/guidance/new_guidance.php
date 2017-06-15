@@ -47,6 +47,10 @@
                   $selected = "";
                   echo '<option value="'.$teacher->idUsuario.'" '.$selected.'>'.$teacher->nome.'</option>';
                 }
+                foreach ($coordinators as $coordinator) {
+                  $selected = "";
+                  echo '<option value="'.$coordinator->idUsuario.'" '.$selected.'>'.$coordinator->nome.'</option>';
+                }
               ?>
             </select>
           </div>

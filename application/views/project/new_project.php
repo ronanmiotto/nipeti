@@ -10,7 +10,7 @@
         <?php $this->load->view('menu') ?>
       </div>
       <div class="col-sm-9">
-        <h1 class="title">Cadastrar projeto</h1>
+        <h1 class="title">Cadastrar Projeto</h1>
         <form class="col-sm-10" action="<?php echo base_url() ?>project/create" method="post" enctype="multipart/form-data">
           <div class="form-group clear">
           </div>
@@ -20,6 +20,18 @@
           </div>
           <label class="clear">Descrição</label>
           <textarea class="form-control clear" name="descricao"  rows="6" placeholder="Descrição do projeto"></textarea>
+          <div class="guidance_space">
+            <label>Autor(a)</label>
+            <select class="form-control js-example-basic-single" name="usuario_idUsuario">
+            <option value=""></option>
+              <?php
+                foreach ($users as $user) {
+                  $selected = "";
+                  echo '<option value="'.$user->idUsuario.'" '.$selected.'>'.$user->nome.'</option>';
+                }
+              ?>
+            </select>
+          </div>
           <div class="form-group clear date-clear">
             <label>Data Início: </label>
             <input type="date" name="dataInicio" required="">

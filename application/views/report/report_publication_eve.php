@@ -24,7 +24,7 @@
                 <input class="input-ano-report input-ano" type="number" name="ano" required="">
               </div>
             <button type="submit" class="btn btn-success">Gerar</button>
-            <a href="/report/index" class="btn btn-primary">Voltar</a>
+            <a href="/report/index_report_publication" class="btn btn-primary">Voltar</a>
             </form>
             </div>
           </div>

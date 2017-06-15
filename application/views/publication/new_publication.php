@@ -10,7 +10,7 @@
           <?php $this->load->view('menu') ?>
         </div>
         <div class="col-sm-9">
-          <h1 class="title">Cadastrar publicação</h1>
+          <h1 class="title">Cadastrar Publicação</h1>
           <form id="form_publication" class="col-sm-10" action="<?php echo base_url() ?>publication/create" method="post" enctype="multipart/form-data">
             <div class="form-group clear">
             </div>
@@ -25,8 +25,8 @@
               <input type="radio" name="tipo" value="3"> Publicação
             </label>
             <div class="form-group">
-              <label>Título do Evento</label>
-              <input type="text" class="form-control" name ="titulo" placeholder="Título do evento ou periódico" required="">
+              <label>Título</label>
+              <input type="text" class="form-control" name ="titulo" placeholder="Título da publicação, evento ou periódico" required="">
             </div>
             <div class="form-group">
               <label>Participante(s) / Palestrante(s)</label>

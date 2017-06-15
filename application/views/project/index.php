@@ -37,7 +37,7 @@
                   <a href="/project/show?idProjeto=<?= $value->idProjeto ?>" class="btn btn-primary">Visualizar</a>
                   <?php if ($type == 1 || $type == 3 || $this->project->get_by_student($value->idProjeto, $this->session->userdata('id')) != NULL){?>
                   <a href="/project/edit?idProjeto=<?= $value->idProjeto ?>" class="btn btn-primary">Editar</a>
-                  <a href="/project/destroy?idProjeto=<?= $value->idProjeto ?>" class="btn btn-danger">Deletar</a>
+                  <a href="/project/destroy?idProjeto=<?= $value->idProjeto ?>" class="btn btn-danger" onclick="return confirm_destroy()">Deletar</a>
                   <?php } ?>
                 </td>
               </tr>

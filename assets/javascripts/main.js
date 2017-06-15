@@ -28,13 +28,18 @@ $(document).ready(function(){
   $('#newspaper_inputs').css('display', 'none');
 
 // Função dos inputs da tela new_user
-  $('#form_user-edit input[name=tipo]').on('change', function() {
+  $('#form_user input[name=tipo]').on('change', function() {
     if ($('input[name=tipo]:checked', '#form_user').val() == 1){
       $('#student_inputs').css('display', 'none');
       $('#server_inputs').css('display', 'block');
     }
 
     if ($('input[name=tipo]:checked', '#form_user').val() == 2){
+      $('#student_inputs').css('display', 'block');
+      $('#server_inputs').css('display', 'none');
+    }
+
+    if ($('input[name=tipo]:checked', '#form_user').val() == 3){
       $('#student_inputs').css('display', 'block');
       $('#server_inputs').css('display', 'none');
     }

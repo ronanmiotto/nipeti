@@ -25,11 +25,14 @@
               <td><?= $project->descricao ?></td>
             </tr>
             <tr>
+              <th scope="row">Autor(a)</th>
+              <td><?php echo $this->user->find($project->usuario_idUsuario)->nome ?></td>
+            </tr>
               <tr>
                 <th scope="row">Participante(s)</th>
                 <td>
                   <?php foreach ($participates as $participate) { ?>
-                      <a href="/user/show?idUsuario=<?php echo $participate->usuario_idUsuario ?>"><?php echo $this->user->find($participate->usuario_idUsuario)->nome ?></a> /
+                      <a href="/user/show?idUsuario=<?php echo $participate->usuario_idUsuario ?>"><?php echo $this->user->find($participate->usuario_idUsuario)->nome ?></a>
                   <?php } ?>
                 </td>
               </tr>

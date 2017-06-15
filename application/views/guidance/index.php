@@ -19,7 +19,7 @@
           <table id="employee_data" class="table table-bordered table-hover table-color">
             <thead>
               <tr>
-                <th>Código</th>
+                <th>Cód</th>
                 <th>Servidor</th>
                 <th>Estudante</th>
                 <th>Projeto</th>

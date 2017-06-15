@@ -12,6 +12,7 @@ class Guidance extends CI_Controller {
 	public function new_guidance(){
 		$data['projects'] = $this->project->all();
 		$data['teachers'] = $this->user->get_by(1);
+		$data['coordinators'] = $this->user->get_by(3);
 		$data['students'] = $this->user->get_by(2);
 		$this->load->view('/guidance/new_guidance', $data);
 	}
@@ -35,6 +36,7 @@ class Guidance extends CI_Controller {
 		$data['projects'] = $this->project->all();
 		$data['teachers'] = $this->user->get_by(1);
 		$data['students'] = $this->user->get_by(2);
+		$data['coordinators'] = $this->user->get_by(3);
 		$data['guidance'] = $this->guidance->find($_GET['idOrientacao']);
 		$this->load->view('/guidance/edit', $data);
 	}

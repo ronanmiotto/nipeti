@@ -17,7 +17,9 @@
             <a href="/report/report_publication_pub" class="btn btn-primary btn-report">Gerar Relatório de Publicações</a>
             <a href="/report/report_publication_eve" class="btn btn-primary btn-report">Gerar Relatório de Eventos</a>
             <a href="/report/report_publication_per" class="btn btn-primary btn-report">Gerar Relatório de Periódicos</a>
+            <a href="/report/index" class="btn btn-primary btn-voltar-report">Voltar</a>
           </div>
+
     </div>
   </div>
   </body>

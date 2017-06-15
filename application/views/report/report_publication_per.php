@@ -10,7 +10,7 @@
         <?php $this->load->view('menu') ?>
       </div>
       <div class="col-sm-9">
-        <h1 class="title">Relatório / Eventos</h1>
+        <h1 class="title">Relatório / Periódicos</h1>
         <hr>
         <form class="col-sm-10" action="<?php echo base_url() ?>report/report_publication_per" method="post" enctype="multipart/form-data">
           <div class="form-group">
@@ -24,7 +24,7 @@
               <input class="input-ano-report input-ano" type="number" name="ano" required="">
             </div>
           <button type="submit" class="btn btn-success">Gerar</button>
-          <a href="/report/index" class="btn btn-primary">Voltar</a>
+          <a href="/report/index_report_publication" class="btn btn-primary">Voltar</a>
           </form>
           </div>
         </div>

@@ -20,6 +20,18 @@
           </div>
           <label class="clear">Descrição</label>
           <textarea class="form-control clear" name="descricao"  rows="6" placeholder="Descrição do projeto"><?= $project->descricao ?></textarea>
+          <div class="guidance_space">
+            <label>Autor(a)</label>
+            <select class="form-control js-example-basic-single" name="projeto_idUsuario">
+            <option value=""></option>
+              <?php
+                foreach ($users as $user) {
+                  $selected = $user->idUsuario == $project->usuario_idUsuario ? "selected" : "";
+                  echo '<option value="'.$user->idUsuario.'" '.$selected.'>'.$user->nome.'</option>';
+                }
+              ?>
+            </select>
+          </div>
           <div class="form-group clear date-clear">
             <label>Data Início: </label>
             <input type="date" name="dataInicio" value="<?= $project->dataInicio ?>" required="">

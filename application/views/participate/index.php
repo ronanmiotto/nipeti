@@ -11,10 +11,10 @@
         </div>
 
         <div class="col-sm-9">
-          <a href="/participate/new_participate" class="btn btn-success btn-lg">Adicionar participante</a>
+          <a href="/participate/new_participate" class="btn btn-success btn-lg">Novo participante</a>
           <hr>
           <div class="col-sm-9">
-            <h1 class="title">Lista de Participantes</h1>
+            <h1 class="title">Lista de participantes</h1>
           </div>
           <table id="employee_data" class="table table-bordered table-hover table-color">
             <thead>

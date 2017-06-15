@@ -13,6 +13,7 @@ class Project extends CI_Controller {
 	public function new_project(){
 		$data['teachers'] = $this->user->get_by(1);
 		$data['students'] = $this->user->get_by(2);
+		$data['users'] = $this->user->all();
 		$this->load->view('project/new_project', $data);
 	}
 
@@ -45,6 +46,7 @@ class Project extends CI_Controller {
 	public function edit(){
 		$data['project'] = $this->project->find($_GET['idProjeto']);
 		$this->load->view('project/edit', $data);
+		$data['users'] = $this->user->all();
 	}
 
 	public function show(){

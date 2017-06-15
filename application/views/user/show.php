@@ -102,7 +102,7 @@
               <td><?= $user->observacoes ?></td>
             </tr>
           </tbody>
-        </table> 
+        </table>
         <button type="button" onclick="javascript:history.back()" class="btn btn-primary">Voltar</button>
       </div>
     </div>
