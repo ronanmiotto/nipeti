@@ -28,11 +28,9 @@ class Project extends CI_Controller {
 
 	public function update(){
 		$data = $_POST;
-		if (!empty($data['senha'])){
-			$data['senha'] = sha1($_POST['senha']);
-		} else {
-			unset($data['senha']);
-		}
+		$this->project->update($data, $_POST['idProjeto']);
+		$data['users'] = $this->user->all();
+		$data['projects'] = $this->project->all();
 
 		$this->send_file($data);
 		$data['arquivo'] = $this->upload->data('file_name');
@@ -45,8 +43,10 @@ class Project extends CI_Controller {
 
 	public function edit(){
 		$data['project'] = $this->project->find($_GET['idProjeto']);
-		$this->load->view('project/edit', $data);
 		$data['users'] = $this->user->all();
+		$data['projects'] = $this->project->all();
+		$this->load->view('project/edit', $data);
+
 	}
 
 	public function show(){

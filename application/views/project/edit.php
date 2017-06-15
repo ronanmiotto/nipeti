@@ -22,11 +22,11 @@
           <textarea class="form-control clear" name="descricao"  rows="6" placeholder="Descrição do projeto"><?= $project->descricao ?></textarea>
           <div class="guidance_space">
             <label>Autor(a)</label>
-            <select class="form-control js-example-basic-single" name="projeto_idUsuario">
+            <select class="form-control js-example-basic-single" name="usuario_idUsuario">
             <option value=""></option>
               <?php
                 foreach ($users as $user) {
-                  $selected = $user->idUsuario == $project->usuario_idUsuario ? "selected" : "";
+                  $selected = $user->idUsuario == $projeto->usuario_idUsuario ? "selected" : "";
                   echo '<option value="'.$user->idUsuario.'" '.$selected.'>'.$user->nome.'</option>';
                 }
               ?>
