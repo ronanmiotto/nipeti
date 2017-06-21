@@ -145,7 +145,7 @@ if (!function_exists('status')){
     return array(
       '' => '',
       'andamento' => 'Em andamento',
-      'concluido' => 'Concluído',
+      'finalizado' => 'Finalizado',
       'suspenso' => 'Suspenso',
     );
   }
@@ -195,6 +195,18 @@ if (!function_exists('types_publications')){
   }
 }
 
+if (!function_exists('types_publications_report')){
+  function types_publications_report(){
+    return array(
+      '' => '',
+      '1' => 'Evento',
+      '2' => 'Periódico',
+      '4' => 'Projeto (todos)',
+      '5' => 'Projeto (específico)',
+    );
+  }
+}
+
 if (!function_exists('flash_message')){
   function flash_message(){
     if (isset($_SESSION['message'])){
@@ -204,6 +216,16 @@ if (!function_exists('flash_message')){
             <span aria-hidden="true">&times;</span>
           </button>
         </div>';
+    }
+  }
+}
+
+if (!function_exists('title_report_user')){
+  function title_report_user($type){
+    if ($type == 2 || $type == 3){
+      return "FORMAÇÃO ACADÊMICA: ";
+    } else {
+      return "CURSO: ";
     }
   }
 }

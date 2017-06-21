@@ -33,6 +33,10 @@
               <td><?php echo $this->user->find($guidance->usuario_idEstudante)->nome ?></td>
             </tr>
             <tr>
+            <th scope="row">Status</th>
+              <td><?= status()[$guidance->statuss] ?></td>
+            </tr>
+            <tr>
             <th scope="row">Data Início</th>
               <td><?= $guidance->dataInicio ?></td>
             </tr>

@@ -12,7 +12,9 @@
       <div class="col-sm-9">
         <h1 class="title">Relatório / Usuários</h1>
         <hr>
-        <form class="col-sm-10" action="<?php echo base_url() ?>report/new_report_user" method="post" enctype="multipart/form-data">
+        <form class="col-sm-10" action="<?php echo base_url() ?>report/print_user" method="post" enctype="multipart/form-data">
+          <fieldset class="scheduler-border">
+          <legend class="scheduler-border">Filtros</legend>
           <div class="form-group clear">
             <div class="form-group">
               <label>Tipo</label>
@@ -31,6 +33,7 @@
               <label>a </label>
               <input class="input-ano-report" type="date" name="dataFim" required="">
             </div>
+            </fieldset>
           <button type="submit" class="btn btn-success">Gerar</button>
           <a href="/report/index" class="btn btn-primary">Voltar</a>
           </form>

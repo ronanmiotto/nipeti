@@ -15,35 +15,37 @@ class Report extends CI_Controller {
 		$this->load->view('report/new_report_user', $data);
 	}
 
+	public function print_user(){
+		$data['teachers'] = $this->user->get_by(1);
+		$data['students'] = $this->user->get_by(2);
+		$this->load->view('report/print_user', $data);
+	}
+
+	public function print_project(){
+		$data['projects'] = $this->project->filter($_GET['tipoOrientacao'], $_GET['tipo']);
+		$this->load->view('report/print_project', $data);
+	}
+
 	public function new_report_project(){
 		$data['projects'] = $this->project->all();
-		$this->load->view('report/new_report_project');
+		$this->load->view('report/new_report_project', $data);
 	}
 
 	public function new_report_guidance(){
 		$data['guidances'] = $this->guidance->all();
-		$this->load->view('report/new_report_guidance');
+		$this->load->view('report/new_report_guidance', $data);
 	}
 
 	public function new_report_publication(){
 		$data['publications'] = $this->publication->all();
-		$this->load->view('report/new_report_publication');
+		$data['projects'] = $this->project->all();
+		$this->load->view('report/new_report_publication', $data);
 	}
 
-	public function index_report_publication(){
-		$this->load->view('report/index_report_publication');
-	}
-
-	public function report_publication_pub(){
-		$this->load->view('report/report_publication_pub');
-	}
-
-	public function report_publication_eve(){
-		$this->load->view('report/report_publication_eve');
-	}
-
-	public function report_publication_per(){
-		$this->load->view('report/report_publication_per');
+	public function print_complete(){
+		$data['publications'] = $this->publication->all();
+		$data['projects'] = $this->project->all();
+		$this->load->view('report/print_complete', $data);
 	}
 
 	public function create(){
@@ -51,7 +53,7 @@ class Report extends CI_Controller {
 		$data['students'] = $this->students();
 		$this->session->set_flashdata('message', 'Cadastrado com sucesso');
 		$this->project->create($data);
-		redirect('/project');
+		redirect('/project', $data);
 	}
 
 	public function show(){

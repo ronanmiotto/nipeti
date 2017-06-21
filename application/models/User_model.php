@@ -42,6 +42,16 @@
           return $query->result();
         }
 
+        public function projects($id){
+          $this->db->select('*, p.tipo as ptipo');
+          $this->db->from('usuario as u');
+          $this->db->join('participa as p', 'p.usuario_idUsuario = u.idUsuario');
+          $this->db->join('projeto as pro', 'p.projeto_idProjeto = pro.idProjeto');
+          $this->db->where('pro.idProjeto', $id);
+          $query = $this->db->get();
+          return $query->result();
+        }
+
         public function check_login($array){
           $query = $this->db->get_where($this->table, array(
             'email' => $array['email'],

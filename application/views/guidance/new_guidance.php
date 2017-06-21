@@ -66,6 +66,17 @@
               ?>
             </select>
           </div>
+          <div class="form-group">
+            <label>Status</label>
+            <select class="form-control" name="statuss">
+              <?php
+                foreach (status() as $key => $value) {
+                  $selected = $user->status == $key ? "selected" : "";
+                  echo '<option value="'.$key.'" '.$selected.'>'.$value.'</option>';
+                }
+              ?>
+            </select>
+          </div>
           <div class="form-group clear">
             <label>Data Início: </label>
             <input class="date-inicio" type="date" name="dataInicio" required="">

@@ -6,6 +6,27 @@ function confirm_destroy() {
   }
 }
 
+// function confirm_destroy({
+//     title: 'Confirm!',
+//     content: 'Simple confirm!',
+//     buttons: {
+//         confirm: function () {
+//             $.alert('Confirmado!');
+//         },
+//         cancel: function () {
+//             $.alert('Cancelado!');
+//         },
+//         somethingElse: {
+//             text: 'Something else',
+//             btnClass: 'btn-blue',
+//             keys: ['enter', 'shift'],
+//             action: function(){
+//                 $.alert('Something else?');
+//             }
+//         }
+//     }
+// });
+
 function confirm_update() {
   if (confirm("Deseja realmente alterar?")){
     return true;

@@ -24,6 +24,20 @@
           return $query->first_row();
         }
 
+        public function filter($type = null, $status = null){
+          $this->db->select('*');
+          $this->db->from('projeto as p');
+          $this->db->join('participa as pa', 'p.idProjeto = pa.projeto_idProjeto');
+          if ($type != null){
+            $this->db->where('p.tipo', $type);
+          };
+          if ($status != null){
+          $this->db->where('p.statuss', $status);
+          };
+          $query = $this->db->get();
+          return $query->result();
+        }
+
         public function count(){
           return $this->db->count_all($this->table);
         }

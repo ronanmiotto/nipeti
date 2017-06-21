@@ -29,6 +29,10 @@
               <td><?php echo $this->user->find($participate->usuario_idUsuario)->nome ?></td>
             </tr>
             <tr>
+              <th scope="row">Status</th>
+              <td><?= status()[$participate->statuss] ?></td>
+            </tr>
+            <tr>
             <th scope="row">Data Início</th>
               <td><?= $participate->dataInicio ?></td>
             </tr>
