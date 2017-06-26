@@ -12,7 +12,7 @@
             <div class="col-sm-9">
               <h1 class="title">Publicações/Eventos/Periódicos</h1>
               <hr>
-              <form class="col-sm-10" action="<?php echo base_url() ?>report/print_publication" method="post" enctype="multipart/form-data">
+              <form class="col-sm-10" action="<?php echo base_url() ?>report/print_publication" target="_blank" method="post" enctype="multipart/form-data">
                 <fieldset class="scheduler-border">
                 <legend class="scheduler-border">Filtros</legend>
                 <div class="form-group clear">
@@ -40,10 +40,10 @@
                     </select>
                   </div>
                   <div class="form-group clear">
-                    <label>Período: </label>
-                    <input class="input-ano-report" type="date" name="dataInicio" required="">
+                    <label>Período (ano): </label>
+                      <input class="input-ano-report input-ano" type="number" name="ano" required="">
                     <label>a </label>
-                    <input class="input-ano-report" type="date" name="dataFim" required="">
+                      <input class="input-ano-report input-ano" type="number" name="ano" required="">
                   </div>
                   </fieldset>
                 <button type="submit" class="btn btn-success">Gerar</button>

@@ -35,7 +35,7 @@
                 <td><?php echo $value->titulo ?></td>
                 <td>
                   <a href="/publication/show?idPublicacao=<?= $value->idPublicacao ?>" class="btn btn-primary">Visualizar</a>
-                  <?php if ($type != 4 || $type != 2 ){?>
+                  <?php if ($type == 1 || $type == 3){?>
                   <a href="/publication/edit?idPublicacao=<?= $value->idPublicacao ?>" class="btn btn-primary">Editar</a>
                   <a href="/publication/destroy?idPublicacao=<?= $value->idPublicacao ?>" class="btn btn-danger" onclick="return confirm_destroy()">Deletar</a>
                   <?php } ?>

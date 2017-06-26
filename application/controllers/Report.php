@@ -12,12 +12,15 @@ class Report extends CI_Controller {
 	public function new_report_user(){
 		$data['teachers'] = $this->user->get_by(1);
 		$data['students'] = $this->user->get_by(2);
+		$data['type'] = $this->session->userdata('type');
 		$this->load->view('report/new_report_user', $data);
 	}
 
 	public function print_user(){
 		$data['teachers'] = $this->user->get_by(1);
 		$data['students'] = $this->user->get_by(2);
+		$data['users'] = $this->user->all();
+		$data['type'] = $this->session->userdata('type');
 		$this->load->view('report/print_user', $data);
 	}
 
@@ -34,6 +37,12 @@ class Report extends CI_Controller {
 	public function new_report_guidance(){
 		$data['guidances'] = $this->guidance->all();
 		$this->load->view('report/new_report_guidance', $data);
+	}
+
+	public function print_guidance(){
+		$data['projects'] = $this->project->all();
+		$data['guidances'] = $this->guidance->all();
+		$this->load->view('report/print_guidance', $data);
 	}
 
 	public function new_report_publication(){

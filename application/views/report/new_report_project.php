@@ -12,7 +12,7 @@
         <div class="col-sm-9">
           <h1 class="title">Relatório / Projetos</h1>
           <hr>
-          <form class="col-sm-10" action="<?php echo base_url() ?>report/print_project" method="get" enctype="multipart/form-data">
+          <form class="col-sm-10" action="<?php echo base_url() ?>report/print_project" method="get" target="_blank" enctype="multipart/form-data">
             <fieldset class="scheduler-border">
             <legend class="scheduler-border">Filtros</legend>
             <div class="form-group clear">
