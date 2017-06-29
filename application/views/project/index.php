@@ -31,7 +31,7 @@
               <?php foreach ($projects as $value) { ?>
               <tr>
                 <td><?php echo $value->idProjeto ?></td>
-                <td style="width: 200"><?php echo $value->titulo ?></td>
+                <td class="width_index"><?php echo $value->titulo ?>...</td>
                 <td><?php echo status()[$value->statuss] ?></td>
                 <td>
                   <a href="/project/show?idProjeto=<?= $value->idProjeto ?>" class="btn btn-primary">Visualizar</a>

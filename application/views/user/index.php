@@ -29,7 +29,7 @@
               <?php foreach ($users as $value) { ?>
               <tr>
                 <td><?php echo $value->idUsuario ?></td>
-                <td><?php echo $value->nome ?></td>
+                <td class="width_index_user"><?php echo $value->nome ?></td>
                 <td><?php echo types_users()[$value->tipo] ?></td>
                 <td>
                   <a href="/user/show?idUsuario=<?= $value->idUsuario ?>" class="btn btn-primary">Visualizar</a>

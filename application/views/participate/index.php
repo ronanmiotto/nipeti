@@ -29,8 +29,8 @@
               <?php foreach ($participates as $value) { ?>
               <tr>
                 <td><?php echo $value->idParticipa ?></td>
-                <td><?php echo $this->project->find($value->projeto_idProjeto)->titulo ?></td>
-                <td><?php echo $this->user->find($value->usuario_idUsuario)->nome ?></td>
+                <td class="width_participate"><?php echo $this->project->find($value->projeto_idProjeto)->titulo ?>...</td>
+                <td class="width_user"><?php echo $this->user->find($value->usuario_idUsuario)->nome ?></td>
                 <td>
                   <a href="/participate/show?idParticipa=<?= $value->idParticipa ?>" class="btn btn-primary">Visualizar</a>
                   <a href="/participate/edit?idParticipa=<?= $value->idParticipa ?>" class="btn btn-primary">Editar</a>

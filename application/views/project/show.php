@@ -65,7 +65,7 @@
             </tr>
             <tr>
               <th scope="row">Visualizar arquivo</th>
-              <td><a href="/projects/<?= $project->arquivo ?>" target="_blank">Arquivo.pdf</a></td>
+              <td><a href="/projects/<?= $project->arquivo ?>" target="_blank">Arquivo</a></td>
             </tr>
           </tbody>
         </table>

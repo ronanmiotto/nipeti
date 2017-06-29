@@ -130,6 +130,30 @@ img {
   margin-top: 90px;
 }
 
+.width_guidance {
+
+  width: 130px;
+}
+
+.width_index {
+
+  width: 200px;
+}
+
+.width_user {
+
+  width: 50px;
+}
+
+.width_index_user {
+
+  width: 210px;
+}
+
+.width_participate {
+
+  width: 180px;
+}
 fieldset.scheduler-border {
     border: 1px groove #ddd !important;
     padding: 0 1.4em 1.4em 1.4em !important;
