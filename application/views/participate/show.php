@@ -34,11 +34,11 @@
             </tr>
             <tr>
             <th scope="row">Data Início</th>
-              <td><?= $participate->dataInicio ?></td>
+              <td><?= date('d/m/Y', strtotime($participate->dataInicio)); ?></td>
             </tr>
             <tr>
               <th scope="row">Data Fim</th>
-            <td><?= $participate->dataFim ?></td>
+            <td><?= date('d/m/Y', strtotime($participate->dataFim)); ?></td>
           </tr>
           </tbody>
         </table>

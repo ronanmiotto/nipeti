@@ -26,7 +26,7 @@
             <option value=""></option>
               <?php
                 foreach ($users as $user) {
-                  $selected = $user->idUsuario == $projeto->usuario_idUsuario ? "selected" : "";
+                  $selected = $user->idUsuario == $project->usuario_idUsuario ? "selected" : "";
                   echo '<option value="'.$user->idUsuario.'" '.$selected.'>'.$user->nome.'</option>';
                 }
               ?>

@@ -29,8 +29,6 @@ class Project extends CI_Controller {
 	public function update(){
 		$data = $_POST;
 		$this->project->update($data, $_POST['idProjeto']);
-		$data['users'] = $this->user->all();
-		$data['projects'] = $this->project->all();
 
 		$this->send_file($data);
 		$data['arquivo'] = $this->upload->data('file_name');
@@ -64,8 +62,9 @@ class Project extends CI_Controller {
 
 	public function send_file($data) {
 	  $config['upload_path']          = '/home/ronanmiotto/php/nipeti/projects/';
-	  $config['allowed_types']        = 'pdf|doc|docx';
+	  $config['allowed_types']        = 'txt|pdf|doc|docx|DOC|DOCX';
 		$config['encrypt_name'] 				= true;
+		$config['max_size']             = 100000;
 
 	  $this->load->library('upload', $config);
 

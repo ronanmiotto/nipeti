@@ -24,7 +24,7 @@
               </div>
               <div class="form-group">
                 <label>CPF</label>
-                <input type="text" class="form-control" name ="cpf" placeholder="CPF" required="">
+                <input type="text" class="form-control" name ="cpf" maxlength="14" placeholder="CPF" required="" OnKeyPress="formatar('###.###.###-##', this)">
               </div>
               <label>Sexo: </label>
               <label class="radio-inline">
@@ -55,7 +55,7 @@
               </div>
               <div class="form-group">
                 <label>CEP</label>
-                <input type="text" class="form-control" name ="cep"  placeholder="CEP" required="">
+                <input type="text" class="form-control" name ="cep"  placeholder="CEP" maxlength="9" OnKeyPress="formatar('#####-###', this)" required="">
               </div>
               <div class="form-group">
                 <label>UF </label>
@@ -70,7 +70,7 @@
               </div>
               <div class="form-group">
                 <label>Fone</label>
-                <input type="text" class="form-control" name ="fone" placeholder="Telefone / Celular" required="">
+                <input type="text" class="form-control" name ="fone" placeholder="Celular" maxlength="13" OnKeyPress="formatar('##-#####-####', this)" required="">
               </div>
               <div class="form-group">
                 <label>E-mail</label>

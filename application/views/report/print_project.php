@@ -4,7 +4,7 @@
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <title>Relatório</title>
+      <title>Relatório de Projetos</title>
 
       <style type="text/css">
         body {
@@ -97,10 +97,10 @@
         <div class="info_user">
           <p><b>Projeto: </b><?php echo $project->titulo ?></p>
           <p><b>Descrição: </b><?php echo $project->descricao ?></p>
-          <p class="float"><b>Início: </b><?php echo $project->dataInicio ?></p>
-          <p class="float_tipo"><b>Fim: </b><?php echo $project->dataFim ?></p>
-          <p class="float_tipo"><b>Tipo:  </b><?php echo $project->tipo ?></p>
-          <p class="float_tipo"><b>Status: </b><?php echo $project->statuss ?></p><br>
+          <p class="float"><b>Início: </b><?php echo date('d/m/Y', strtotime($project->dataInicio)); ?></p>
+          <p class="float_tipo"><b>Fim: </b><?php echo date('d/m/Y', strtotime($project->dataFim)); ?></p>
+          <p class="float_tipo"><b>Tipo:  </b><?php echo projects_guidance()[$project->tipo] ?></p>
+          <p class="float_tipo"><b>Status: </b><?php echo status()[$project->statuss] ?></p><br>
           <h5><b>Participantes</b></h5>
           <table class="table table-bordered">
             <thead>

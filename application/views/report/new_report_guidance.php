@@ -18,7 +18,7 @@
               <div class="form-group clear">
                 <div class="form-group">
                   <label>Tipo de orientação</label>
-                  <select class="form-control" name="tipo" required="">
+                  <select class="form-control" name="tipo">
                     <?php
                       foreach (projects() as $key => $value) {
                         $selected = $guidance->guidance == $key ? "selected" : "";

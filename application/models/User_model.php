@@ -1,4 +1,4 @@
-  <?php
+'  <?php
 
     class User_model extends CI_Model {
 
@@ -48,6 +48,17 @@
           $this->db->join('participa as p', 'p.usuario_idUsuario = u.idUsuario');
           $this->db->join('projeto as pro', 'p.projeto_idProjeto = pro.idProjeto');
           $this->db->where('pro.idProjeto', $id);
+          $query = $this->db->get();
+          return $query->result();
+        }
+
+        public function guidances_by_user(){
+          $this->db->select('*');
+          $this->db->from('usuario as u');
+          $this->db->join('orientacao as o', 'u.idUsuario = o.usuario_idServidor');
+          $this->db->join('projeto as p', 'p.idProjeto = o.projeto_idProjeto');
+          $this->db->where('u.tipo = 1');
+          $this->db->or_where('u.tipo = 3');
           $query = $this->db->get();
           return $query->result();
         }

@@ -25,7 +25,7 @@ class Report extends CI_Controller {
 	}
 
 	public function print_project(){
-		$data['projects'] = $this->project->filter($_GET['tipoOrientacao'], $_GET['tipo']);
+		$data['projects'] = $this->project->filter($_GET['tipo'], $_GET['tipo']);
 		$this->load->view('report/print_project', $data);
 	}
 
@@ -40,8 +40,9 @@ class Report extends CI_Controller {
 	}
 
 	public function print_guidance(){
-		$data['projects'] = $this->project->all();
-		$data['guidances'] = $this->guidance->all();
+		// $data['projects'] = $this->project->all();
+		// $data['guidances'] = $this->guidance->all();
+		$data['guidances'] = $this->user->guidances_by_user();
 		$this->load->view('report/print_guidance', $data);
 	}
 
@@ -49,6 +50,12 @@ class Report extends CI_Controller {
 		$data['publications'] = $this->publication->all();
 		$data['projects'] = $this->project->all();
 		$this->load->view('report/new_report_publication', $data);
+	}
+
+	public function print_publication(){
+		$data['projects'] = $this->project->all();
+		$data['publications'] = $this->publication->all();
+		$this->load->view('report/print_publication', $data);
 	}
 
 	public function print_complete(){
@@ -80,5 +87,4 @@ class Report extends CI_Controller {
 	private function logged_in(){
     $this->session->userdata('logged_in') == true ? '' : redirect('/login/index');
   }
-
 }

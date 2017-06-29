@@ -4,14 +4,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Relatório Geral</title>
+    <title>Relatório de Publicações</title>
 
     <style type="text/css">
       body {
         font-family: Arial;
         margin: 0 auto;
-        width: 960px;
-        border: solid 1px black;
+        width: 770px;
       }
 
       header h1, header h2 {
@@ -62,6 +61,11 @@
 
       }
 
+      .space {
+
+        margin-bottom: : 40px;
+      }
+
       .img-print {
 
         margin: 10px 0 10px 300px;
@@ -72,6 +76,16 @@
         height: 125px;
         border-radius: 4px;
         box-shadow: 5px 5px 5px #888888;
+      }
+
+      .row {
+
+        width: 200px;
+      }
+
+      .dados {
+
+        width: 500px;
       }
     </style>
 
@@ -84,44 +98,27 @@
       </div>
       <div>
         <h1><b>NÚCLEO INTERDISCIPLINAR DE PESQUISA, ESTUDO E DESENVOLVIMENTO EM TECNOLOGIA DA INFORMAÇÃO – IFMS</b></h1><br>
-          <h2><b>RELATÓRIO DE PROJETOS</b></h2><br>
+          <h2><b>RELATÓRIO DE PUBLICAÇÕES</b></h2><br>
       </div>
     </header>
-    <p ><b>PERÍODO: <?php echo $_GET['dataInicio']?></b></p><br>
-    <p class="float_project"><b>A: <?php echo $_GET['dataFim']?></b></p><br>
-    <?php foreach ($projects as $project) { ?>
-    <div class="info_user">
-      <p class="float_project"><b>Projeto: </b><?php echo $project->titulo ?></p>
-      <p><b>Tipo:  </b><?php echo $project->tipo ?></p>
-      <p><b>Descrição: </b><?php echo $project->descricao ?></p>
-      <p class="float_project"><b>Início: </b><?php echo $project->dataInicio ?></p>
-      <p class="float_project"><b>Fim: </b><?php echo $project->dataFim ?></p>
-      <p><b>Status: </b><?php echo $project->statuss ?></p>
-      <p><b>Participantes </b></p>
+    <!-- <p ><b>PERÍODO: <?php echo $_GET['dataInicio']?></b></p><br>
+    <p class="float_project"><b>A: <?php echo $_GET['dataFim']?></b></p><br> -->
+      <?php foreach ($publications as $value) { ?>
       <table class="table table-bordered">
+        <p><b>Ano: </b><?php echo $value->ano ?></p>
         <thead>
+          <tbody>
           <tr>
-            <th>Nome</th>
-            <th>Tipo</th>
-            <th>Bolsa</th>
-            <th>Status</th>
+              <td><?php echo $value->descricao ?></td>
           </tr>
         </thead>
-        <tbody>
-          <?php foreach ($this->user->projects($project->idProjeto) as $value) { ?>
-          <tr>
-            <td><?php echo $value->nome ?></td>
-            <td><?php echo projects_participate()[$value->ptipo] ?></td>
-            <td><?php echo scholarships()[$value->fomento] ?></td>
-            <td><?php echo status()[$value->statuss] ?></td>
-          </tr>
-          <?php } ?>
         </tbody>
+          <?php } ?>
+        <div class="space">
+
+        </div>
     </table>
-    </div>
-    <?php } ?>
     <div class="footer">
-      <div>
         <p><b>IFMS Nova Andradina - MS - 2017</b></p>
     </div>
   </body>

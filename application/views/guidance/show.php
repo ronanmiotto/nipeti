@@ -38,11 +38,11 @@
             </tr>
             <tr>
             <th scope="row">Data Início</th>
-              <td><?= $guidance->dataInicio ?></td>
+              <td><?=  date('d/m/Y', strtotime($guidance->dataInicio)); ?></td>
             </tr>
             <tr>
               <th scope="row">Data Fim</th>
-            <td><?= $guidance->dataFim ?></td>
+            <td><?= date('d/m/Y', strtotime($guidance->dataFim)); ?></td>
           </tr>
           </tbody>
         </table>

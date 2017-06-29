@@ -39,7 +39,7 @@
             </tr>
             <tr>
               <th scope="row">Data de Nascimento</th>
-              <td><?= $user->dataNasc ?></td>
+              <td><?= date('d/m/Y', strtotime($user->dataNasc)); ?></td>
             </tr>
             <tr>
               <th scope="row">Endereço</th>
@@ -100,6 +100,10 @@
             <tr>
               <th scope="row">Observações</th>
               <td><?= $user->observacoes ?></td>
+            </tr>
+            <tr>
+              <th scope="row">Data de Ingresso na Instituição</th>
+              <td><?= date('d/m/Y', strtotime($user->dataInicio)); ?></td>
             </tr>
           </tbody>
         </table>

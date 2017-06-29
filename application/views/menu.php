@@ -1,5 +1,5 @@
 <div class="list-group">
-  <a href="/" class="list-group-item active">Início</a>
+  <a href="/" class="list-group-item">Início</a>
   <a href="/project" class="list-group-item">Projetos</a>
   <a href="/publication" class="list-group-item">Publicação</a>
   <?php if ($this->session->userdata('type') == 1 || $this->session->userdata('type') == 3) { ?>
@@ -10,3 +10,7 @@
   <?php } ?>
   <a href="/user/logoff" class="list-group-item">Sair</a>
 </div>
+
+<?
+  if(parse_url($_SERVER['REQUEST_URI'])['path'] == '/project'){ echo "actived";}
+?>

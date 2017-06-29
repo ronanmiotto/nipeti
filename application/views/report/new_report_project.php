@@ -18,7 +18,7 @@
             <div class="form-group clear">
               <div class="form-group">
                 <label>Tipo de projeto</label>
-                <select class="form-control" name="tipoOrientacao" required="">
+                <select class="form-control" name="tipoOrientacao">
                   <?php
                     foreach (projects() as $key => $value) {
                       $selected = $user->project == $key ? "selected" : "";

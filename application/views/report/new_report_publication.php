@@ -41,9 +41,9 @@
                   </div>
                   <div class="form-group clear">
                     <label>Período (ano): </label>
-                      <input class="input-ano-report input-ano" type="number" name="ano" required="">
+                      <input class="input-ano-report input-ano" type="number" name="ano">
                     <label>a </label>
-                      <input class="input-ano-report input-ano" type="number" name="ano" required="">
+                      <input class="input-ano-report input-ano" type="number" name="ano">
                   </div>
                   </fieldset>
                 <button type="submit" class="btn btn-success">Gerar</button>

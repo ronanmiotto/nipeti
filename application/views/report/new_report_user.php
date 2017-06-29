@@ -18,7 +18,7 @@
           <div class="form-group clear">
             <div class="form-group">
               <label>Tipo</label>
-              <select class="form-control" name="tipo" required="">
+              <select class="form-control" name="tipo">
                 <?php
                   foreach (types_users() as $key => $value) {
                     $selected = $user->user == $key ? "selected" : "";

@@ -37,11 +37,11 @@
                 </td>
               </tr>
               <th scope="row">Data Início</th>
-              <td><?= $project->dataInicio ?></td>
+              <td><?= date('d/m/Y', strtotime($project->dataInicio)); ?></td>
             </tr>
             <tr>
               <th scope="row">Data Fim</th>
-              <td><?= $project->dataFim ?></td>
+              <td><?= date('d/m/Y', strtotime($project->dataFim)); ?></td>
             </tr>
             <tr>
               <th scope="row">Área</th>

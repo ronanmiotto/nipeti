@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Relatório</title>
+    <title>Relatório de Orientações</title>
 
     <style type="text/css">
       body {
@@ -107,15 +107,15 @@
             </tr>
           </thead>
           <tbody>
-            <?php foreach ($this->user->projects($project->idProjeto) as $value) { ?>
+            <?php foreach ($guidances as $value) { ?>
             <tr>
               <td><?php echo $value->nome ?></td>
-              <td><?php echo projects_participate()[$value->ptipo] ?></td>
+              <td><?php echo $value->titulo ?></td>
+              <td><?php echo projects_guidance()[$value->tipoOrientacao] ?></td>
+              <td><?php echo $this->user->find($value->usuario_idEstudante)->nome ?></td>
               <td><?php echo scholarships()[$value->fomento] ?></td>
-              <td><?php echo status()[$value->statuss] ?></td>
-              <td><?php echo status()[$value->statuss] ?></td>
-              <td><?php echo status()[$value->statuss] ?></td>
-              <td><?php echo status()[$value->statuss] ?></td>
+              <td><?php echo date('d/m/Y', strtotime($value->dataInicio)); ?></td>
+              <td><?php echo date('d/m/Y', strtotime($value->dataFim)); ?></td>
               <td><?php echo status()[$value->statuss] ?></td>
             </tr>
             <?php } ?>
@@ -123,8 +123,6 @@
       </table>
       <p>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
       </div>
-    </div>
-
     <div class="footer">
         <p><b>IFMS Nova Andradina - MS - 2017</b></p>
     </div>
