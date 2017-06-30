@@ -21,9 +21,7 @@
             <label class="radio-inline">
               <input type="radio" name="tipo" value="2" <?php if($publication->tipo == 2) echo "checked"; ?> /> Periódico
             </label>
-            <label class="radio-inline">
-              <input type="radio" name="tipo" value="3" <?php if($publication->tipo == 3) echo "checked"; ?> /> Publicação
-            </label>
+
             <div class="form-group">
               <label>Título</label>
               <input type="text" class="form-control" name ="titulo" value="<?= $publication->titulo ?>" placeholder="Título do evento ou periódico" required="">
@@ -91,7 +89,7 @@
               <legend></legend>
             </fieldset>
             <input type="hidden" name="idPublicacao" value="<?= $publication->idPublicacao ?>">
-            <button type="submit" class="btn btn-success">Salvar</button>
+            <button type="submit" class="btn btn-success" onclick="return confirm_update()">Salvar</button>
             <a href="/publication/index" class="btn btn-primary">Voltar</a>
             </form>
             </div>

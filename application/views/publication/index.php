@@ -32,7 +32,7 @@
               <tr>
                 <td><?php echo $value->idPublicacao ?></td>
                 <td><?php echo types_publications()[$value->tipo] ?></td>
-                <td class="width_index"><?php echo $value->titulo ?>...</td>
+                <td class="width_index_publication"><?php echo mb_strimwidth($value->titulo, 0 , 55, "...") ?></td>
                 <td>
                   <a href="/publication/show?idPublicacao=<?= $value->idPublicacao ?>" class="btn btn-primary">Visualizar</a>
                   <?php if ($type == 1 || $type == 3){?>

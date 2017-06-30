@@ -123,7 +123,7 @@ if (!function_exists('projects_guidance')){
       '' => '',
       '1' => 'TCC',
       '2' => 'PIBIC',
-      '3' => 'Extensão',
+      '3' => 'Extensão'
     );
   }
 }
@@ -146,7 +146,18 @@ if (!function_exists('status')){
       '' => '',
       'andamento' => 'Em andamento',
       'finalizado' => 'Finalizado',
-      'suspenso' => 'Suspenso',
+      'suspenso' => 'Suspenso'
+    );
+  }
+}
+
+if (!function_exists('status_guidance')){
+  function status_guidance(){
+    return array(
+      '' => '',
+      '1' => 'Em andamento',
+      '2' => 'Finalizado',
+      '3' => 'Suspenso',
     );
   }
 }
@@ -174,6 +185,17 @@ if (!function_exists('types_users')){
   }
 }
 
+if (!function_exists('types_users_report')){
+  function types_users_report(){
+    return array(
+      '' => '',
+      '1' => 'Servidor',
+      '2' => 'Estudante'
+    );
+  }
+}
+
+
 if (!function_exists('sex')){
   function sex(){
     return array(
@@ -190,7 +212,6 @@ if (!function_exists('types_publications')){
       '' => '',
       '1' => 'Evento',
       '2' => 'Periódico',
-      '3' => 'Publicação',
     );
   }
 }
@@ -201,8 +222,6 @@ if (!function_exists('types_publications_report')){
       '' => '',
       '1' => 'Evento',
       '2' => 'Periódico',
-      '4' => 'Projeto (todos)',
-      '5' => 'Projeto (específico)',
     );
   }
 }

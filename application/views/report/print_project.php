@@ -91,15 +91,14 @@
         </div>
       </header>
       <div class="body-margin">
-        <!-- <p><b>PERÍODO: <?php echo $_GET['dataInicio']?></b></p><br> -->
-        <!-- <p class="float_project"><b>A: <?php echo $_GET['dataFim']?></b></p><br> -->
+
         <?php foreach ($projects as $project) { ?>
         <div class="info_user">
           <p><b>Projeto: </b><?php echo $project->titulo ?></p>
           <p><b>Descrição: </b><?php echo $project->descricao ?></p>
           <p class="float"><b>Início: </b><?php echo date('d/m/Y', strtotime($project->dataInicio)); ?></p>
           <p class="float_tipo"><b>Fim: </b><?php echo date('d/m/Y', strtotime($project->dataFim)); ?></p>
-          <p class="float_tipo"><b>Tipo:  </b><?php echo projects_guidance()[$project->tipo] ?></p>
+          <p class="float_tipo"><b>Tipo:  </b><?php echo projects()[$project->p_tipo ] ?></p>
           <p class="float_tipo"><b>Status: </b><?php echo status()[$project->statuss] ?></p><br>
           <h5><b>Participantes</b></h5>
           <table class="table table-bordered">

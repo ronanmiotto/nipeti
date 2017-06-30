@@ -19,13 +19,22 @@ class Report extends CI_Controller {
 	public function print_user(){
 		$data['teachers'] = $this->user->get_by(1);
 		$data['students'] = $this->user->get_by(2);
-		$data['users'] = $this->user->all();
+		$data['users'] = $this->user->filter_by_users(
+			$_GET['tipo'],
+			$_GET['dataInicio'],
+			$_GET['dataFim']
+		);
 		$data['type'] = $this->session->userdata('type');
 		$this->load->view('report/print_user', $data);
 	}
 
 	public function print_project(){
-		$data['projects'] = $this->project->filter($_GET['tipo'], $_GET['tipo']);
+		$data['projects'] = $this->project->filter_by_project(
+			$_GET['tipo'],
+			$_GET['statuss'],
+			$_GET['dataInicio'],
+			$_GET['dataFim']
+		);
 		$this->load->view('report/print_project', $data);
 	}
 
@@ -35,14 +44,16 @@ class Report extends CI_Controller {
 	}
 
 	public function new_report_guidance(){
-		$data['guidances'] = $this->guidance->all();
-		$this->load->view('report/new_report_guidance', $data);
+		$this->load->view('report/new_report_guidance');
 	}
 
 	public function print_guidance(){
-		// $data['projects'] = $this->project->all();
-		// $data['guidances'] = $this->guidance->all();
-		$data['guidances'] = $this->user->guidances_by_user();
+		$data['guidances'] = $this->user->guidances_by_user(
+			$_GET['tipoOrientacao'],
+			$_GET['statuss'],
+			$_GET['dataInicio'],
+			$_GET['dataFim']
+		);
 		$this->load->view('report/print_guidance', $data);
 	}
 
@@ -54,13 +65,23 @@ class Report extends CI_Controller {
 
 	public function print_publication(){
 		$data['projects'] = $this->project->all();
-		$data['publications'] = $this->publication->all();
+		$data['publications'] = $this->publication->filter_by_publication(
+			$_GET['tipo'],
+			$_GET['anoInicio'],
+			$_GET['anoFim']
+		);
 		$this->load->view('report/print_publication', $data);
+	}
+
+	public function new_report_complete(){
+		$this->load->view('report/new_report_complete');
 	}
 
 	public function print_complete(){
 		$data['publications'] = $this->publication->all();
 		$data['projects'] = $this->project->all();
+		$data['users'] = $this->user->all();
+		$data['guidances'] = $this->guidance->all();
 		$this->load->view('report/print_complete', $data);
 	}
 

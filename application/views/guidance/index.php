@@ -32,7 +32,7 @@
                 <td><?php echo $value->idOrientacao ?></td>
                 <td class="width_user"><?php echo $this->user->find($value->usuario_idServidor)->nome ?></td>
                 <td class="width_user"><?php echo $this->user->find($value->usuario_idEstudante)->nome ?></td>
-                <td class="width_guidance"><?php echo $this->project->find($value->projeto_idProjeto)->titulo ?>...</td>
+                <td class="width_guidance"><?php echo mb_strimwidth($this->project->find($value->projeto_idProjeto)->titulo, 0, 45, "...") ?></td>
                 <td>
                   <a href="/guidance/show?idOrientacao=<?= $value->idOrientacao ?>" class="btn btn-primary">Visualizar</a>
                   <a href="/guidance/edit?idOrientacao=<?= $value->idOrientacao ?>" class="btn btn-primary">Editar</a>

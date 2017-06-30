@@ -101,8 +101,6 @@
           <h2><b>RELATÓRIO DE PUBLICAÇÕES</b></h2><br>
       </div>
     </header>
-    <!-- <p ><b>PERÍODO: <?php echo $_GET['dataInicio']?></b></p><br>
-    <p class="float_project"><b>A: <?php echo $_GET['dataFim']?></b></p><br> -->
       <?php foreach ($publications as $value) { ?>
       <table class="table table-bordered">
         <p><b>Ano: </b><?php echo $value->ano ?></p>

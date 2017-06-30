@@ -101,8 +101,6 @@
             <h2><b>RELATÓRIO DE USUÁRIOS</b></h2><br>
         </div>
       </header>
-      <!-- <p ><b>PERÍODO: <?php echo $_GET['dataInicio']?></b></p><br>
-      <p class="float_project"><b>A: <?php echo $_GET['dataFim']?></b></p><br> -->
         <?php foreach ($users as $value) { ?>
         <table class="table table-bordered">
           <p><b>Tipo: </b><?php echo types_users()[$value->tipo] ?></p>
@@ -118,11 +116,11 @@
             </tr>
             <tr>
                 <th class="row">Curso / Formação acad.</th>
-                <td class="dados"><?php if ($type == 1 || $type == 3) { ?>
+                <td class="dados"><?php if ($value->tipo == '1' || $value->tipo == '3') { ?>
                     <?php echo $value->formacao ?>
                 <?php
                     }else {
-                       if ($type == 2) { ?>
+                       if ($value->tipo == '2') { ?>
                           <?php echo courses()[$value->curso] ?>
                   <?php   }
                         }?></td>

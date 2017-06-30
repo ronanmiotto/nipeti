@@ -9,7 +9,7 @@ class User extends CI_Controller {
 	// }
 
 	public function index(){
-		$this->logged_in('1 or 3');
+		$this->logged_in('1');
 		$data['users'] = $this->user->all();
 		$this->load->view('user/index', $data);
 	}

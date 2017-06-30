@@ -18,7 +18,7 @@
             <div class="form-group clear">
               <div class="form-group">
                 <label>Tipo de projeto</label>
-                <select class="form-control" name="tipoOrientacao">
+                <select class="form-control" name="tipo">
                   <?php
                     foreach (projects() as $key => $value) {
                       $selected = $user->project == $key ? "selected" : "";
@@ -29,7 +29,7 @@
               </div>
               <div class="form-group">
                 <label>Status</label>
-                <select class="form-control" name="tipo">
+                <select class="form-control" name="statuss">
                   <?php
                     foreach (status() as $key => $value) {
                       $selected = $user->project == $key ? "selected" : "";
@@ -47,6 +47,9 @@
                 </fieldset>
             <button type="submit" class="btn btn-success">Gerar</button>
             <a href="/report/index" class="btn btn-primary">Voltar</a>
+            <div class="form-group clear alert">
+              <label>*Imprimir em modo Paisagem</label>
+            </div>
             </form>
             </div>
           </div>

@@ -86,7 +86,7 @@
             <input class="date-fim" type="date" name="dataFim" value="<?= $guidance->dataFim ?>" required="">
           </div>
           <input type="hidden" name="idOrientacao" value="<?= $guidance->idOrientacao ?>">
-          <button type="submit" class="btn btn-success">Salvar</button>
+          <button type="submit" class="btn btn-success" onclick="return confirm_update()">Salvar</button>
           <a href="/guidance/index" class="btn btn-primary">Voltar</a>
           </form>
           </div>

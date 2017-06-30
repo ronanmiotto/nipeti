@@ -35,6 +35,20 @@
         $this->db->delete($this->table, array('idOrientacao' => $id));
       }
 
+      public function filter($type_guidance, $status, $datei, $datef){
+        $this->db->select('*');
+        $this->db->from('projeto as p');
+        $this->db->join('participa as pa', 'p.idProjeto = pa.projeto_idProjeto');
+        if ($type != null){
+          $this->db->where('p.tipo', $type);
+        };
+        if ($status != null){
+        $this->db->where('p.statuss', $status);
+        };
+        $query = $this->db->get();
+        return $query->result();
+      }
+
       public function check_login($array){
         $query = $this->db->get_where($this->table, array(
           'email' => $array['email'],

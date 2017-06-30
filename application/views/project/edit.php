@@ -88,7 +88,7 @@
             <input type="file" name="arquivo">
               <p class="help-block">Arquivo a ser cadastrado</p>
           <input type="hidden" name="idProjeto" value="<?= $project->idProjeto ?>">
-          <button type="submit" class="btn btn-success">Salvar</button>
+          <button type="submit" class="btn btn-success" onclick="return confirm_update()">Salvar</button>
           <a href="/project/index" class="btn btn-primary">Voltar</a>
           </form>
           </div>

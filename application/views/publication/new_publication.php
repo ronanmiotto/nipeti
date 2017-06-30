@@ -21,9 +21,7 @@
             <label class="radio-inline">
               <input type="radio" name="tipo" value="2"> Periódico
             </label>
-            <label class="radio-inline">
-              <input type="radio" name="tipo" value="3"> Publicação
-            </label>
+            
             <div class="form-group">
               <label>Título</label>
               <input type="text" class="form-control" name ="titulo" placeholder="Título da publicação, evento ou periódico" required="">

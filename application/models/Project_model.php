@@ -18,22 +18,26 @@
           $this->db->from('usuario as u');
           $this->db->join('orientacao as o', 'u.idUsuario = o.usuario_idEstudante');
           $this->db->join('projeto as p', 'p.idProjeto = o.projeto_idProjeto');
-          $this->db->where('u.idUsuario', $id_student);
           $this->db->where('p.idProjeto', $id_project);
+          $this->db->where('p.usuario_idUsuario', $id_student);
           $query = $this->db->get();
           return $query->first_row();
         }
 
-        public function filter($type = null, $status = null){
-          $this->db->select('*');
+        public function filter_by_project($type_project = null, $status = null, $datei = null, $datef = null){
+          $this->db->select('*, p.tipo as p_tipo, pa.tipo as pa_tipo');
           $this->db->from('projeto as p');
           $this->db->join('participa as pa', 'p.idProjeto = pa.projeto_idProjeto');
-          if ($type != null){
-            $this->db->where('p.tipo', $type);
+          if ($type_project != null){
+            $this->db->where('p.tipo', $type_project);
           };
           if ($status != null){
           $this->db->where('p.statuss', $status);
           };
+          if ($datei != null && $datef != null){
+            $this->db->where('p.dataInicio >=', $datei);
+            $this->db->where('p.dataFim <=', $datef);
+          }
           $query = $this->db->get();
           return $query->result();
         }

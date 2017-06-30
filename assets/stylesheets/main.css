@@ -133,11 +133,18 @@ img {
 .width_guidance {
 
   width: 130px;
+  height: 50px;
 }
 
 .width_index {
 
   width: 200px;
+  height: 50px;
+}
+
+.width_index_publication {
+
+  width: 240px;
 }
 
 .width_user {
@@ -154,6 +161,14 @@ img {
 
   width: 180px;
 }
+
+.alert {
+
+  margin-top: 10px;
+  margin-left: -20px;
+}
+
+
 fieldset.scheduler-border {
     border: 1px groove #ddd !important;
     padding: 0 1.4em 1.4em 1.4em !important;

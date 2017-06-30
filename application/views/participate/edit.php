@@ -73,7 +73,7 @@
             <input class="date-fim" type="date" name="dataFim" value="<?= $participate->dataInicio ?>">
           </div>
           <input type="hidden" name="idParticipa" value="<?= $participate->idParticipa ?>">
-          <button type="submit" class="btn btn-success">Salvar</button>
+          <button type="submit" class="btn btn-success" onclick="return confirm_update()">Salvar</button>
           <a href="/participate/index" class="btn btn-primary">Voltar</a>
           </form>
           </div>

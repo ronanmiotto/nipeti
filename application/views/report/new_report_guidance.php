@@ -12,15 +12,15 @@
           <div class="col-sm-9">
             <h1 class="title">Relatório / Orientações</h1>
             <hr>
-            <form class="col-sm-10" action="<?php echo base_url() ?>report/print_guidance" target="_blank" method="post" enctype="multipart/form-data">
+            <form class="col-sm-10" action="<?php echo base_url() ?>report/print_guidance" target="_blank" method="get" enctype="multipart/form-data">
               <fieldset class="scheduler-border">
               <legend class="scheduler-border">Filtros</legend>
               <div class="form-group clear">
                 <div class="form-group">
                   <label>Tipo de orientação</label>
-                  <select class="form-control" name="tipo">
+                  <select class="form-control" name="tipoOrientacao">
                     <?php
-                      foreach (projects() as $key => $value) {
+                      foreach (projects_guidance() as $key => $value) {
                         $selected = $guidance->guidance == $key ? "selected" : "";
                         echo '<option value="'.$key.'" '.$selected.'>'.$value.'</option>';
                       }
@@ -29,7 +29,7 @@
                 </div>
                 <div class="form-group">
                   <label>Status</label>
-                  <select class="form-control" name="tipo">
+                  <select class="form-control" name="statuss">
                     <?php
                       foreach (status() as $key => $value) {
                         $selected = $guidance->guidance == $key ? "selected" : "";
@@ -47,6 +47,9 @@
                 </fieldset>
               <button type="submit" class="btn btn-success">Gerar</button>
               <a href="/report/index" class="btn btn-primary">Voltar</a>
+              <div class="form-group clear alert">
+                <label>*Imprimir em modo Paisagem</label>
+              </div>
             </div>
             </form>
           </div>

@@ -13,6 +13,19 @@
         return $query->result();
       }
 
+      public function filter_by_publication($type_publication = null, $yeari = null, $yearf = null){
+    		$this->db->select('*');
+    		$this->db->from('publicacao as p');
+    		if ($type_publication != null){
+    			$this->db->where('p.tipo', $type_publication);
+    		}
+    		if ($yeari != null || $yearf != null){
+    			$this->db->where('p.ano BETWEEN "'. $yeari . '" and "'. $yearf .'"');
+    		}
+    		$query = $this->db->get();
+    		return $query->result();
+    	}
+
       public function count(){
         return $this->db->count_all($this->table);
       }

@@ -12,7 +12,7 @@
             <div class="col-sm-9">
               <h1 class="title">Publicações/Eventos/Periódicos</h1>
               <hr>
-              <form class="col-sm-10" action="<?php echo base_url() ?>report/print_publication" target="_blank" method="post" enctype="multipart/form-data">
+              <form class="col-sm-10" action="<?php echo base_url() ?>report/print_publication" target="_blank" method="get" enctype="multipart/form-data">
                 <fieldset class="scheduler-border">
                 <legend class="scheduler-border">Filtros</legend>
                 <div class="form-group clear">
@@ -27,27 +27,18 @@
                       ?>
                     </select>
                   </div>
-                  <div class="guidance_space">
-                    <label>Projeto</label>
-                    <select class="form-control js-example-basic-single" name="projeto_idProjeto" disabled="">
-                    <option value=""></option>
-                      <?php
-                        foreach ($projects as $project) {
-                          $selected = "";
-                          echo '<option value="'.$project->idProjeto.'" '.$selected.'>'.$project->titulo.'</option>';
-                        }
-                      ?>
-                    </select>
-                  </div>
                   <div class="form-group clear">
                     <label>Período (ano): </label>
-                      <input class="input-ano-report input-ano" type="number" name="ano">
+                      <input class="input-ano-report input-ano" type="number" name="anoInicio">
                     <label>a </label>
-                      <input class="input-ano-report input-ano" type="number" name="ano">
+                      <input class="input-ano-report input-ano" type="number" name="anoFim">
                   </div>
                   </fieldset>
                 <button type="submit" class="btn btn-success">Gerar</button>
                 <a href="/report/index" class="btn btn-primary">Voltar</a>
+                <div class="form-group clear alert">
+                  <label>*Imprimir em modo Retrato</label>
+                </div>
               </div>
               </form>
             </div>

@@ -91,8 +91,6 @@
       </div>
     </header>
     <div class="body-margin">
-      <!-- <p><b>PERÍODO: <?php echo $_GET['dataInicio']?></b></p><br> -->
-      <!-- <p class="float_project"><b>A: <?php echo $_GET['dataFim']?></b></p><br> -->
         <table class="table table-bordered">
           <thead>
             <tr>
@@ -114,9 +112,9 @@
               <td><?php echo projects_guidance()[$value->tipoOrientacao] ?></td>
               <td><?php echo $this->user->find($value->usuario_idEstudante)->nome ?></td>
               <td><?php echo scholarships()[$value->fomento] ?></td>
-              <td><?php echo date('d/m/Y', strtotime($value->dataInicio)); ?></td>
-              <td><?php echo date('d/m/Y', strtotime($value->dataFim)); ?></td>
-              <td><?php echo status()[$value->statuss] ?></td>
+              <td><?php echo date('d/m/Y', strtotime($value->dataInicio_orientacao)); ?></td>
+              <td><?php echo date('d/m/Y', strtotime($value->dataFim_orientacao)); ?></td>
+              <td><?php echo status()[$value->status_orientacao] ?></td>
             </tr>
             <?php } ?>
           </tbody>

@@ -29,7 +29,7 @@
               <?php foreach ($participates as $value) { ?>
               <tr>
                 <td><?php echo $value->idParticipa ?></td>
-                <td class="width_participate"><?php echo $this->project->find($value->projeto_idProjeto)->titulo ?>...</td>
+                <td class="width_participate"><?php echo mb_strimwidth($this->project->find($value->projeto_idProjeto)->titulo, 0 , 45, "...") ?></td>
                 <td class="width_user"><?php echo $this->user->find($value->usuario_idUsuario)->nome ?></td>
                 <td>
                   <a href="/participate/show?idParticipa=<?= $value->idParticipa ?>" class="btn btn-primary">Visualizar</a>
