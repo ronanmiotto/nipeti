@@ -11,7 +11,7 @@
         </div>
 
         <div class="col-sm-9">
-          <?php if ($type != 4 || $type != 2){?>
+          <?php if ($type != 4 && $type != 2){?>
           <a href="/publication/new_publication" class="btn btn-success btn-lg">Nova Publicação</a>
           <hr>
           <?php } ?>

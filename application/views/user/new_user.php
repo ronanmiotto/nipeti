@@ -96,7 +96,7 @@
                 <fieldset class="scheduler-border">
                   <legend class="scheduler-border">Estudante</legend>
                   <label>Curso</label>
-                  <select class="form-control" name="curso" required="">
+                  <select class="form-control" name="curso">
                     <?php
                       foreach (courses() as $key => $value) {
                         $selected = $user->courses == $key ? "selected" : "";
