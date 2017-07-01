@@ -30,7 +30,7 @@
               <td><?= $user->rg ?></td>
             </tr>
             <tr>
-              <th scope="row">CPF</th>
+              <th scope="row" >CPF</th>
               <td><?= $user->cpf ?></td>
             </tr>
             <tr>

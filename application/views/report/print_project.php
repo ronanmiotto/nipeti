@@ -76,6 +76,16 @@
 
           margin: 0 10px 0 10px;
         }
+
+        .participates_name {
+
+          width: 200px;
+        }
+
+        .participates_ {
+
+          width: 100px;
+        }
       </style>
 
     </head>
@@ -113,10 +123,10 @@
             <tbody>
               <?php foreach ($this->user->projects($project->idProjeto) as $value) { ?>
               <tr>
-                <td><?php echo $value->nome ?></td>
-                <td><?php echo projects_participate()[$value->ptipo] ?></td>
-                <td><?php echo scholarships()[$value->fomento] ?></td>
-                <td><?php echo status()[$value->statuss] ?></td>
+                <td class="participates_name"><?php echo $value->nome ?></td>
+                <td class="participates_"><?php echo projects_participate()[$value->ptipo] ?></td>
+                <td class="participates_"><?php echo scholarships()[$value->fomento] ?></td>
+                <td class="participates_"><?php echo status()[$value->statuss] ?></td>
               </tr>
               <?php } ?>
             </tbody>

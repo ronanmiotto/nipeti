@@ -21,14 +21,14 @@
             <label class="radio-inline">
               <input type="radio" name="tipo" value="2"> Periódico
             </label>
-            
+
             <div class="form-group">
               <label>Título</label>
-              <input type="text" class="form-control" name ="titulo" placeholder="Título da publicação, evento ou periódico" required="">
+              <input type="text" class="form-control" name ="titulo" placeholder="Título da publicação, evento ou periódico">
             </div>
             <div class="form-group">
               <label>Participante(s) / Palestrante(s)</label>
-              <input type="text" class="form-control" name ="participante" placeholder="Participante(s) do evento" required="">
+              <input type="text" class="form-control" name ="participante" placeholder="Participante(s) do evento"php>
             </div>
             <label class="label-clear">Com alunos? </label>
             <label class="radio-inline">
@@ -38,7 +38,7 @@
               <input type="radio" name="comAluno" value="2"> Não
             </label>
             <div class="guidance_space">
-              <label>Projeto (vincular se houver)</label>
+              <label>Projeto</label>
               <select class="form-control js-example-basic-single" name="projeto_idProjeto">
               <option value=""></option>
                 <?php
@@ -54,11 +54,11 @@
             <div class="form-group clear date-clear">
               <div class="form-group">
                 <label>Localidade</label>
-                <input type="text" class="form-control" name ="localidade" placeholder="Instituição / Cidade" required="">
+                <input type="text" class="form-control" name ="localidade" placeholder="Instituição / Cidade">
               </div>
               <div class="form-group">
                 <label>Área</label>
-                <input type="text" class="form-control" name ="area" placeholder="Área de atuação relacionada" required="">
+                <input type="text" class="form-control" name ="area" placeholder="Área de atuação relacionada">
               </div>
               <label>Ano: </label>
               <input class="input-ano" type="number" name="ano" required="">

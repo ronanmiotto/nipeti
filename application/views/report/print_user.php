@@ -112,7 +112,7 @@
             </tr>
             <tr>
                 <th class="row">CPF</th>
-                <td class="dados"><?php echo mask('###.###.###-##', $value->cpf) ?></td>
+                <td class="dados"><?php echo $value->cpf ?></td>
             </tr>
             <tr>
                 <th class="row">Curso / Formação acad.</th>

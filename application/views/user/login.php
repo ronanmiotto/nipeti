@@ -18,7 +18,7 @@
                   <div class="col-md-offset-5 col-md-3">
                       <?php echo flash_message(); ?>
                       <div class="form-login">
-                      <h4>Login de Usuário</h4>
+                      <h4>Autenticação de Usuário</h4>
                       <input type="email" name="email" class="form-control input-sm chat-input" placeholder="E-mail" />
                       </br>
                       <input type="password" name="senha" class="form-control input-sm chat-input" placeholder="Senha" />

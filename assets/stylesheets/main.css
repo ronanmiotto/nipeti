@@ -39,8 +39,9 @@ body {
 
 .image-nipeti {
 
-  width: 600px;
+  width: 450px;
   height: 350px;
+  border-radius: 10px;
 }
 
 .image-nipeti2 {

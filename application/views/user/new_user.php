@@ -20,11 +20,11 @@
               </div>
               <div class="form-group">
                 <label>RG</label>
-                <input type="text" class="form-control" name ="rg" placeholder="RG" required="">
+                <input type="text" class="form-control" name ="rg" placeholder="RG">
               </div>
               <div class="form-group">
                 <label>CPF</label>
-                <input type="text" class="form-control" name ="cpf" maxlength="14" placeholder="CPF" required="" OnKeyPress="formatar('###.###.###-##', this)">
+                <input type="text" class="form-control" name ="cpf" maxlength="14" placeholder="CPF" OnKeyPress="formatar('###.###.###-##', this)" required="">
               </div>
               <label>Sexo: </label>
               <label class="radio-inline">
@@ -35,27 +35,27 @@
               </label>
               <div class="form-group clear">
                 <label>Data de Nascimento: </label>
-                <input type="date" name="dataNasc" required="">
+                <input type="date" name="dataNasc">
               </div>
               <div class="form-group">
                 <label>Endereço</label>
-                <input type="text" class="form-control" name ="endereco" placeholder="Ex. Rua, Av" required="">
+                <input type="text" class="form-control" name ="endereco" placeholder="Ex. Rua, Av">
               </div>
               <div class="form-group">
                 <label>Número</label>
-                <input type="text" class="form-control" name ="numero"  placeholder="Número" required="">
+                <input type="text" class="form-control" name ="numero"  placeholder="Número">
               </div>
               <div class="form-group">
                 <label>Bairro</label>
-                <input type="text" class="form-control" name ="bairro"  placeholder="Bairro" required="">
+                <input type="text" class="form-control" name ="bairro"  placeholder="Bairro">
               </div>
               <div class="form-group">
                 <label>Cidade</label>
-                <input type="text" class="form-control" name ="cidade"  placeholder="Cidade" required="">
+                <input type="text" class="form-control" name ="cidade"  placeholder="Cidade">
               </div>
               <div class="form-group">
                 <label>CEP</label>
-                <input type="text" class="form-control" name ="cep"  placeholder="CEP" maxlength="9" OnKeyPress="formatar('#####-###', this)" required="">
+                <input type="text" class="form-control" name ="cep"  placeholder="CEP" maxlength="9" OnKeyPress="formatar('#####-###', this)">
               </div>
               <div class="form-group">
                 <label>UF </label>
@@ -70,7 +70,7 @@
               </div>
               <div class="form-group">
                 <label>Fone</label>
-                <input type="text" class="form-control" name ="fone" placeholder="Celular" maxlength="13" OnKeyPress="formatar('##-#####-####', this)" required="">
+                <input type="text" class="form-control" name ="fone" placeholder="Celular" maxlength="13" OnKeyPress="formatar('##-#####-####', this)">
               </div>
               <div class="form-group">
                 <label>E-mail</label>
@@ -96,7 +96,7 @@
                 <fieldset class="scheduler-border">
                   <legend class="scheduler-border">Estudante</legend>
                   <label>Curso</label>
-                  <select class="form-control" name="curso">
+                  <select class="form-control" name="curso" required="">
                     <?php
                       foreach (courses() as $key => $value) {
                         $selected = $user->courses == $key ? "selected" : "";
